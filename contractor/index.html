@@ -7,10 +7,11 @@
 <meta name="description" content="Licensed, insured, and built on reputation. Ridgeline Pro handles your home right — done on time, done right."/>
 <style>
   :root{
-    --bg:#0c1018;--bg2:#111827;--bg3:#1a2233;
-    --text:#f1f5f9;--muted:#94a3b8;--faint:#475569;
-    --accent:#f59e0b;--accent-soft:rgba(245,158,11,.12);--accent-glow:rgba(245,158,11,.3);
-    --border:rgba(255,255,255,.08);
+    --navy:#0d2240;--navy-mid:#163460;--navy-light:#1e4080;
+    --orange:#f97316;--orange-deep:#c2600e;--orange-soft:rgba(249,115,22,.1);
+    --bg:#ffffff;--bg2:#f4f7fa;--bg3:#e8eef5;
+    --text:#0d1f35;--muted:#526070;--faint:#8fa0b0;
+    --border:#dde5ed;
     --maxw:1100px;
     --sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   }
@@ -20,168 +21,221 @@
   a{color:inherit;text-decoration:none}
   img{display:block;max-width:100%}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
-  .eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--accent)}
-  .btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:14px;padding:14px 28px;border-radius:10px;transition:.25s;border:none;cursor:pointer;letter-spacing:.02em}
-  .btn-primary{background:var(--accent);color:#1c0f00}
-  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 32px -10px var(--accent-glow)}
-  .btn-ghost{border:1.5px solid var(--border);color:var(--text);background:none;border-radius:10px}
-  .btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
 
-  header{position:sticky;top:0;z-index:50;backdrop-filter:blur(16px);background:rgba(12,16,24,.8);border-bottom:1px solid var(--border)}
-  .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
-  .brand{font-weight:900;font-size:18px;letter-spacing:-.02em;display:flex;align-items:center;gap:10px}
-  .brand .mark{width:32px;height:32px;border-radius:8px;background:var(--accent);display:grid;place-items:center}
-  .brand .mark svg{width:16px;height:16px;fill:none;stroke:#1c0f00;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+  /* TOP BAR */
+  .topbar{background:var(--navy);padding:8px 0;font-size:13px;color:rgba(255,255,255,.7);text-align:center}
+  .topbar strong{color:#fff}
+  .topbar a{color:var(--orange);font-weight:600}
+
+  /* NAV */
+  header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:2px solid var(--border);box-shadow:0 2px 16px -4px rgba(13,34,64,.12)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:70px;gap:16px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:900;font-size:20px;letter-spacing:-.02em;color:var(--navy)}
+  .brand .mark{width:36px;height:36px;border-radius:8px;background:var(--navy);display:grid;place-items:center}
+  .brand .mark svg{width:18px;height:18px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
   .nav-links{display:flex;align-items:center;gap:28px}
-  .nav-links a{font-size:14px;font-weight:500;color:var(--muted);transition:.2s}
-  .nav-links a:hover{color:var(--text)}
+  .nav-links a{font-size:14px;font-weight:600;color:var(--muted);transition:.2s}
+  .nav-links a:hover{color:var(--navy)}
+  .nav-phone{font-weight:800;font-size:15px;color:var(--navy);display:flex;align-items:center;gap:6px}
+  .nav-phone svg{width:15px;height:15px;stroke:var(--orange);fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+  .btn-orange{background:var(--orange);color:#fff;font-weight:700;font-size:14px;padding:11px 22px;border-radius:6px;transition:.2s;display:inline-block}
+  .btn-orange:hover{background:var(--orange-deep);transform:translateY(-1px);box-shadow:0 8px 20px -6px rgba(249,115,22,.5)}
+  .btn-navy{background:var(--navy);color:#fff;font-weight:700;font-size:14px;padding:14px 28px;border-radius:6px;transition:.2s;display:inline-flex;align-items:center;gap:8px}
+  .btn-navy:hover{background:var(--navy-mid);transform:translateY(-1px)}
+  .btn-outline{border:2px solid var(--border);color:var(--muted);font-weight:600;font-size:14px;padding:12px 24px;border-radius:6px;transition:.2s;display:inline-block}
+  .btn-outline:hover{border-color:var(--navy);color:var(--navy)}
 
   /* HERO */
-  .hero{display:grid;grid-template-columns:1fr 1fr;min-height:90vh;overflow:hidden;position:relative}
-  .hero-photo{position:relative;overflow:hidden}
+  .hero{background:var(--navy);position:relative;overflow:hidden}
+  .hero::before{content:"";position:absolute;top:-200px;right:-200px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(249,115,22,.18),transparent 65%);pointer-events:none}
+  .hero-inner{display:grid;grid-template-columns:1.1fr .9fr;min-height:82vh;align-items:center;gap:0}
+  .hero-copy{padding:72px 40px 72px 24px;color:#fff}
+  .trust-row{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:26px}
+  .badge{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border:1.5px solid rgba(255,255,255,.2);border-radius:4px;padding:5px 10px;color:rgba(255,255,255,.75)}
+  .badge.lit{border-color:rgba(249,115,22,.6);color:var(--orange)}
+  .hero-copy h1{font-size:clamp(38px,5.5vw,66px);font-weight:900;line-height:1.0;letter-spacing:-.025em;color:#fff}
+  .hero-copy h1 .hl{color:var(--orange)}
+  .hero-copy p{font-size:18px;color:rgba(255,255,255,.7);margin-top:20px;max-width:44ch;line-height:1.7}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+  .hero-stats{display:flex;gap:36px;margin-top:48px;padding-top:32px;border-top:1px solid rgba(255,255,255,.12);flex-wrap:wrap}
+  .stat .n{font-size:30px;font-weight:900;color:#fff;letter-spacing:-.02em}
+  .stat .n span{color:var(--orange)}
+  .stat .l{font-size:12px;color:rgba(255,255,255,.5);margin-top:2px}
+  .hero-photo{position:relative;overflow:hidden;height:100%}
   .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center}
-  .hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(to right,transparent 60%,var(--bg)),linear-gradient(to top,var(--bg) 0%,transparent 20%)}
-  .hero-copy{padding:72px 24px 72px 48px;display:flex;flex-direction:column;justify-content:center;position:relative}
-  .hero-copy::before{content:"";position:absolute;top:0;right:0;bottom:0;left:-80px;background:radial-gradient(120% 80% at 70% 50%,var(--accent-soft),transparent 65%);pointer-events:none}
-  .trust-badges{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:28px}
-  .badge{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--border);border-radius:6px;padding:5px 10px;color:var(--muted)}
-  .badge.green{border-color:rgba(34,197,94,.4);color:#4ade80}
-  h1{font-size:clamp(38px,5vw,64px);font-weight:900;line-height:1.0;letter-spacing:-.03em}
-  h1 .hl{color:var(--accent)}
-  .hero-copy p{font-size:18px;color:var(--muted);margin-top:20px;max-width:44ch;line-height:1.65}
-  .hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px}
-  .hero-stats{display:flex;gap:36px;margin-top:48px;padding-top:32px;border-top:1px solid var(--border);flex-wrap:wrap}
-  .stat .n{font-size:28px;font-weight:900;letter-spacing:-.02em}
-  .stat .l{font-size:12px;color:var(--muted);margin-top:2px}
+  .hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(to right,var(--navy) 0%,transparent 25%),linear-gradient(to top,var(--navy) 0%,transparent 20%)}
+
+  /* TRUST STRIP */
+  .trust-strip{background:var(--orange);padding:18px 0}
+  .trust-items{display:flex;justify-content:center;gap:48px;flex-wrap:wrap}
+  .trust-item{display:flex;align-items:center;gap:10px;color:#fff;font-weight:700;font-size:14px}
+  .trust-item svg{width:20px;height:20px;fill:none;stroke:#fff;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;opacity:.85}
 
   /* SERVICES */
   .services{padding:100px 0;background:var(--bg2)}
-  .services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:48px}
-  .svc{border:1px solid var(--border);border-radius:16px;padding:30px;background:var(--bg3);display:flex;gap:20px;align-items:flex-start;transition:.25s}
-  .svc:hover{border-color:var(--accent);transform:translateX(4px)}
-  .svc .ic{width:44px;height:44px;border-radius:12px;background:var(--accent-soft);display:grid;place-items:center;flex-shrink:0}
-  .svc .ic svg{width:22px;height:22px;stroke:var(--accent);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-  .svc h3{font-size:18px;font-weight:800}
-  .svc p{color:var(--muted);font-size:14px;margin-top:6px;line-height:1.6}
+  .sec-head{margin-bottom:48px}
+  .sec-head .eyebrow{font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--orange)}
+  .sec-head h2{font-size:clamp(28px,4vw,42px);font-weight:900;letter-spacing:-.02em;color:var(--navy);margin-top:12px}
+  .sec-head p{color:var(--muted);margin-top:12px;font-size:17px;max-width:52ch}
+  .services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  .svc{background:#fff;border:1px solid var(--border);border-radius:10px;padding:30px;display:flex;gap:18px;align-items:flex-start;transition:.25s}
+  .svc:hover{border-color:var(--orange);box-shadow:0 8px 28px -8px rgba(249,115,22,.2)}
+  .svc .ic{width:46px;height:46px;border-radius:10px;background:var(--orange-soft);border:1.5px solid rgba(249,115,22,.25);display:grid;place-items:center;flex-shrink:0}
+  .svc .ic svg{width:22px;height:22px;stroke:var(--orange);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .svc h3{font-size:18px;font-weight:800;color:var(--navy)}
+  .svc p{color:var(--muted);font-size:14px;margin-top:6px;line-height:1.65}
 
   /* WHY US */
   .why{padding:100px 0}
   .why-inner{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
-  .why-copy h2{font-size:clamp(28px,4vw,44px);font-weight:900;letter-spacing:-.025em;line-height:1.1}
-  .why-copy p{color:var(--muted);margin-top:18px;font-size:17px;line-height:1.7}
-  .why-list{margin-top:28px;display:flex;flex-direction:column;gap:14px}
+  .why-photo{border-radius:12px;overflow:hidden;position:relative;box-shadow:0 24px 60px -20px rgba(13,34,64,.35)}
+  .why-photo img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center}
+  .why-photo .over{position:absolute;bottom:20px;left:20px;right:20px;background:#fff;border-radius:10px;padding:18px 20px;display:flex;align-items:center;gap:14px;box-shadow:0 8px 24px -8px rgba(13,34,64,.25)}
+  .why-photo .over .icon-w{width:40px;height:40px;border-radius:8px;background:var(--orange-soft);display:grid;place-items:center;flex-shrink:0}
+  .why-photo .over .icon-w svg{width:20px;height:20px;stroke:var(--orange);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .why-photo .over .ow-title{font-weight:800;font-size:14px;color:var(--navy)}
+  .why-photo .over .ow-sub{font-size:12px;color:var(--muted)}
+  .why-copy .sec-head{margin-bottom:28px}
+  .why-list{display:flex;flex-direction:column;gap:16px}
   .why-item{display:flex;gap:14px;align-items:flex-start}
-  .why-item .check{width:24px;height:24px;border-radius:50%;background:var(--accent-soft);border:1.5px solid var(--accent);display:grid;place-items:center;flex-shrink:0;margin-top:2px}
-  .why-item .check svg{width:13px;height:13px;stroke:var(--accent);fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
-  .why-item p{font-size:16px;color:var(--muted)}
+  .why-item .chk{width:24px;height:24px;border-radius:50%;background:var(--orange-soft);border:1.5px solid var(--orange);display:grid;place-items:center;flex-shrink:0;margin-top:2px}
+  .why-item .chk svg{width:12px;height:12px;stroke:var(--orange);fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+  .why-item p{font-size:16px;color:var(--muted);line-height:1.6}
   .why-item strong{color:var(--text)}
-  .why-numbers{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-  .num-card{border:1px solid var(--border);border-radius:16px;padding:28px;background:var(--bg2)}
-  .num-card .n{font-size:40px;font-weight:900;color:var(--accent);letter-spacing:-.03em}
-  .num-card .l{color:var(--muted);font-size:14px;margin-top:6px}
+  .why-copy .btn-navy{margin-top:32px}
+
+  /* NUMBERS */
+  .numbers{padding:80px 0;background:var(--navy)}
+  .numbers-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.1);border-radius:10px;overflow:hidden}
+  .num-card{background:var(--navy);padding:36px 24px;text-align:center}
+  .num-card .big{font-size:44px;font-weight:900;color:var(--orange);line-height:1;letter-spacing:-.02em}
+  .num-card p{color:rgba(255,255,255,.55);font-size:13px;margin-top:10px;text-transform:uppercase;letter-spacing:.06em}
 
   /* REVIEWS */
   .reviews{padding:100px 0;background:var(--bg2)}
-  .reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:48px}
-  .review{border:1px solid var(--border);border-radius:16px;padding:28px;background:var(--bg3)}
-  .stars{color:var(--accent);font-size:14px;letter-spacing:2px;margin-bottom:14px}
-  .review p{color:var(--muted);font-size:15px;line-height:1.7;font-style:italic}
+  .reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px}
+  .review{background:#fff;border:1px solid var(--border);border-radius:10px;padding:28px}
+  .review .g-badge{display:flex;align-items:center;gap:8px;margin-bottom:14px}
+  .review .g-badge .g{width:24px;height:24px;border-radius:50%;background:var(--navy);display:grid;place-items:center;font-weight:800;font-size:11px;color:#fff}
+  .review .g-badge .stars{color:var(--orange);font-size:13px;letter-spacing:2px}
+  .review blockquote{color:var(--muted);font-size:15px;line-height:1.7;font-style:italic}
   .reviewer{margin-top:18px;display:flex;gap:12px;align-items:center}
-  .reviewer .av{width:36px;height:36px;border-radius:50%;background:var(--accent-soft);border:1.5px solid var(--accent);display:grid;place-items:center;font-weight:800;font-size:13px;color:var(--accent)}
-  .reviewer .nm{font-weight:700;font-size:14px}
+  .reviewer .av{width:36px;height:36px;border-radius:50%;background:var(--bg3);border:2px solid var(--border);display:grid;place-items:center;font-weight:800;font-size:12px;color:var(--navy)}
+  .reviewer .nm{font-weight:700;font-size:14px;color:var(--text)}
   .reviewer .rl{font-size:12px;color:var(--faint)}
 
-  /* QUOTE CTA */
-  .quote{padding:100px 0;text-align:center}
-  .quote-box{border:1px solid var(--border);border-radius:24px;padding:72px 28px;background:radial-gradient(120% 130% at 50% 0,var(--accent-soft),transparent 55%),var(--bg2)}
-  .quote-box h2{font-size:clamp(30px,5vw,52px);font-weight:900;letter-spacing:-.03em}
-  .quote-box p{color:var(--muted);margin:16px auto 0;max-width:48ch;font-size:18px}
-  .quote-box .btn-primary{margin-top:36px}
-  .quote-note{font-size:13px;color:var(--faint);margin-top:18px}
+  /* QUOTE */
+  .quote{padding:100px 0;background:var(--bg)}
+  .quote-box{background:var(--navy);border-radius:14px;padding:72px 48px;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center}
+  .quote-box h2{font-size:clamp(28px,4vw,44px);font-weight:900;letter-spacing:-.02em;color:#fff}
+  .quote-box p{color:rgba(255,255,255,.6);margin-top:12px;font-size:17px}
+  .quote-right{display:flex;flex-direction:column;align-items:flex-end;gap:14px;flex-shrink:0}
+  .quote-note{font-size:13px;color:rgba(255,255,255,.4);text-align:right}
 
-  footer{border-top:1px solid var(--border);padding:28px 0}
-  .foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:14px;color:var(--faint)}
+  footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.1);padding:32px 0}
+  .foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:13px;color:rgba(255,255,255,.4)}
+  .foot strong{color:rgba(255,255,255,.65)}
 
-  .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s cubic-bezier(.22,1,.36,1),transform .6s cubic-bezier(.22,1,.36,1)}
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s cubic-bezier(.22,1,.36,1),transform .6s cubic-bezier(.22,1,.36,1)}
   .reveal.in{opacity:1;transform:none}
 
   @media(max-width:900px){
-    .hero{grid-template-columns:1fr;min-height:auto}
-    .hero-photo{height:50vh}
-    .hero-photo::after{background:linear-gradient(to top,var(--bg) 0%,transparent 30%)}
-    .hero-copy{padding:40px 24px 48px;order:-1}
-    .hero-copy::before{display:none}
-    .services-grid,.reviews-grid,.why-numbers{grid-template-columns:1fr}
-    .why-inner{grid-template-columns:1fr;gap:40px}
+    .hero-inner{grid-template-columns:1fr;min-height:auto}
+    .hero-photo{height:50vw;min-height:240px}
+    .hero-photo::after{background:linear-gradient(to top,var(--navy) 0%,transparent 30%)}
+    .hero-copy{order:-1;padding:40px 24px 36px}
+    .services-grid,.reviews-grid,.numbers-grid{grid-template-columns:1fr}
+    .why-inner{grid-template-columns:1fr;gap:36px}
+    .quote-box{grid-template-columns:1fr;gap:28px}
+    .quote-right{align-items:flex-start}
+    .trust-items{gap:24px}
   }
   @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
 
+<div class="topbar">
+  Licensed · Insured · Free Estimates &nbsp;|&nbsp; <a href="tel:+19705555555">Call (970) 555-5555</a> — we actually answer.
+</div>
+
 <header>
   <div class="wrap nav">
     <div class="brand">
-      <span class="mark">
-        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-      </span>
+      <span class="mark"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
       Ridgeline Pro
     </div>
     <nav class="nav-links">
       <a href="#services">Services</a>
       <a href="#why">About</a>
-      <a href="#quote" class="btn btn-primary" style="padding:9px 20px;border-radius:8px">Free Quote</a>
+      <a href="#reviews">Reviews</a>
     </nav>
+    <div style="display:flex;align-items:center;gap:16px">
+      <div class="nav-phone"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.62 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>(970) 555-5555</div>
+      <a href="#quote" class="btn-orange">Free Quote</a>
+    </div>
   </div>
 </header>
 
 <section class="hero">
-  <div class="hero-photo">
-    <img src="../images/contractor-hero.jpeg" alt="Ridgeline Pro contractor" id="hero-img"/>
-  </div>
-  <div class="hero-copy">
-    <div class="trust-badges">
-      <span class="badge green">✓ Licensed & Insured</span>
-      <span class="badge">10+ Years Experience</span>
-      <span class="badge">Free Estimates</span>
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <div class="trust-row">
+        <span class="badge lit">✓ Licensed &amp; Insured</span>
+        <span class="badge">10+ Years Experience</span>
+        <span class="badge">Free Estimates</span>
+        <span class="badge">2-Year Warranty</span>
+      </div>
+      <h1>Done right.<br><span class="hl">Done on time.</span></h1>
+      <p>Home remodeling and repair you can actually count on. Upfront pricing, clean work, and a warranty you can use.</p>
+      <div class="hero-cta">
+        <a href="#quote" class="btn-orange" style="padding:14px 30px;border-radius:6px;font-size:15px">Get a Free Quote</a>
+        <a href="#services" class="btn-outline" style="color:rgba(255,255,255,.7);border-color:rgba(255,255,255,.2)">See Services</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><div class="n">500<span>+</span></div><div class="l">Projects completed</div></div>
+        <div class="stat"><div class="n">10<span>yr</span></div><div class="l">In business</div></div>
+        <div class="stat"><div class="n">4.9<span>★</span></div><div class="l">Google reviews</div></div>
+      </div>
     </div>
-    <h1>Done right.<br><span class="hl">Done on time.</span></h1>
-    <p>Home remodeling and repair you can actually count on. No surprises on the bill, no mystery on the timeline.</p>
-    <div class="hero-cta">
-      <a href="#quote" class="btn btn-primary">Get a Free Quote</a>
-      <a href="#services" class="btn btn-ghost">See services</a>
-    </div>
-    <div class="hero-stats">
-      <div class="stat"><div class="n">500+</div><div class="l">Projects completed</div></div>
-      <div class="stat"><div class="n">10yr</div><div class="l">In business</div></div>
-      <div class="stat"><div class="n">4.9★</div><div class="l">Google reviews</div></div>
+    <div class="hero-photo">
+      <img src="../images/contractor-hero.jpeg" alt="Ridgeline Pro contractor"/>
     </div>
   </div>
 </section>
 
+<div class="trust-strip">
+  <div class="wrap trust-items">
+    <div class="trust-item"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Licensed &amp; Insured</div>
+    <div class="trust-item"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Written Estimates</div>
+    <div class="trust-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> On-Time Completion</div>
+    <div class="trust-item"><svg viewBox="0 0 24 24"><path d="M14 9V5a3 3 0 0 0-6 0v4"/><rect x="2" y="9" width="20" height="13" rx="2"/></svg> 2-Year Warranty</div>
+  </div>
+</div>
+
 <section class="services" id="services">
   <div class="wrap">
-    <div class="reveal">
-      <span class="eyebrow">What we do</span>
-      <h2 style="font-size:clamp(28px,4vw,44px);font-weight:900;letter-spacing:-.025em;margin-top:12px">One crew.<br>Every job done right.</h2>
-      <p style="color:var(--muted);margin-top:14px;font-size:17px;max-width:50ch">We handle the full scope — so you're not coordinating three different contractors for one project.</p>
+    <div class="sec-head reveal">
+      <div class="eyebrow">What we do</div>
+      <h2>One crew. Every job done right.</h2>
+      <p>We handle the full scope — so you're not coordinating three different contractors for one project.</p>
     </div>
     <div class="services-grid">
       <div class="svc reveal">
         <div class="ic"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
-        <div><h3>Kitchen & Bath Remodeling</h3><p>Full gut-to-finish remodels. We handle demo, framing, plumbing rough-in, tile, cabinets, and final install.</p></div>
+        <div><h3>Kitchen &amp; Bath Remodeling</h3><p>Full gut-to-finish remodels — demo, framing, plumbing, tile, cabinets, and final install. Properly permitted every time.</p></div>
       </div>
       <div class="svc reveal">
         <div class="ic"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
-        <div><h3>Additions & Framing</h3><p>Room additions, garage conversions, and structural work — properly permitted and built to last.</p></div>
+        <div><h3>Additions &amp; Framing</h3><p>Room additions, garage conversions, and structural work — permitted and built to last.</p></div>
       </div>
       <div class="svc reveal">
         <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-        <div><h3>Roofing & Exterior</h3><p>Roof replacement, siding, gutters, and windows. Your home's first defense deserves the best work.</p></div>
+        <div><h3>Roofing &amp; Exterior</h3><p>Roof replacement, siding, gutters, and windows. Your home's first defense deserves the best work.</p></div>
       </div>
       <div class="svc reveal">
         <div class="ic"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-        <div><h3>General Repairs & Handyman</h3><p>For the jobs that don't fit a category — drywall, doors, decks, flooring. One call, one crew.</p></div>
+        <div><h3>General Repairs &amp; Handyman</h3><p>Drywall, doors, decks, flooring — for the jobs that don't fit a category. One call, one crew.</p></div>
       </div>
     </div>
   </div>
@@ -190,55 +244,74 @@
 <section class="why" id="why">
   <div class="wrap">
     <div class="why-inner">
-      <div class="why-copy reveal">
-        <span class="eyebrow">Why Ridgeline</span>
-        <h2>We show up.<br>We finish.<br>We stand behind it.</h2>
-        <p>A lot of contractors take the deposit and disappear. We built our reputation on the opposite — clear communication, clean work, and a warranty you can actually use.</p>
-        <div class="why-list">
-          <div class="why-item">
-            <span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
-            <p><strong>Upfront pricing</strong> — written estimate before any work starts. No surprise add-ons.</p>
-          </div>
-          <div class="why-item">
-            <span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
-            <p><strong>Licensed & insured</strong> — fully covered so your home is protected the whole job.</p>
-          </div>
-          <div class="why-item">
-            <span class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
-            <p><strong>2-year workmanship warranty</strong> — if something's wrong, we come back and fix it.</p>
-          </div>
+      <div class="why-photo reveal">
+        <img src="../images/contractor-hero.jpeg" alt="Ridgeline Pro"/>
+        <div class="over">
+          <div class="icon-w"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div><div class="ow-title">Licensed &amp; Insured</div><div class="ow-sub">Your home is protected the whole job</div></div>
         </div>
       </div>
-      <div class="why-numbers reveal">
-        <div class="num-card"><div class="n">500+</div><div class="l">Projects completed without a single unresolved complaint</div></div>
-        <div class="num-card"><div class="n">98%</div><div class="l">On-time completion rate across all projects</div></div>
-        <div class="num-card"><div class="n">10yr</div><div class="l">In business, fully licensed the entire time</div></div>
-        <div class="num-card"><div class="n">2yr</div><div class="l">Workmanship warranty on every job</div></div>
+      <div class="why-copy reveal">
+        <div class="sec-head">
+          <div class="eyebrow">Why Ridgeline</div>
+          <h2>We show up. We finish.<br>We stand behind it.</h2>
+          <p>Most contractors take the deposit and go quiet. We built our reputation on the opposite — clear communication, clean work, and a warranty you can actually use.</p>
+        </div>
+        <div class="why-list">
+          <div class="why-item">
+            <span class="chk"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <p><strong>Upfront pricing</strong> — written estimate before any work starts. No surprise add-ons at the end.</p>
+          </div>
+          <div class="why-item">
+            <span class="chk"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <p><strong>Licensed &amp; fully insured</strong> — your home is protected for the entire duration of the job.</p>
+          </div>
+          <div class="why-item">
+            <span class="chk"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <p><strong>2-year workmanship warranty</strong> — if something's wrong, we come back and fix it. Period.</p>
+          </div>
+          <div class="why-item">
+            <span class="chk"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <p><strong>Clean jobsite, daily</strong> — we clean up every single day. Your home stays livable throughout.</p>
+          </div>
+        </div>
+        <a href="#quote" class="btn-navy">Get your free estimate</a>
       </div>
     </div>
   </div>
 </section>
 
-<section class="reviews">
+<section class="numbers">
   <div class="wrap">
-    <div class="reveal">
-      <span class="eyebrow">Google Reviews</span>
-      <h2 style="font-size:clamp(26px,4vw,40px);font-weight:900;letter-spacing:-.025em;margin-top:12px">What homeowners say.</h2>
+    <div class="numbers-grid reveal">
+      <div class="num-card"><div class="big">500+</div><p>Projects completed</p></div>
+      <div class="num-card"><div class="big">98%</div><p>On-time completion</p></div>
+      <div class="num-card"><div class="big">10yr</div><p>In business, fully licensed</p></div>
+      <div class="num-card"><div class="big">2yr</div><p>Workmanship warranty</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="reviews" id="reviews">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Google Reviews</div>
+      <h2>What homeowners say.</h2>
     </div>
     <div class="reviews-grid">
       <div class="review reveal">
-        <div class="stars">★★★★★</div>
-        <p>"They gave us a written estimate, stuck to it almost to the dollar, and finished two days early. I've never had a contractor do that. Never."</p>
+        <div class="g-badge"><div class="g">G</div><div class="stars">★★★★★</div></div>
+        <blockquote>"Written estimate, stuck to it almost to the dollar, finished two days early. I've never had a contractor do that. Never."</blockquote>
         <div class="reviewer"><div class="av">DW</div><div><div class="nm">David W.</div><div class="rl">Kitchen remodel · 2024</div></div></div>
       </div>
       <div class="review reveal">
-        <div class="stars">★★★★★</div>
-        <p>"The bathroom looks incredible. More importantly, they cleaned up every single day. I barely knew they were there. Will absolutely hire again."</p>
+        <div class="g-badge"><div class="g">G</div><div class="stars">★★★★★</div></div>
+        <blockquote>"The bathroom looks incredible. More importantly, they cleaned up every single day. I barely knew they were there. Hiring again for sure."</blockquote>
         <div class="reviewer"><div class="av">SR</div><div><div class="nm">Sandra R.</div><div class="rl">Bathroom renovation · 2024</div></div></div>
       </div>
       <div class="review reveal">
-        <div class="stars">★★★★★</div>
-        <p>"Hired them for a roof replacement after getting three other bids. Best price AND best communication. I referred them to both my neighbors already."</p>
+        <div class="g-badge"><div class="g">G</div><div class="stars">★★★★★</div></div>
+        <blockquote>"Best price AND best communication out of three bids. Roof looks incredible. Referred them to both my neighbors already."</blockquote>
         <div class="reviewer"><div class="av">MK</div><div><div class="nm">Mike K.</div><div class="rl">Roof replacement · 2023</div></div></div>
       </div>
     </div>
@@ -248,11 +321,14 @@
 <section class="quote" id="quote">
   <div class="wrap">
     <div class="quote-box reveal">
-      <span class="eyebrow">Get started</span>
-      <h2>Free estimate.<br>No obligation.</h2>
-      <p>Tell us about your project and we'll come take a look — at no cost and no pressure. Most estimates within 48 hours.</p>
-      <a href="mailto:burgossstudio@gmail.com?subject=Ridgeline Pro website inquiry" class="btn btn-primary">Request a free estimate</a>
-      <div class="quote-note">Or call us anytime — we actually answer.</div>
+      <div>
+        <h2>Free estimate.<br>No obligation.</h2>
+        <p>Tell us about your project and we'll come take a look — at no cost and no pressure. Most estimates within 48 hours.</p>
+      </div>
+      <div class="quote-right">
+        <a href="mailto:burgossstudio@gmail.com?subject=Ridgeline Pro website inquiry" class="btn-orange" style="padding:16px 32px;border-radius:6px;font-size:15px;white-space:nowrap">Request Free Estimate</a>
+        <div class="quote-note">Or call (970) 555-5555 — we actually answer.</div>
+      </div>
     </div>
   </div>
 </section>
@@ -265,7 +341,7 @@
 </footer>
 
 <script>
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.08});
   document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
 </script>
 </body>

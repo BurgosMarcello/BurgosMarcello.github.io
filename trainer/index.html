@@ -5,13 +5,16 @@
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>Apex Training — Personal Training Studio</title>
 <meta name="description" content="1-on-1 personal training designed to get you results. Apex Training — your strongest self starts here."/>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&display=swap" rel="stylesheet"/>
 <style>
   :root{
-    --bg:#080b09;--bg2:#0f1410;--bg3:#161e15;
-    --text:#f4f4f2;--muted:#9ca899;--faint:#5a6358;
-    --accent:#22c55e;--accent-soft:rgba(34,197,94,.12);--accent-glow:rgba(34,197,94,.25);
-    --border:rgba(255,255,255,.08);
+    --bg:#080604; --bg2:#100d09; --bg3:#1a1510;
+    --text:#f5f0ea; --muted:#a89880; --faint:#6b5c4a;
+    --accent:#f97316; --accent-deep:#c2600e;
+    --accent-soft:rgba(249,115,22,.12); --accent-glow:rgba(249,115,22,.4);
+    --border:rgba(255,255,255,.07);
     --maxw:1100px;
+    --display:'Oswald',Impact,'Arial Narrow',sans-serif;
     --sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   }
   *{box-sizing:border-box;margin:0;padding:0}
@@ -20,95 +23,97 @@
   a{color:inherit;text-decoration:none}
   img{display:block;max-width:100%}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
-  .eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--accent)}
-  .btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:14px;padding:14px 28px;border-radius:999px;transition:.25s;border:none;cursor:pointer;letter-spacing:.04em}
-  .btn-primary{background:var(--accent);color:#071008}
-  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 32px -10px var(--accent-glow)}
-  .btn-ghost{border:1.5px solid var(--border);color:var(--text);background:none}
+  .eyebrow{font-family:var(--display);font-size:13px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--display);font-weight:600;font-size:15px;letter-spacing:.08em;text-transform:uppercase;padding:14px 32px;border-radius:4px;transition:.2s;border:none;cursor:pointer}
+  .btn-primary{background:var(--accent);color:#fff}
+  .btn-primary:hover{background:var(--accent-deep);transform:translateY(-2px);box-shadow:0 12px 30px -8px var(--accent-glow)}
+  .btn-ghost{border:2px solid rgba(255,255,255,.2);color:var(--text);background:none}
   .btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
 
   /* NAV */
-  header{position:sticky;top:0;z-index:50;backdrop-filter:blur(16px);background:rgba(8,11,9,.75);border-bottom:1px solid var(--border)}
-  .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
-  .brand{font-weight:900;font-size:18px;letter-spacing:-.02em;display:flex;align-items:center;gap:10px}
-  .brand .mark{width:32px;height:32px;border-radius:8px;background:var(--accent);display:grid;place-items:center}
-  .brand .mark svg{width:18px;height:18px;fill:none;stroke:#071008;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
-  .nav-links{display:flex;align-items:center;gap:28px}
-  .nav-links a{font-size:14px;font-weight:500;color:var(--muted);transition:.2s}
+  header{position:sticky;top:0;z-index:50;background:rgba(8,6,4,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:66px}
+  .brand{display:flex;align-items:center;gap:12px;font-family:var(--display);font-size:20px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+  .brand .bolt{width:34px;height:34px;background:var(--accent);border-radius:4px;display:grid;place-items:center}
+  .brand .bolt svg{width:18px;height:18px;fill:none;stroke:#fff;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+  .nav-links{display:flex;align-items:center;gap:32px}
+  .nav-links a{font-family:var(--display);font-size:14px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);transition:.2s}
   .nav-links a:hover{color:var(--text)}
 
   /* HERO */
-  .hero{min-height:92vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:0;overflow:hidden;position:relative}
-  .hero::before{content:"";position:absolute;top:0;left:0;right:50%;bottom:0;background:radial-gradient(120% 80% at 30% 60%,var(--accent-soft),transparent 65%);pointer-events:none}
-  .hero-copy{padding:72px 48px 72px 24px;z-index:1}
-  .hero-copy .pill{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border);border-radius:999px;padding:6px 14px;margin-bottom:28px;font-size:13px;color:var(--muted)}
-  .hero-copy .pill .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
-  .hero-copy h1{font-size:clamp(40px,5.5vw,68px);font-weight:900;line-height:1.0;letter-spacing:-.035em}
-  .hero-copy h1 .hl{color:var(--accent)}
-  .hero-copy p{font-size:18px;color:var(--muted);margin-top:20px;max-width:44ch;line-height:1.65}
+  .hero{display:grid;grid-template-columns:1fr 1fr;min-height:90vh;overflow:hidden}
+  .hero-photo{position:relative;overflow:hidden}
+  .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;filter:saturate(.85) contrast(1.05)}
+  .hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(to right,transparent 55%,var(--bg) 100%),linear-gradient(to top,var(--bg) 0%,transparent 18%)}
+  .hero-photo::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(249,115,22,.15),transparent 50%);z-index:1}
+  .hero-copy{padding:72px 24px 72px 48px;display:flex;flex-direction:column;justify-content:center}
+  .hero-copy h1{font-family:var(--display);font-size:clamp(52px,7vw,88px);font-weight:700;line-height:.95;letter-spacing:.01em;text-transform:uppercase}
+  .hero-copy h1 .hl{color:var(--accent);display:block}
+  .hero-copy p{font-size:17px;color:var(--muted);margin-top:22px;max-width:42ch;line-height:1.7}
   .hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:36px}
-  .hero-stats{display:flex;gap:40px;margin-top:52px;padding-top:36px;border-top:1px solid var(--border)}
-  .stat .n{font-size:32px;font-weight:900;letter-spacing:-.03em;color:var(--accent)}
-  .stat .l{font-size:12px;color:var(--muted);margin-top:2px;font-weight:500}
+  .hero-stats{display:flex;gap:36px;margin-top:52px;padding-top:32px;border-top:1px solid var(--border)}
+  .stat .n{font-family:var(--display);font-size:36px;font-weight:700;color:var(--accent);letter-spacing:.02em}
+  .stat .l{font-size:12px;color:var(--muted);margin-top:2px;text-transform:uppercase;letter-spacing:.06em}
 
-  .hero-photo{position:relative;height:100%;min-height:92vh;overflow:hidden}
-  .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center top}
-  .hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(to right,var(--bg) 0%,transparent 20%),linear-gradient(to top,var(--bg) 0%,transparent 25%)}
+  /* TICKER */
+  .ticker{background:var(--accent);padding:10px 0;overflow:hidden;white-space:nowrap}
+  .ticker-inner{display:inline-flex;gap:0;animation:tick 22s linear infinite}
+  .ticker-inner span{font-family:var(--display);font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#fff;padding:0 28px}
+  .ticker-inner span::after{content:"·";padding-left:28px;opacity:.5}
+  @keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
   /* SERVICES */
   .services{padding:100px 0;background:var(--bg2)}
-  .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
-  .service-card{border:1px solid var(--border);border-radius:20px;padding:32px;background:var(--bg3);transition:.3s}
-  .service-card:hover{border-color:var(--accent);transform:translateY(-4px)}
-  .service-card .ic{width:48px;height:48px;border-radius:14px;background:var(--accent-soft);display:grid;place-items:center;margin-bottom:20px}
-  .service-card .ic svg{width:24px;height:24px;stroke:var(--accent);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-  .service-card h3{font-size:20px;font-weight:800;letter-spacing:-.01em}
-  .service-card p{color:var(--muted);margin-top:8px;font-size:15px;line-height:1.65}
-  .service-card .price{margin-top:20px;padding-top:16px;border-top:1px solid var(--border);font-size:13px;color:var(--faint)}
-  .service-card .price strong{font-size:22px;font-weight:800;color:var(--text);margin-right:4px}
+  .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:52px;border:2px solid var(--border);border-radius:8px;overflow:hidden}
+  .svc{background:var(--bg3);padding:38px 32px;transition:.25s;position:relative;overflow:hidden}
+  .svc::before{content:"";position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--accent);transform:scaleX(0);transition:.3s;transform-origin:left}
+  .svc:hover{background:#1f180f}
+  .svc:hover::before{transform:scaleX(1)}
+  .svc .num{font-family:var(--display);font-size:48px;font-weight:700;color:rgba(249,115,22,.2);line-height:1;margin-bottom:16px}
+  .svc h3{font-family:var(--display);font-size:22px;font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+  .svc p{color:var(--muted);margin-top:10px;font-size:15px;line-height:1.65}
+  .svc .price{margin-top:24px;font-family:var(--display);font-size:28px;font-weight:700;color:var(--accent)}
+  .svc .price small{font-size:14px;color:var(--muted);font-family:var(--sans);font-weight:400}
 
   /* RESULTS */
   .results{padding:100px 0}
-  .results-inner{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
-  .results-copy h2{font-size:clamp(28px,4vw,44px);font-weight:900;letter-spacing:-.025em;line-height:1.1}
-  .results-copy p{color:var(--muted);margin-top:18px;font-size:17px;line-height:1.7}
-  .results-copy .btn-primary{margin-top:30px}
-  .wins{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-  .win{border:1px solid var(--border);border-radius:18px;padding:24px;background:var(--bg2)}
-  .win .n{font-size:38px;font-weight:900;letter-spacing:-.03em;color:var(--accent)}
-  .win .l{color:var(--muted);font-size:14px;margin-top:4px}
+  .results-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:52px;border:2px solid var(--border);border-radius:8px;overflow:hidden}
+  .result-card{background:var(--bg2);padding:36px 28px;text-align:center}
+  .result-card .big{font-family:var(--display);font-size:52px;font-weight:700;color:var(--accent);line-height:1}
+  .result-card p{color:var(--muted);font-size:14px;margin-top:10px;line-height:1.5;text-transform:uppercase;letter-spacing:.06em}
 
   /* TESTIMONIALS */
   .testimonials{padding:100px 0;background:var(--bg2)}
-  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
-  .testi{border:1px solid var(--border);border-radius:18px;padding:28px;background:var(--bg3)}
-  .stars{color:var(--accent);font-size:14px;letter-spacing:2px;margin-bottom:14px}
-  .testi p{color:var(--muted);font-size:15px;line-height:1.7;font-style:italic}
-  .testi .author{margin-top:18px;font-weight:700;font-size:14px}
-  .testi .role{font-size:13px;color:var(--faint)}
+  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:52px}
+  .testi{border:1px solid var(--border);border-radius:6px;padding:32px;background:var(--bg3)}
+  .stars{font-size:16px;letter-spacing:2px;color:var(--accent);margin-bottom:16px}
+  .testi blockquote{color:var(--muted);font-size:15px;line-height:1.75;font-style:italic}
+  .testi cite{display:block;margin-top:20px;font-family:var(--display);font-size:14px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--text);font-style:normal}
+  .testi .role{font-size:12px;color:var(--faint);text-transform:uppercase;letter-spacing:.06em}
 
   /* CTA */
-  .cta-section{padding:100px 0;text-align:center}
-  .cta-box{border:1px solid var(--border);border-radius:28px;padding:72px 28px;background:radial-gradient(120% 130% at 50% 0,var(--accent-soft),transparent 55%),var(--bg2)}
-  .cta-box h2{font-size:clamp(30px,5vw,52px);font-weight:900;letter-spacing:-.03em}
-  .cta-box p{color:var(--muted);margin:16px auto 0;max-width:46ch;font-size:18px}
-  .cta-box .btn-primary{margin-top:36px}
+  .cta-section{background:var(--accent);padding:80px 0;text-align:center}
+  .cta-section h2{font-family:var(--display);font-size:clamp(36px,5vw,60px);font-weight:700;text-transform:uppercase;letter-spacing:.02em;color:#fff}
+  .cta-section p{color:rgba(255,255,255,.75);margin:14px auto 0;max-width:44ch;font-size:18px}
+  .cta-section .btn-white{margin-top:32px;background:#fff;color:var(--accent-deep);display:inline-flex;align-items:center;font-family:var(--display);font-size:15px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:16px 36px;border-radius:4px;transition:.2s}
+  .cta-section .btn-white:hover{transform:translateY(-2px);box-shadow:0 12px 30px -6px rgba(0,0,0,.35)}
 
-  footer{border-top:1px solid var(--border);padding:28px 0}
-  .foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:14px;color:var(--faint)}
+  footer{background:var(--bg2);border-top:1px solid var(--border);padding:32px 0}
+  .foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:13px;color:var(--faint)}
+  .foot strong{color:var(--muted)}
 
   .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s cubic-bezier(.22,1,.36,1),transform .6s cubic-bezier(.22,1,.36,1)}
   .reveal.in{opacity:1;transform:none}
 
   @media(max-width:900px){
     .hero{grid-template-columns:1fr;min-height:auto}
-    .hero-photo{min-height:50vh;height:50vh}
-    .hero-copy{padding:48px 24px 40px}
+    .hero-photo{height:55vw;min-height:260px}
     .hero-photo::after{background:linear-gradient(to top,var(--bg) 0%,transparent 30%)}
-    .services-grid,.testi-grid{grid-template-columns:1fr}
-    .results-inner{grid-template-columns:1fr;gap:40px}
+    .hero-copy{padding:36px 24px 48px}
+    .services-grid,.testi-grid{grid-template-columns:1fr;gap:2px}
+    .results-grid{grid-template-columns:1fr 1fr}
   }
-  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}.ticker-inner{animation:none}}
 </style>
 </head>
 <body>
@@ -116,64 +121,70 @@
 <header>
   <div class="wrap nav">
     <div class="brand">
-      <span class="mark">
-        <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-      </span>
+      <span class="bolt"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></span>
       Apex Training
     </div>
     <nav class="nav-links">
-      <a href="#services">Services</a>
+      <a href="#services">Programs</a>
       <a href="#results">Results</a>
-      <a href="#contact" class="btn btn-primary" style="padding:9px 20px">Book a Consult</a>
+      <a href="#contact" class="btn btn-primary" style="padding:10px 22px">Book Free Consult</a>
     </nav>
   </div>
 </header>
 
 <section class="hero">
+  <div class="hero-photo">
+    <img src="../images/trainer-hero.jpeg" alt="Apex Training"/>
+  </div>
   <div class="hero-copy">
-    <div class="pill"><span class="dot"></span> Now accepting new clients</div>
-    <h1>Your strongest self<br><span class="hl">starts here.</span></h1>
+    <span class="eyebrow">Now accepting new clients</span>
+    <h1 style="margin-top:16px">Your<br>strongest<br><span class="hl">self starts<br>here.</span></h1>
     <p>1-on-1 coaching, real programming, and the accountability that actually gets you to your goals — not just to the gym.</p>
     <div class="hero-cta">
       <a href="#contact" class="btn btn-primary">Book a Free Consult</a>
-      <a href="#services" class="btn btn-ghost">See programs</a>
+      <a href="#services" class="btn btn-ghost">See Programs</a>
     </div>
     <div class="hero-stats">
-      <div class="stat"><div class="n">200+</div><div class="l">Clients transformed</div></div>
+      <div class="stat"><div class="n">200+</div><div class="l">Clients trained</div></div>
       <div class="stat"><div class="n">6yr</div><div class="l">Experience</div></div>
-      <div class="stat"><div class="n">4.9★</div><div class="l">Average rating</div></div>
+      <div class="stat"><div class="n">4.9★</div><div class="l">Rating</div></div>
     </div>
   </div>
-  <div class="hero-photo">
-    <img src="../images/trainer-hero.jpeg" alt="Apex Training athlete" id="hero-img"/>
-  </div>
 </section>
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-inner">
+    <span>1-on-1 Training</span><span>Online Coaching</span><span>Nutrition Guidance</span>
+    <span>Group Sessions</span><span>Free Consultation</span><span>Real Results</span>
+    <span>1-on-1 Training</span><span>Online Coaching</span><span>Nutrition Guidance</span>
+    <span>Group Sessions</span><span>Free Consultation</span><span>Real Results</span>
+  </div>
+</div>
 
 <section class="services" id="services">
   <div class="wrap">
     <div class="reveal">
       <span class="eyebrow">Programs</span>
-      <h2 style="font-size:clamp(28px,4vw,44px);font-weight:900;letter-spacing:-.025em;margin-top:12px">Training built around <em>your</em> life.</h2>
-      <p style="color:var(--muted);margin-top:14px;max-width:52ch;font-size:17px">No cookie-cutter plans. Every program is built from scratch around your schedule, goals, and starting point.</p>
+      <h2 style="font-family:var(--display);font-size:clamp(32px,5vw,52px);font-weight:700;text-transform:uppercase;letter-spacing:.02em;margin-top:14px">Training built around<br><span style="color:var(--accent)">your life.</span></h2>
     </div>
     <div class="services-grid">
-      <div class="service-card reveal">
-        <div class="ic"><svg viewBox="0 0 24 24"><path d="M17 7h-4a3 3 0 0 0 0 6h4"/><path d="M7 17h4a3 3 0 0 0 0-6H7"/><line x1="8" y1="12" x2="16" y2="12"/></svg></div>
+      <div class="svc reveal">
+        <div class="num">01</div>
         <h3>1-on-1 Personal Training</h3>
-        <p>Full attention, full customization. We build your program, adjust on the fly, and make sure every session counts.</p>
-        <div class="price">Starting at <strong>$120</strong> / session</div>
+        <p>Full attention, full customization. Every session is built around your goals, your body, and what actually works for you.</p>
+        <div class="price">$120 <small>/ session</small></div>
       </div>
-      <div class="service-card reveal">
-        <div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><line x1="2" y1="12" x2="22" y2="12"/></svg></div>
+      <div class="svc reveal">
+        <div class="num">02</div>
         <h3>Online Coaching</h3>
-        <p>Programming, check-ins, and form reviews — all remote. Train from anywhere with a coach in your corner.</p>
-        <div class="price">Starting at <strong>$199</strong> / month</div>
+        <p>Programming, check-ins, and form reviews — all remote. Train from anywhere with a real coach in your corner every week.</p>
+        <div class="price">$199 <small>/ month</small></div>
       </div>
-      <div class="service-card reveal">
-        <div class="ic"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-        <h3>Small Group (3–5 people)</h3>
-        <p>Team up with friends or coworkers. Same quality programming, split across a small group — more fun, lower cost.</p>
-        <div class="price">Starting at <strong>$60</strong> / session/person</div>
+      <div class="svc reveal">
+        <div class="num">03</div>
+        <h3>Small Group (3–5)</h3>
+        <p>Same quality programming, split across a small group. More energy, more accountability, and a price that works for everyone.</p>
+        <div class="price">$60 <small>/ person / session</small></div>
       </div>
     </div>
   </div>
@@ -181,44 +192,44 @@
 
 <section class="results" id="results">
   <div class="wrap">
-    <div class="results-inner">
-      <div class="results-copy reveal">
-        <span class="eyebrow">Results</span>
-        <h2>Real progress.<br>Not just motivation.</h2>
-        <p>Most people have tried to get in shape on their own. The difference isn't trying harder — it's having a system and someone holding you to it.</p>
-        <a href="#contact" class="btn btn-primary">Start your program</a>
-      </div>
-      <div class="wins reveal">
-        <div class="win"><div class="n">-28lb</div><div class="l">Average client weight loss in 12 weeks</div></div>
-        <div class="win"><div class="n">2×</div><div class="l">Average strength increase over 6 months</div></div>
-        <div class="win"><div class="n">94%</div><div class="l">Client retention rate after 3 months</div></div>
-        <div class="win"><div class="n">Free</div><div class="l">First consultation — no commitment needed</div></div>
-      </div>
+    <div class="reveal">
+      <span class="eyebrow">By the numbers</span>
+      <h2 style="font-family:var(--display);font-size:clamp(32px,5vw,52px);font-weight:700;text-transform:uppercase;letter-spacing:.02em;margin-top:14px">Real progress.<br><span style="color:var(--accent)">Not just motivation.</span></h2>
+      <p style="color:var(--muted);margin-top:14px;font-size:17px;max-width:50ch">Most people have tried to get in shape alone. The difference isn't effort — it's having a system and someone holding you to it.</p>
+    </div>
+    <div class="results-grid reveal">
+      <div class="result-card"><div class="big">-28<span style="font-size:.5em">lb</span></div><p>Avg. weight loss in 12 weeks</p></div>
+      <div class="result-card"><div class="big">2×</div><p>Avg. strength gain over 6 months</p></div>
+      <div class="result-card"><div class="big">94<span style="font-size:.5em">%</span></div><p>Client retention after 3 months</p></div>
+      <div class="result-card"><div class="big">Free</div><p>First consultation — no commitment</p></div>
     </div>
   </div>
 </section>
 
-<section class="testimonials">
+<section class="testimonials" id="reviews">
   <div class="wrap">
     <div class="reveal">
-      <span class="eyebrow">Client reviews</span>
-      <h2 style="font-size:clamp(26px,4vw,40px);font-weight:900;letter-spacing:-.025em;margin-top:12px">What clients say.</h2>
+      <span class="eyebrow">Client Reviews</span>
+      <h2 style="font-family:var(--display);font-size:clamp(32px,4.5vw,48px);font-weight:700;text-transform:uppercase;letter-spacing:.02em;margin-top:14px">What they say.</h2>
     </div>
     <div class="testi-grid">
       <div class="testi reveal">
         <div class="stars">★★★★★</div>
-        <p>"I'd tried four gyms and two apps. Nothing stuck. Six months with Apex and I'm down 30 pounds and actually enjoy training now."</p>
-        <div class="author">Jason M.</div><div class="role">Client since 2023</div>
+        <blockquote>"I tried four gyms and two apps. Nothing stuck. Six months with Apex and I'm down 30 pounds and I actually enjoy training now."</blockquote>
+        <cite>Jason M.</cite>
+        <div class="role">Client since 2023</div>
       </div>
       <div class="testi reveal">
         <div class="stars">★★★★★</div>
-        <p>"The online coaching is unreal. I travel every week for work and he keeps my program running no matter what. Best investment I've made."</p>
-        <div class="author">Priya S.</div><div class="role">Online coaching client</div>
+        <blockquote>"The online coaching is unreal. I travel every week for work and he keeps my program running no matter what. Best investment I've made."</blockquote>
+        <cite>Priya S.</cite>
+        <div class="role">Online coaching client</div>
       </div>
       <div class="testi reveal">
         <div class="stars">★★★★★</div>
-        <p>"Our group of four has been training together for a year. We hold each other accountable AND we've all hit PRs. Can't recommend it enough."</p>
-        <div class="author">The Rodriguez family</div><div class="role">Group training clients</div>
+        <blockquote>"Our group of four has been training together for a year. We've all hit PRs we never thought were possible. Can't recommend it enough."</blockquote>
+        <cite>The Rodriguez Family</cite>
+        <div class="role">Group training clients</div>
       </div>
     </div>
   </div>
@@ -226,12 +237,9 @@
 
 <section class="cta-section" id="contact">
   <div class="wrap">
-    <div class="cta-box reveal">
-      <span class="eyebrow">Get started</span>
-      <h2>First consult is free.<br>No commitment.</h2>
-      <p>Let's talk about your goals, your schedule, and whether we're a fit. 30 minutes, no pressure.</p>
-      <a href="mailto:burgossstudio@gmail.com?subject=Apex Training website inquiry" class="btn btn-primary">Book your free consult</a>
-    </div>
+    <h2>First consult is free.<br>No commitment.</h2>
+    <p>Let's talk about your goals, your schedule, and whether we're a fit. 30 minutes, no pressure, no sales pitch.</p>
+    <a href="mailto:burgossstudio@gmail.com?subject=Apex Training inquiry" class="btn-white">Book your free consult →</a>
   </div>
 </section>
 
@@ -243,7 +251,7 @@
 </footer>
 
 <script>
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.08});
   document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
 </script>
 </body>
