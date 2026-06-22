@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Marcello Burgos — Web Designer & Developer</title>
+<meta name="description" content="Marcello Burgos is a web designer & developer in Colorado building modern, conversion-focused websites for small businesses." />
+<style>
+  :root{
+    --bg:#0d0d0f; --bg2:#151519; --bg3:#1e1e24;
+    --text:#f5f4f2; --muted:#a8a29e; --faint:#6b6760;
+    --accent:#f5a524; --accent-soft:rgba(245,165,36,.12);
+    --border:rgba(255,255,255,.09);
+    --cream:#f4efe4; --ink:#2a2824; --pine:#2f6647; --wheat:#c79a3c;
+    --maxw:1140px;
+    --sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:var(--sans);background:var(--bg);color:var(--text);
+    -webkit-font-smoothing:antialiased;line-height:1.6;overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  .eyebrow{font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--accent)}
+  .muted{color:var(--muted)}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14px;padding:13px 24px;border-radius:999px;transition:.25s;cursor:pointer;border:1px solid transparent}
+  .btn-primary{background:var(--accent);color:#1a1206}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 30px -10px rgba(245,165,36,.6)}
+  .btn-ghost{border-color:var(--border);color:var(--text)}
+  .btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+
+  /* nav */
+  header{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(13,13,15,.7);border-bottom:1px solid var(--border)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:66px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:-.01em}
+  .brand .mark{width:34px;height:34px;border-radius:10px;background:var(--accent);color:#1a1206;display:grid;place-items:center;font-weight:800;font-size:15px}
+  .nav-links{display:flex;align-items:center;gap:32px}
+  .nav-links a{font-size:14px;color:var(--muted);font-weight:500;transition:.2s}
+  .nav-links a:hover{color:var(--text)}
+  .nav-toggle{display:none;background:none;border:0;color:var(--text);font-size:24px;cursor:pointer}
+
+  /* hero */
+  .hero{position:relative;padding:96px 0 84px}
+  .hero::before{content:"";position:absolute;top:-120px;left:50%;transform:translateX(-50%);width:680px;height:680px;background:radial-gradient(circle,var(--accent-soft),transparent 60%);pointer-events:none;z-index:-1}
+  .pill{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);border:1px solid var(--border);border-radius:999px;padding:6px 14px;margin-bottom:26px}
+  .pill .dot{width:8px;height:8px;border-radius:50%;background:#46d369;box-shadow:0 0 0 4px rgba(70,211,105,.18)}
+  .hero h1{font-size:clamp(38px,7vw,72px);line-height:1.02;font-weight:800;letter-spacing:-.03em;max-width:14ch}
+  .hero h1 .hl{color:var(--accent)}
+  .hero p.lead{font-size:clamp(17px,2.4vw,21px);color:var(--muted);max-width:56ch;margin-top:24px}
+  .hero .cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:38px}
+  .stats{display:flex;gap:44px;margin-top:64px;flex-wrap:wrap}
+  .stat .n{font-size:30px;font-weight:800;letter-spacing:-.02em}
+  .stat .l{font-size:13px;color:var(--muted);margin-top:2px}
+
+  section{padding:90px 0}
+  .sec-head{max-width:60ch;margin-bottom:48px}
+  .sec-head h2{font-size:clamp(28px,4.5vw,44px);font-weight:800;letter-spacing:-.025em;margin-top:14px}
+  .sec-head p{color:var(--muted);margin-top:14px;font-size:17px}
+
+  /* featured work */
+  .work{background:linear-gradient(180deg,transparent,rgba(255,255,255,.02))}
+  .project{border:1px solid var(--border);border-radius:28px;background:var(--bg2);overflow:hidden}
+  .project-top{display:grid;grid-template-columns:1.05fr .95fr;gap:0}
+  .project-copy{padding:48px}
+  .tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+  .tag{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);border:1px solid var(--border);border-radius:999px;padding:5px 11px}
+  .project h3{font-size:34px;font-weight:800;letter-spacing:-.02em}
+  .project-copy p{color:var(--muted);margin-top:14px;font-size:16px}
+  .project-links{display:flex;gap:14px;margin-top:26px;flex-wrap:wrap}
+
+  /* browser mockup */
+  .mock{background:var(--bg3);border-left:1px solid var(--border);display:flex;flex-direction:column}
+  .mock-bar{display:flex;align-items:center;gap:8px;padding:13px 16px;border-bottom:1px solid var(--border)}
+  .mock-bar .d{width:11px;height:11px;border-radius:50%;background:#3a3a42}
+  .mock-url{margin-left:14px;font-size:12px;color:var(--faint);background:rgba(255,255,255,.04);padding:5px 14px;border-radius:8px}
+  .mock-body{flex:1;background:linear-gradient(180deg,#eef1e6,var(--cream));padding:34px 30px;display:flex;flex-direction:column;justify-content:center}
+  .mock-body .mock-eye{font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--pine)}
+  .mock-body h4{font-family:Georgia,"Times New Roman",serif;color:var(--ink);font-size:30px;line-height:1.05;font-weight:600;margin-top:8px;letter-spacing:-.01em}
+  .mock-body h4 span{color:var(--pine)}
+  .mock-row{display:flex;align-items:center;gap:16px;margin-top:18px}
+  .mock-btn{background:var(--pine);color:#fff;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:9px 16px;border-radius:999px}
+  .mock-cookie{width:104px;height:128px;border-radius:18px;object-fit:cover;margin-left:auto;box-shadow:0 18px 36px -16px rgba(0,0,0,.5)}
+
+  /* gallery */
+  .gallery{padding:32px 48px 48px;border-top:1px solid var(--border)}
+  .gallery .glabel{font-size:13px;color:var(--muted);margin-bottom:16px}
+  .grid-photos{display:grid;grid-template-columns:repeat(7,1fr);gap:12px}
+  .grid-photos figure{border-radius:14px;overflow:hidden;aspect-ratio:3/4;background:#000;border:1px solid var(--border)}
+  .grid-photos img{width:100%;height:100%;object-fit:cover;transition:.5s}
+  .grid-photos figure:hover img{transform:scale(1.08)}
+
+  /* case study */
+  .case{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:30px}
+  .case .c{border:1px solid var(--border);border-radius:18px;padding:24px;background:var(--bg2)}
+  .case .c .k{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+  .case .c p{color:var(--muted);font-size:15px;margin-top:10px}
+
+  /* services */
+  .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .card{border:1px solid var(--border);border-radius:20px;padding:30px;background:var(--bg2);transition:.25s}
+  .card:hover{transform:translateY(-4px);border-color:rgba(245,165,36,.4)}
+  .card .ic{width:46px;height:46px;border-radius:13px;background:var(--accent-soft);display:grid;place-items:center;font-size:22px;margin-bottom:18px}
+  .card h3{font-size:20px;font-weight:700;letter-spacing:-.01em}
+  .card p{color:var(--muted);margin-top:8px;font-size:15px}
+
+  /* process */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:s}
+  .step{border-top:2px solid var(--border);padding-top:20px}
+  .step::before{counter-increment:s;content:"0" counter(s);font-size:14px;font-weight:800;color:var(--accent);letter-spacing:.05em}
+  .step h4{margin-top:8px;font-size:18px;font-weight:700}
+  .step p{color:var(--muted);font-size:14px;margin-top:6px}
+
+  /* about */
+  .about{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:center}
+  .about-card{border:1px solid var(--border);border-radius:24px;background:var(--bg2);padding:40px;text-align:center}
+  .about-card img{width:96px;height:96px;border-radius:50%;margin:0 auto 18px;border:3px solid var(--bg3)}
+  .about-card .nm{font-weight:800;font-size:20px;letter-spacing:-.01em}
+  .about-card .rl{color:var(--accent);font-size:13px;font-weight:600;margin-top:2px}
+  .about-text h2{font-size:clamp(26px,4vw,40px);font-weight:800;letter-spacing:-.025em}
+  .about-text p{color:var(--muted);margin-top:16px;font-size:17px}
+
+  /* contact */
+  .contact{text-align:center}
+  .contact-box{border:1px solid var(--border);border-radius:28px;background:radial-gradient(120% 140% at 50% 0,rgba(245,165,36,.14),transparent 55%),var(--bg2);padding:72px 28px}
+  .contact-box h2{font-size:clamp(30px,5vw,52px);font-weight:800;letter-spacing:-.03em}
+  .contact-box p{color:var(--muted);margin:16px auto 0;max-width:48ch;font-size:18px}
+  .contact-box .cta{display:flex;gap:14px;justify-content:center;margin-top:34px;flex-wrap:wrap}
+  .contact-mail{font-size:14px;color:var(--faint);margin-top:22px}
+
+  footer{border-top:1px solid var(--border);padding:32px 0;color:var(--faint);font-size:14px}
+  .foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:900px){
+    .project-top{grid-template-columns:1fr}
+    .mock{border-left:0;border-top:1px solid var(--border)}
+    .grid-photos{grid-template-columns:repeat(4,1fr)}
+    .case{grid-template-columns:1fr}
+    .cards{grid-template-columns:1fr}
+    .steps{grid-template-columns:repeat(2,1fr)}
+    .about{grid-template-columns:1fr;gap:28px}
+  }
+  @media(max-width:640px){
+    .nav-links{position:fixed;inset:66px 0 auto 0;flex-direction:column;background:var(--bg2);border-bottom:1px solid var(--border);padding:18px 24px;gap:18px;display:none}
+    .nav-links.open{display:flex}
+    .nav-toggle{display:block}
+    .project-copy{padding:30px}
+    .gallery{padding:24px 24px 30px}
+    .grid-photos{grid-template-columns:repeat(3,1fr)}
+    .stats{gap:28px}
+  }
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="brand"><span class="mark">MB</span> Marcello Burgos</a>
+    <nav class="nav-links" id="menu">
+      <a href="#work">Work</a>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact" class="btn btn-primary" style="padding:9px 18px">Start a project</a>
+    </nav>
+    <button class="nav-toggle" id="toggle" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="pill reveal"><span class="dot"></span> Available for new projects</div>
+      <h1 class="reveal">Websites that make small businesses look like <span class="hl">big ones.</span></h1>
+      <p class="lead reveal">I'm Marcello — a web designer &amp; developer in Colorado. I handle the whole thing, brand to build, so you get one polished, modern site that earns trust and turns visitors into customers.</p>
+      <div class="cta reveal">
+        <a href="#work" class="btn btn-primary">See my work</a>
+        <a href="#contact" class="btn btn-ghost">Start a project</a>
+      </div>
+      <div class="stats reveal">
+        <div class="stat"><div class="n">Brand→Build</div><div class="l">Design &amp; development in one</div></div>
+        <div class="stat"><div class="n">Modern stack</div><div class="l">Next.js · React · Tailwind</div></div>
+        <div class="stat"><div class="n">Colorado</div><div class="l">Available worldwide</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section class="work" id="work">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Featured project</span>
+        <h2>Dad's Wooden Spoon</h2>
+        <p>A complete brand &amp; e-commerce experience for an organic Colorado cookie bakery — built to turn a home kitchen into a premium-feeling brand.</p>
+      </div>
+
+      <div class="project reveal">
+        <div class="project-top">
+          <div class="project-copy">
+            <div class="tags">
+              <span class="tag">Brand Identity</span>
+              <span class="tag">Web Design</span>
+              <span class="tag">Development</span>
+              <span class="tag">E-commerce</span>
+              <span class="tag">Photography</span>
+            </div>
+            <h3>An organic bakery, online — at last.</h3>
+            <p>I designed a warm, photo-forward storefront from the ground up: a logo-driven color system, a two-step "build-a-bag" ordering flow, buttery smooth motion, and a full set of dramatic product photos. The result makes a small home bakery look like an established brand.</p>
+            <div class="project-links">
+              <a href="#contact" class="btn btn-primary">Want one like this?</a>
+              <span class="btn btn-ghost" style="cursor:default">Live demo on request</span>
+            </div>
+          </div>
+
+          <!-- browser mockup -->
+          <div class="mock" aria-hidden="true">
+            <div class="mock-bar">
+              <span class="d"></span><span class="d"></span><span class="d"></span>
+              <span class="mock-url">dadswoodenspoon.com</span>
+            </div>
+            <div class="mock-body">
+              <span class="mock-eye">Organic Bakery · Windsor, CO</span>
+              <h4>Wholesome cookies,<br><span>made by hand.</span></h4>
+              <div class="mock-row">
+                <span class="mock-btn">Order Now</span>
+                <img class="mock-cookie" src="images/dws-doodle-bop.jpeg" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- gallery -->
+        <div class="gallery">
+          <div class="glabel">Custom product photography — every flavor, art-directed for one cohesive look.</div>
+          <div class="grid-photos">
+            <figure><img src="images/dws-dark-vader.jpeg" alt="Dark chocolate cookie"></figure>
+            <figure><img src="images/dws-doodle-bop.jpeg" alt="Snickerdoodle cookie"></figure>
+            <figure><img src="images/dws-lemon-sisters.jpeg" alt="Lemon cookie"></figure>
+            <figure><img src="images/dws-mesa-maverick.jpeg" alt="Gluten-free cookie"></figure>
+            <figure><img src="images/dws-oatmeal-raisin.jpeg" alt="Oatmeal raisin cookie"></figure>
+            <figure><img src="images/dws-ginger-mary-ann.jpeg" alt="Ginger cookie"></figure>
+            <figure><img src="images/dws-ted-lasso-shortbread.jpeg" alt="Shortbread"></figure>
+          </div>
+        </div>
+      </div>
+
+      <!-- case study -->
+      <div class="case">
+        <div class="c reveal"><div class="k">Challenge</div><p>A home-based bakery with a great product but no online presence — and an owner unsure a website was even worth it.</p></div>
+        <div class="c reveal"><div class="k">Approach</div><p>A full brand-matched build: a design system pulled from their logo, an intuitive pack-builder, refined motion, and a complete set of art-directed photos.</p></div>
+        <div class="c reveal"><div class="k">Result</div><p>A premium, conversion-ready storefront that makes a small home bakery feel like a brand customers already trust.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">What I do</span>
+        <h2>Everything your site needs, from one person.</h2>
+        <p>No hand-offs, no agency markup — just a single point of contact who designs <em>and</em> builds.</p>
+      </div>
+      <div class="cards">
+        <div class="card reveal"><div class="ic">🎨</div><h3>Web Design</h3><p>Clean, modern, on-brand layouts that build instant trust and guide visitors toward action.</p></div>
+        <div class="card reveal"><div class="ic">💻</div><h3>Web Development</h3><p>Fast, responsive builds on a modern stack (Next.js, React, Tailwind) — smooth on every device.</p></div>
+        <div class="card reveal"><div class="ic">✦</div><h3>Branding &amp; Identity</h3><p>Logos, color systems, and typography that give your business one cohesive, memorable look.</p></div>
+        <div class="card reveal"><div class="ic">🛒</div><h3>E-commerce</h3><p>Online stores and ordering flows designed to convert browsers into paying customers.</p></div>
+      </div>
+
+      <div class="steps" style="margin-top:56px">
+        <div class="step reveal"><h4>Discover</h4><p>We talk goals, audience, and what makes you different.</p></div>
+        <div class="step reveal"><h4>Design</h4><p>I craft the brand and layouts until they feel unmistakably you.</p></div>
+        <div class="step reveal"><h4>Build</h4><p>A fast, polished, responsive site — built right.</p></div>
+        <div class="step reveal"><h4>Launch</h4><p>We ship it, and I make sure you can grow with it.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap about">
+      <div class="about-card reveal">
+        <img src="images/dws-logo.png" alt="">
+        <div class="nm">Marcello Burgos</div>
+        <div class="rl">Web Designer &amp; Developer</div>
+        <p class="muted" style="margin-top:14px;font-size:14px">Colorado · Available worldwide</p>
+      </div>
+      <div class="about-text reveal">
+        <h2>Hi, I'm Marcello.</h2>
+        <p>I help small businesses show up online looking polished and professional. Because I handle both the design and the development, you get one cohesive result — no piecing together a designer, a developer, and a brand person — and without the agency price tag.</p>
+        <p>Dad's Wooden Spoon is a great example: a home bakery that needed to look the part. If you've got a business that deserves a better website, I'd love to help.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <div class="contact-box reveal">
+        <span class="eyebrow">Let's talk</span>
+        <h2>Let's build something your customers remember.</h2>
+        <p>Tell me about your business and what you're trying to do online. First conversation's free.</p>
+        <div class="cta">
+          <a href="mailto:burgos.marcello@gmail.com?subject=Website%20project" class="btn btn-primary">Email me</a>
+          <a href="#work" class="btn btn-ghost">See the work again</a>
+        </div>
+        <div class="contact-mail">burgos.marcello@gmail.com</div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>© <span id="yr"></span> Marcello Burgos — Web Designer &amp; Developer</span>
+    <span>Built &amp; designed by me, in Colorado.</span>
+  </div>
+</footer>
+
+<script>
+  // year
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  // mobile menu
+  var t=document.getElementById('toggle'),m=document.getElementById('menu');
+  t.addEventListener('click',function(){m.classList.toggle('open')});
+  m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){m.classList.remove('open')})});
+  // scroll reveal
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+</script>
+</body>
+</html>
