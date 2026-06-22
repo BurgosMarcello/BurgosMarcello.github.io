@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>About — Burgos Studio</title>
+<meta name="description" content="Marcello Burgos — web designer and developer building sites for small businesses." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23f5a524'/%3E%3Ctext x='32' y='46' font-family='system-ui,sans-serif' font-size='42' font-weight='800' fill='%231a1206' text-anchor='middle'%3EB%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&display=swap" rel="stylesheet" />
+<style>
+  :root{--bg:#0d0d0f;--bg2:#151519;--bg3:#1e1e24;--text:#f5f4f2;--muted:#a8a29e;--faint:#6b6760;--accent:#f5a524;--accent-soft:rgba(245,165,36,.12);--border:rgba(255,255,255,.09);--maxw:1140px;--sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;line-height:1.6;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  .eyebrow{font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--accent)}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14px;padding:13px 24px;border-radius:999px;transition:.25s;cursor:pointer;border:1px solid transparent}
+  .btn-primary{background:var(--accent);color:#1a1206}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 30px -10px rgba(245,165,36,.6)}
+  .btn-ghost{border-color:var(--border);color:var(--text)}
+  .btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+
+  header{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(13,13,15,.8);border-bottom:1px solid var(--border)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:66px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:-.01em;font-size:17px}
+  .nav-links{display:flex;align-items:center;gap:32px}
+  .nav-links a{font-size:14px;color:var(--muted);font-weight:500;transition:.2s}
+  .nav-links a:hover,.nav-links a.active{color:var(--text)}
+  .nav-toggle{display:none;background:none;border:0;color:var(--text);font-size:24px;cursor:pointer}
+
+  section{padding:80px 0}
+
+  .about-grid{display:grid;grid-template-columns:340px 1fr;gap:56px;align-items:start}
+  .about-card{background:var(--bg2);border:1px solid var(--border);border-radius:28px;padding:44px 36px;text-align:center;position:sticky;top:88px}
+  .badge-wrap{display:flex;justify-content:center;margin-bottom:20px}
+  .about-card h3{font-size:22px;font-weight:800;letter-spacing:-.01em}
+  .about-card .role{color:var(--accent);font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-top:4px}
+  .about-card .divider{height:1px;background:var(--border);margin:24px 0}
+  .about-card .detail{display:flex;align-items:center;justify-content:center;gap:8px;font-size:14px;color:var(--muted);margin-bottom:10px}
+  .about-card .detail svg{width:15px;height:15px;stroke:var(--accent);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+  .about-card .detail a{color:var(--accent)}
+  .status-pill{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:600;letter-spacing:.03em;color:var(--muted);border:1px solid var(--border);border-radius:999px;padding:6px 13px;margin-top:20px}
+  .status-pill .dot{width:8px;height:8px;border-radius:50%;background:#46d369;box-shadow:0 0 0 3px rgba(70,211,105,.18);flex-shrink:0}
+
+  .about-content h2{font-size:clamp(32px,5vw,52px);font-weight:800;letter-spacing:-.03em;line-height:1.1}
+  .about-content h2 .hl{color:var(--accent)}
+  .about-content .bio{color:var(--muted);font-size:17px;line-height:1.75;margin-top:24px}
+  .about-content .bio p{margin-bottom:16px}
+  .about-content .bio p:last-child{margin-bottom:0}
+  .about-values{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:36px}
+  .about-val{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:22px 20px}
+  .about-val h4{font-size:15px;font-weight:700}
+  .about-val p{font-size:14px;color:var(--muted);margin-top:6px}
+
+  .partners{background:var(--bg2);padding:80px 0}
+  .partners-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:44px}
+  .partner-card{background:var(--bg3);border:1px solid var(--border);border-radius:18px;padding:28px 22px;text-align:center;transition:.25s}
+  .partner-card:hover{border-color:rgba(245,165,36,.3);transform:translateY(-3px)}
+  .partner-av{width:58px;height:58px;border-radius:50%;background:var(--accent-soft);border:2px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;color:var(--accent);margin:0 auto 14px}
+  .partner-nm{font-weight:700;font-size:16px}
+  .partner-rl{color:var(--accent);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;margin-top:4px}
+  .partner-bio{color:var(--muted);font-size:13px;margin-top:10px;line-height:1.55}
+
+  .cta-band{text-align:center;padding:80px 0}
+  .cta-band h2{font-size:clamp(28px,4.5vw,44px);font-weight:800;letter-spacing:-.025em}
+  .cta-band p{color:var(--muted);margin:14px auto 0;max-width:50ch;font-size:18px}
+  .cta-band .cta{display:flex;gap:14px;justify-content:center;margin-top:28px;flex-wrap:wrap}
+
+  footer{border-top:1px solid var(--border);padding:32px 0;color:var(--faint);font-size:14px}
+  .foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+  .foot .brand-sm{display:flex;align-items:center;gap:9px;color:var(--text);font-weight:700}
+
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:900px){
+    .about-grid{grid-template-columns:1fr}
+    .about-card{position:static;max-width:400px}
+    .partners-grid{grid-template-columns:1fr 1fr}
+    .about-values{grid-template-columns:1fr}
+  }
+  @media(max-width:640px){
+    .nav-links{position:fixed;inset:66px 0 auto 0;flex-direction:column;background:var(--bg2);border-bottom:1px solid var(--border);padding:18px 24px;gap:18px;display:none}
+    .nav-links.open{display:flex}
+    .nav-toggle{display:block}
+    .partners-grid{grid-template-columns:1fr}
+  }
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="/" class="brand"><svg viewBox="0 0 360 490" height="32" style="display:block;flex-shrink:0" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="nb-bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#2b2720"/><stop offset="100%" stop-color="#0b0908"/></linearGradient><linearGradient id="nb-rim" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#9a7844"/><stop offset="48%" stop-color="#4a3c24"/><stop offset="100%" stop-color="#886438"/></linearGradient></defs><rect x="2" y="2" width="356" height="486" rx="54" fill="none" stroke="url(#nb-rim)" stroke-width="4"/><rect x="5" y="5" width="350" height="480" rx="51" fill="url(#nb-bg)"/><rect x="15" y="15" width="330" height="460" rx="42" fill="none" stroke="#3a2e1a" stroke-width="2"/><ellipse cx="180" cy="128" rx="136" ry="86" fill="rgba(255,255,255,0.10)"/><text x="176" y="318" style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;font-size:300px;fill:#f5a524" text-anchor="middle">B</text></svg> Burgos Studio</a>
+    <nav class="nav-links" id="menu">
+      <a href="/work/">Work</a>
+      <a href="/about/" class="active">About</a>
+      <a href="/contact/" class="btn btn-primary" style="padding:9px 18px">Get a free demo</a>
+    </nav>
+    <button class="nav-toggle" id="toggle" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<main>
+  <section>
+    <div class="wrap">
+      <div class="about-grid">
+        <div class="about-card reveal">
+          <div class="badge-wrap">
+            <svg viewBox="0 0 360 490" height="100" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="ac-bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#2b2720"/><stop offset="100%" stop-color="#0b0908"/></linearGradient><linearGradient id="ac-rim" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#9a7844"/><stop offset="48%" stop-color="#4a3c24"/><stop offset="100%" stop-color="#886438"/></linearGradient></defs><rect x="2" y="2" width="356" height="486" rx="54" fill="none" stroke="url(#ac-rim)" stroke-width="4"/><rect x="5" y="5" width="350" height="480" rx="51" fill="url(#ac-bg)"/><rect x="15" y="15" width="330" height="460" rx="42" fill="none" stroke="#3a2e1a" stroke-width="2"/><ellipse cx="180" cy="128" rx="136" ry="86" fill="rgba(255,255,255,0.10)"/><text x="176" y="318" style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;font-size:300px;fill:#f5a524" text-anchor="middle">B</text></svg>
+          </div>
+          <div style="height:1px;background:linear-gradient(90deg,transparent,var(--accent),transparent);width:80%;margin:0 auto 16px"></div>
+          <div style="font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--faint);margin-bottom:4px">BURGOS</div>
+          <div style="font-size:10px;font-weight:600;letter-spacing:.36em;text-transform:uppercase;color:var(--faint)">STUDIO</div>
+          <div class="divider"></div>
+          <h3>Marcello Burgos</h3>
+          <div class="role">Founder &amp; Designer</div>
+          <div class="divider"></div>
+          <div class="detail">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Colorado, USA
+          </div>
+          <div class="detail">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.37 2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 6.29 6.29l.98-.98a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7a2 2 0 0 1 1.72 2z"/></svg>
+            <a href="tel:+19704123085">970-412-3085</a>
+          </div>
+          <div class="detail">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <a href="mailto:burgossstudio@gmail.com">burgossstudio@gmail.com</a>
+          </div>
+          <div class="status-pill"><span class="dot"></span> Available for new projects</div>
+        </div>
+
+        <div class="about-content reveal">
+          <span class="eyebrow">About</span>
+          <h2>I build websites that make small businesses look like <span class="hl">big ones.</span></h2>
+          <div class="bio">
+            <p>I'm Marcello — a web designer and developer based in Colorado. I started Burgos Studio because I kept seeing the same thing: great small businesses held back by bad (or zero) web presence.</p>
+            <p>Most web design agencies charge too much, take too long, and hand you back something that feels like it could belong to anyone. I do the opposite — custom, fast, and built specifically around your business.</p>
+            <p>Brand, logo, design, code, launch — I do all of it. That means faster timelines, nothing lost in translation between a designer and a developer, and a site that actually feels cohesive start to finish.</p>
+            <p>Starting at $750, I work with businesses of all sizes — from side hustles getting their first site to established businesses ready to level up.</p>
+          </div>
+          <div class="about-values">
+            <div class="about-val">
+              <h4>Custom, not templated</h4>
+              <p>Every site is designed from scratch for your specific business. No drag-and-drop themes.</p>
+            </div>
+            <div class="about-val">
+              <h4>Fast turnaround</h4>
+              <p>Most projects go from conversation to launch in under two weeks.</p>
+            </div>
+            <div class="about-val">
+              <h4>No-risk demo</h4>
+              <p>I'll build you a working demo before you commit to anything. See it first.</p>
+            </div>
+            <div class="about-val">
+              <h4>You work with me directly</h4>
+              <p>Not a team, not an agency. Just me — which means you always know who to call and things actually get done.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="partners">
+    <div class="wrap">
+      <div class="sec-head reveal" style="max-width:60ch;margin-bottom:0">
+        <span class="eyebrow">Partners &amp; Collaborators</span>
+        <h2 style="font-size:clamp(28px,4.5vw,44px);font-weight:800;letter-spacing:-.025em;margin-top:14px">People I work with</h2>
+        <p style="color:var(--muted);margin-top:14px;font-size:17px">Photographers, copywriters, and specialists I trust to collaborate on client projects.</p>
+      </div>
+      <div class="partners-grid" style="margin-top:44px">
+        <!-- PARTNER CARD - duplicate this block to add more -->
+        <div class="partner-card reveal">
+          <div class="partner-av">TB</div>
+          <div class="partner-nm">Taylor Brooks</div>
+          <div class="partner-rl">Photography</div>
+          <div class="partner-bio">Product &amp; lifestyle photography for e-commerce and brand projects.</div>
+        </div>
+        <!-- PARTNER CARD -->
+        <div class="partner-card reveal">
+          <div class="partner-av">SR</div>
+          <div class="partner-nm">Sofia Rivera</div>
+          <div class="partner-rl">Copywriting</div>
+          <div class="partner-bio">Brand voice, web copy, and conversion-focused content for small businesses.</div>
+        </div>
+        <!-- PARTNER CARD -->
+        <div class="partner-card reveal">
+          <div class="partner-av">JM</div>
+          <div class="partner-nm">Jordan Mills</div>
+          <div class="partner-rl">SEO &amp; Marketing</div>
+          <div class="partner-bio">Local SEO strategy and Google Business optimization for service businesses.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-band">
+    <div class="wrap">
+      <div class="reveal">
+        <span class="eyebrow">Let's work together</span>
+        <h2>Want to see what your site could look like?</h2>
+        <p>I'll build a free demo for your specific business — no commitment, no deposit, no risk.</p>
+        <div class="cta">
+          <a href="/contact/" class="btn btn-primary">Get a free demo →</a>
+          <a href="/work/" class="btn btn-ghost">See the work first</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span class="brand-sm"><svg viewBox="0 0 360 490" height="24" style="display:block;flex-shrink:0" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="fb-bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#2b2720"/><stop offset="100%" stop-color="#0b0908"/></linearGradient><linearGradient id="fb-rim" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#9a7844"/><stop offset="48%" stop-color="#4a3c24"/><stop offset="100%" stop-color="#886438"/></linearGradient></defs><rect x="2" y="2" width="356" height="486" rx="54" fill="none" stroke="url(#fb-rim)" stroke-width="4"/><rect x="5" y="5" width="350" height="480" rx="51" fill="url(#fb-bg)"/><ellipse cx="180" cy="128" rx="136" ry="86" fill="rgba(255,255,255,0.10)"/><text x="176" y="318" style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;font-size:300px;fill:#f5a524" text-anchor="middle">B</text></svg> Burgos Studio</span>
+    <span>© <span id="yr"></span> Burgos Studio — designed &amp; built by Marcello.</span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  var t=document.getElementById('toggle'),m=document.getElementById('menu');
+  t.addEventListener('click',function(){m.classList.toggle('open')});
+  m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){m.classList.remove('open')})});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.08,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+</script>
+</body>
+</html>

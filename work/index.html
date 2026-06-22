@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Work — Burgos Studio</title>
+<meta name="description" content="Portfolio of Burgos Studio — real websites built for real businesses." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23f5a524'/%3E%3Ctext x='32' y='46' font-family='system-ui,sans-serif' font-size='42' font-weight='800' fill='%231a1206' text-anchor='middle'%3EB%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&display=swap" rel="stylesheet" />
+<style>
+  :root{--bg:#0d0d0f;--bg2:#151519;--bg3:#1e1e24;--text:#f5f4f2;--muted:#a8a29e;--faint:#6b6760;--accent:#f5a524;--accent-soft:rgba(245,165,36,.12);--border:rgba(255,255,255,.09);--maxw:1140px;--sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;line-height:1.6;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  .eyebrow{font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--accent)}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14px;padding:13px 24px;border-radius:999px;transition:.25s;cursor:pointer;border:1px solid transparent}
+  .btn-primary{background:var(--accent);color:#1a1206}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 30px -10px rgba(245,165,36,.6)}
+  .btn-ghost{border-color:var(--border);color:var(--text)}
+  .btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+
+  header{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(13,13,15,.8);border-bottom:1px solid var(--border)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:66px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:-.01em;font-size:17px}
+  .nav-links{display:flex;align-items:center;gap:32px}
+  .nav-links a{font-size:14px;color:var(--muted);font-weight:500;transition:.2s}
+  .nav-links a:hover,.nav-links a.active{color:var(--text)}
+  .nav-toggle{display:none;background:none;border:0;color:var(--text);font-size:24px;cursor:pointer}
+
+  .page-hero{padding:72px 0 56px;border-bottom:1px solid var(--border)}
+  .page-hero .eyebrow{margin-bottom:14px}
+  .page-hero h1{font-size:clamp(36px,6vw,60px);font-weight:800;letter-spacing:-.03em}
+  .page-hero p{color:var(--muted);margin-top:16px;font-size:18px;max-width:54ch}
+
+  section{padding:80px 0}
+
+  .featured{background:var(--bg2);border:1px solid var(--border);border-radius:28px;overflow:hidden;margin-bottom:60px}
+  .featured-label{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);border-radius:999px;padding:6px 14px;margin-bottom:20px}
+  .featured-inner{padding:44px}
+  .featured-header{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:start}
+  .featured-meta h2{font-size:clamp(26px,4vw,40px);font-weight:800;letter-spacing:-.025em;margin-top:8px}
+  .featured-meta p{color:var(--muted);margin-top:12px;font-size:16px;max-width:60ch}
+  .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+  .tag{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);border:1px solid var(--border);border-radius:999px;padding:5px 11px}
+
+  .browser{background:var(--bg3);border-radius:18px;border:1px solid var(--border);overflow:hidden;margin:36px 0}
+  .browser-bar{background:var(--bg2);border-bottom:1px solid var(--border);padding:11px 16px;display:flex;align-items:center;gap:12px}
+  .dots{display:flex;gap:6px}
+  .dots span{width:12px;height:12px;border-radius:50%}
+  .dots span:nth-child(1){background:#ff5f57}
+  .dots span:nth-child(2){background:#ffbd2e}
+  .dots span:nth-child(3){background:#28ca41}
+  .url{background:var(--bg3);border-radius:7px;padding:5px 13px;font-size:12px;color:var(--faint);flex:1;max-width:260px;text-align:center}
+  .browser-body{height:320px;overflow:hidden;position:relative}
+  .browser-body img{width:100%;height:100%;object-fit:cover;object-position:center top}
+
+  .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:28px 0}
+  .gallery img{border-radius:12px;aspect-ratio:3/4;width:100%;object-fit:cover;transition:.3s}
+  .gallery img:hover{transform:scale(1.03)}
+
+  .case-study{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border-radius:18px;overflow:hidden;margin-top:36px}
+  .cs-col{background:var(--bg);padding:32px 28px}
+  .cs-col h4{font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+  .cs-col p{color:var(--muted);font-size:15px;line-height:1.7}
+
+  .mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:56px}
+  .mini-card{background:var(--bg2);border:1px solid var(--border);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;transition:.25s}
+  .mini-card:hover{transform:translateY(-4px);border-color:rgba(245,165,36,.35)}
+  .mini-photo{aspect-ratio:3/4;overflow:hidden}
+  .mini-photo img{width:100%;height:100%;object-fit:cover;transition:.5s}
+  .mini-card:hover .mini-photo img{transform:scale(1.05)}
+  .mini-body{padding:28px;flex:1;display:flex;flex-direction:column}
+  .mini-body h3{font-size:22px;font-weight:800;letter-spacing:-.01em;margin-top:12px}
+  .mini-body p{color:var(--muted);font-size:15px;margin-top:10px;flex:1}
+  .mini-body a{margin-top:20px;align-self:flex-start}
+
+  .process{background:var(--bg2);padding:80px 0}
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:44px;counter-reset:step}
+  .step{position:relative;padding-top:20px;counter-increment:step}
+  .step::before{content:counter(step,decimal-leading-zero);display:block;font-size:11px;font-weight:700;letter-spacing:.12em;color:var(--accent);margin-bottom:14px}
+  .step h4{font-size:17px;font-weight:700}
+  .step p{color:var(--muted);font-size:14px;margin-top:8px;line-height:1.6}
+
+  .cta-band{text-align:center;padding:80px 0}
+  .cta-band h2{font-size:clamp(28px,4.5vw,44px);font-weight:800;letter-spacing:-.025em}
+  .cta-band p{color:var(--muted);margin:14px auto 0;max-width:50ch;font-size:18px}
+  .cta-band .cta{display:flex;gap:14px;justify-content:center;margin-top:28px;flex-wrap:wrap}
+
+  footer{border-top:1px solid var(--border);padding:32px 0;color:var(--faint);font-size:14px}
+  .foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+  .foot .brand-sm{display:flex;align-items:center;gap:9px;color:var(--text);font-weight:700}
+
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:900px){
+    .featured-header{grid-template-columns:1fr}
+    .gallery{grid-template-columns:repeat(2,1fr)}
+    .case-study{grid-template-columns:1fr}
+    .steps{grid-template-columns:repeat(2,1fr)}
+    .mini-grid{grid-template-columns:1fr}
+  }
+  @media(max-width:640px){
+    .nav-links{position:fixed;inset:66px 0 auto 0;flex-direction:column;background:var(--bg2);border-bottom:1px solid var(--border);padding:18px 24px;gap:18px;display:none}
+    .nav-links.open{display:flex}
+    .nav-toggle{display:block}
+    .featured-inner{padding:24px}
+    .gallery{grid-template-columns:1fr 1fr}
+    .steps{grid-template-columns:1fr}
+  }
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="/" class="brand"><svg viewBox="0 0 360 490" height="32" style="display:block;flex-shrink:0" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="nb-bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#2b2720"/><stop offset="100%" stop-color="#0b0908"/></linearGradient><linearGradient id="nb-rim" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#9a7844"/><stop offset="48%" stop-color="#4a3c24"/><stop offset="100%" stop-color="#886438"/></linearGradient></defs><rect x="2" y="2" width="356" height="486" rx="54" fill="none" stroke="url(#nb-rim)" stroke-width="4"/><rect x="5" y="5" width="350" height="480" rx="51" fill="url(#nb-bg)"/><rect x="15" y="15" width="330" height="460" rx="42" fill="none" stroke="#3a2e1a" stroke-width="2"/><ellipse cx="180" cy="128" rx="136" ry="86" fill="rgba(255,255,255,0.10)"/><text x="176" y="318" style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;font-size:300px;fill:#f5a524" text-anchor="middle">B</text></svg> Burgos Studio</a>
+    <nav class="nav-links" id="menu">
+      <a href="/work/" class="active">Work</a>
+      <a href="/about/">About</a>
+      <a href="/contact/" class="btn btn-primary" style="padding:9px 18px">Get a free demo</a>
+    </nav>
+    <button class="nav-toggle" id="toggle" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="page-hero reveal">
+      <div class="eyebrow">The work</div>
+      <h1>Real sites, real businesses.</h1>
+      <p>Every project starts with a conversation, not a template. Here's what that looks like.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+
+      <div class="featured reveal">
+        <div class="featured-inner">
+          <div class="featured-label">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            Featured project
+          </div>
+          <div class="featured-header">
+            <div class="featured-meta">
+              <div class="eyebrow">Bakery · E-commerce · Branding</div>
+              <h2>Dad's Wooden Spoon</h2>
+              <p>A home-based cookie business needed more than a website — they needed a brand. I built them one from the ground up.</p>
+              <div class="tags">
+                <span class="tag">Web Design</span>
+                <span class="tag">E-commerce</span>
+                <span class="tag">Logo Design</span>
+                <span class="tag">Brand Identity</span>
+                <span class="tag">Photography</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="browser">
+            <div class="browser-bar">
+              <div class="dots"><span></span><span></span><span></span></div>
+              <div class="url">dads-wooden-spoon.com</div>
+            </div>
+            <div class="browser-body">
+              <img src="../images/dws-ginger-mary-ann.jpeg" alt="Dad's Wooden Spoon — homepage hero" />
+            </div>
+          </div>
+
+          <div class="gallery">
+            <img src="../images/dws-doodle-bop.jpeg" alt="Doodle Bop cookie" />
+            <img src="../images/dws-lemon-sisters.jpeg" alt="Lemon Sisters cookie" />
+            <img src="../images/dws-oatmeal-raisin.jpeg" alt="Oatmeal Raisin cookie" />
+            <img src="../images/dws-mesa-maverick.jpeg" alt="Mesa Maverick cookie" />
+          </div>
+
+          <div class="case-study">
+            <div class="cs-col">
+              <h4>The challenge</h4>
+              <p>The business had no web presence and was relying entirely on word-of-mouth. The owner needed a way to take orders online, build trust with new customers, and present a consistent brand identity.</p>
+            </div>
+            <div class="cs-col">
+              <h4>The approach</h4>
+              <p>I started with the brand — defining a warm, artisan aesthetic with a custom color palette, logo, and typography system. Then I built the site around the product photography to let the cookies do the talking.</p>
+            </div>
+            <div class="cs-col">
+              <h4>The result</h4>
+              <p>A complete brand identity and e-commerce ready site — logo, color system, copy, and a store customers can actually trust. Delivered in under two weeks.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sec-head reveal" style="max-width:60ch;margin-bottom:36px">
+        <span class="eyebrow">More work</span>
+        <h2 style="font-size:clamp(24px,3.5vw,36px);font-weight:800;letter-spacing:-.025em;margin-top:12px">Industry demos</h2>
+        <p style="color:var(--muted);margin-top:12px;font-size:16px">These are working demo sites built for specific industries — they show exactly what I'd build for a business like yours.</p>
+      </div>
+
+      <div class="mini-grid">
+        <div class="mini-card reveal">
+          <div class="mini-photo"><img src="../images/trainer-hero.jpeg" alt="Apex Training personal trainer website" /></div>
+          <div class="mini-body">
+            <div class="tags"><span class="tag">Fitness</span><span class="tag">Web Design</span></div>
+            <h3>Apex Training</h3>
+            <p>A bold, dark-themed site for a personal training studio. High-impact design with pricing, client results, and one-tap booking — built to convert gym-browsers into paying clients.</p>
+            <a href="/trainer/" class="btn btn-ghost">View demo →</a>
+          </div>
+        </div>
+        <div class="mini-card reveal">
+          <div class="mini-photo"><img src="../images/contractor-hero.jpeg" alt="Ridgeline Pro contractor website" /></div>
+          <div class="mini-body">
+            <div class="tags"><span class="tag">Contractor</span><span class="tag">Home Services</span></div>
+            <h3>Ridgeline Pro</h3>
+            <p>A trust-forward site for a general contractor. Light, professional layout with license badges, real-looking reviews, a detailed services breakdown, and a prominent free-quote CTA.</p>
+            <a href="/contractor/" class="btn btn-ghost">View demo →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="process">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">How it works</span>
+        <h2 style="font-size:clamp(28px,4.5vw,44px);font-weight:800;letter-spacing:-.025em;margin-top:14px">From conversation to launch</h2>
+        <p style="color:var(--muted);margin-top:14px;font-size:17px">Every project follows the same straightforward process.</p>
+      </div>
+      <div class="steps">
+        <div class="step reveal">
+          <h4>We talk</h4>
+          <p>You tell me about your business — what you do, who your customers are, what you want your site to feel like.</p>
+        </div>
+        <div class="step reveal">
+          <h4>I design</h4>
+          <p>I build a working demo tailored to your business. You see exactly what you're getting before committing to anything.</p>
+        </div>
+        <div class="step reveal">
+          <h4>We refine</h4>
+          <p>You give feedback, I make changes. We go back and forth until everything is right.</p>
+        </div>
+        <div class="step reveal">
+          <h4>You launch</h4>
+          <p>I handle the hosting setup, domain, and go-live. You get a fast, polished site and can focus on running your business.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-band">
+    <div class="wrap">
+      <div class="reveal">
+        <span class="eyebrow">Your business next</span>
+        <h2>Want to see what yours could look like?</h2>
+        <p>I'll build a free demo site for your specific business — no commitment, no deposit, no risk.</p>
+        <div class="cta">
+          <a href="/contact/" class="btn btn-primary">Get a free demo →</a>
+          <a href="/about/" class="btn btn-ghost">About Marcello</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span class="brand-sm"><svg viewBox="0 0 360 490" height="24" style="display:block;flex-shrink:0" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="fb-bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#2b2720"/><stop offset="100%" stop-color="#0b0908"/></linearGradient><linearGradient id="fb-rim" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#9a7844"/><stop offset="48%" stop-color="#4a3c24"/><stop offset="100%" stop-color="#886438"/></linearGradient></defs><rect x="2" y="2" width="356" height="486" rx="54" fill="none" stroke="url(#fb-rim)" stroke-width="4"/><rect x="5" y="5" width="350" height="480" rx="51" fill="url(#fb-bg)"/><ellipse cx="180" cy="128" rx="136" ry="86" fill="rgba(255,255,255,0.10)"/><text x="176" y="318" style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;font-size:300px;fill:#f5a524" text-anchor="middle">B</text></svg> Burgos Studio</span>
+    <span>© <span id="yr"></span> Burgos Studio — designed &amp; built by Marcello.</span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  var t=document.getElementById('toggle'),m=document.getElementById('menu');
+  t.addEventListener('click',function(){m.classList.toggle('open')});
+  m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){m.classList.remove('open')})});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.08,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+</script>
+</body>
+</html>
