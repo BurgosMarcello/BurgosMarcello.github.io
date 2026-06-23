@@ -4,27 +4,36 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Burgos Studio — Web · Motion · Brand</title>
-<meta name="description" content="One studio. Three ways to make your business unforgettable. Web design, motion graphics, and brand identity — starting at $350." />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23f5a524'/%3E%3Ctext x='32' y='46' font-family='system-ui,sans-serif' font-size='42' font-weight='800' fill='%231a1206' text-anchor='middle'%3EB%3C/text%3E%3C/svg%3E" />
+<meta name="description" content="One studio. Everything your business needs to look unforgettable — web design, motion graphics, brand identity, and SEO. Starting at $250." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%236366f1'/%3E%3Cstop offset='55%25' stop-color='%23a259ff'/%3E%3Cstop offset='100%25' stop-color='%2322d3ee'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='url(%23g)'/%3E%3Ctext x='32' y='46' font-family='system-ui,sans-serif' font-size='42' font-weight='800' fill='%230a0a12' text-anchor='middle'%3EB%3C/text%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
 <style>
-  :root{--bg:#0d0d0f;--bg2:#151519;--bg3:#1e1e24;--text:#f5f4f2;--muted:#a8a29e;--faint:#6b6760;--accent:#f5a524;--accent-soft:rgba(245,165,36,.12);--border:rgba(255,255,255,.09);--maxw:1140px;--sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  :root{
+    --bg:#0a0a12;--bg2:#101019;--bg3:#171724;--text:#f4f4f8;--muted:#9b9bb4;--faint:#62627c;
+    --i:#6366f1;--v:#a259ff;--c:#22d3ee;
+    --accent:#a259ff;--accent-soft:rgba(162,89,255,.13);
+    --grad:linear-gradient(135deg,#6366f1 0%,#a259ff 52%,#22d3ee 100%);
+    --grad-soft:linear-gradient(135deg,rgba(99,102,241,.16),rgba(162,89,255,.16),rgba(34,211,238,.16));
+    --border:rgba(255,255,255,.08);--glass:rgba(255,255,255,.035);
+    --maxw:1140px;--sans:"Space Grotesk",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif
+  }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
   body{font-family:var(--sans);background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;line-height:1.6;overflow-x:hidden}
   a{color:inherit;text-decoration:none}
   img,video{display:block;max-width:100%}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
-  .eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--accent)}
+  .grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
   .btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14px;padding:13px 24px;border-radius:999px;transition:.25s;cursor:pointer;border:1px solid transparent}
-  .btn-primary{background:var(--accent);color:#1a1206}
-  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 30px -10px rgba(245,165,36,.6)}
-  .btn-ghost{border-color:var(--border);color:var(--text)}
-  .btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+  .btn-primary{background:var(--grad);color:#0a0a12;box-shadow:0 6px 24px -8px rgba(162,89,255,.5)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 36px -10px rgba(162,89,255,.7)}
+  .btn-ghost{border-color:var(--border);color:var(--text);background:var(--glass)}
+  .btn-ghost:hover{border-color:var(--v);color:#fff;box-shadow:0 0 0 1px rgba(162,89,255,.4)}
 
-  header{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(13,13,15,.85);border-bottom:1px solid var(--border)}
+  header{position:sticky;top:0;z-index:50;backdrop-filter:blur(16px);background:rgba(10,10,18,.72);border-bottom:1px solid var(--border)}
   .nav{display:flex;align-items:center;justify-content:space-between;height:66px}
   .brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:-.01em;font-size:17px}
   .nav-links{display:flex;align-items:center;gap:28px}
@@ -34,100 +43,132 @@
 
   /* hero */
   .hero{position:relative;padding:104px 0 88px;text-align:center;overflow:hidden}
-  .hero-glow{position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:900px;height:900px;background:radial-gradient(circle,var(--accent-soft),transparent 55%);pointer-events:none;z-index:0}
-  .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse 80% 70% at 50% 40%,black,transparent);pointer-events:none;z-index:0}
-  .hero-content{position:relative;z-index:1;max-width:860px;margin:0 auto}
-  .pill{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);border:1px solid var(--border);border-radius:999px;padding:6px 16px;margin-bottom:28px}
-  .pill .dot{width:7px;height:7px;border-radius:50%;background:#46d369;box-shadow:0 0 0 4px rgba(70,211,105,.18)}
-  .hero h1{font-size:clamp(48px,9vw,96px);line-height:.95;font-weight:800;letter-spacing:-.05em}
-  .hero h1 .hl{color:var(--accent)}
-  .hero h1 .sep{color:var(--faint);margin:0 .15em}
-  .hero-sub{font-size:clamp(16px,2.2vw,20px);color:var(--muted);max-width:52ch;margin:26px auto 0;line-height:1.65}
+  .hero-glow{position:absolute;top:-220px;left:50%;transform:translateX(-50%);width:1000px;height:1000px;background:radial-gradient(circle,rgba(162,89,255,.18),rgba(99,102,241,.08) 35%,transparent 60%);pointer-events:none;z-index:0}
+  .hero-glow2{position:absolute;top:60px;right:-120px;width:520px;height:520px;background:radial-gradient(circle,rgba(34,211,238,.12),transparent 62%);pointer-events:none;z-index:0}
+  .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse 80% 70% at 50% 38%,black,transparent);pointer-events:none;z-index:0}
+  .hero-content{position:relative;z-index:1;max-width:880px;margin:0 auto}
+  .pill{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);border:1px solid var(--border);border-radius:999px;padding:6px 16px;margin-bottom:28px;background:var(--glass)}
+  .pill .dot{width:7px;height:7px;border-radius:50%;background:var(--c);box-shadow:0 0 0 4px rgba(34,211,238,.2)}
+  .hero h1{font-size:clamp(48px,9vw,100px);line-height:.94;font-weight:700;letter-spacing:-.05em}
+  .hero h1 .sep{color:var(--faint);margin:0 .12em;-webkit-text-fill-color:var(--faint)}
+  .hero-sub{font-size:clamp(16px,2.2vw,20px);color:var(--muted);max-width:54ch;margin:26px auto 0;line-height:1.65}
   .hero-cta{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:38px}
   .stats{display:flex;justify-content:center;gap:44px;margin-top:64px;flex-wrap:wrap;padding-top:40px;border-top:1px solid var(--border)}
-  .stat .n{font-size:21px;font-weight:800;letter-spacing:-.02em;color:var(--text)}
+  .stat .n{font-size:21px;font-weight:700;letter-spacing:-.02em;color:var(--text)}
   .stat .l{font-size:13px;color:var(--muted);margin-top:2px}
 
   /* service pillars */
-  .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-  .pillar{border:1px solid var(--border);border-radius:22px;overflow:hidden;background:var(--bg2);transition:.3s;display:flex;flex-direction:column}
-  .pillar:hover{transform:translateY(-5px);border-color:rgba(245,165,36,.35)}
-  .pillar-media{aspect-ratio:4/3;overflow:hidden;position:relative}
+  .pillars{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .pillar{border:1px solid var(--border);border-radius:22px;overflow:hidden;background:var(--glass);backdrop-filter:blur(8px);transition:.3s;display:flex;flex-direction:column;position:relative}
+  .pillar::after{content:"";position:absolute;inset:0;border-radius:22px;padding:1px;background:var(--grad);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:.3s;pointer-events:none}
+  .pillar:hover{transform:translateY(-5px)}
+  .pillar:hover::after{opacity:1}
+  .pillar-media{aspect-ratio:16/9;overflow:hidden;position:relative}
   .pillar-media img,.pillar-media video{width:100%;height:100%;object-fit:cover;transition:.6s}
   .pillar:hover .pillar-media img{transform:scale(1.05)}
-  .pillar-media .overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(13,13,15,.7) 0%,transparent 50%)}
-  .pillar-media .price-chip{position:absolute;bottom:14px;left:14px;font-size:12px;font-weight:700;color:#1a1206;background:var(--accent);border-radius:999px;padding:4px 12px}
-  .pillar-body{padding:24px;flex:1;display:flex;flex-direction:column}
+  .pillar-media .overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,18,.75) 0%,transparent 55%)}
+  .pillar-media .price-chip{position:absolute;bottom:14px;left:14px;font-size:12px;font-weight:700;color:#0a0a12;background:var(--grad);border-radius:999px;padding:4px 13px}
+  .pillar-body{padding:26px;flex:1;display:flex;flex-direction:column}
   .pillar-body .tags{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:12px}
   .pillar-body .tag{font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);border:1px solid var(--border);border-radius:999px;padding:4px 10px}
-  .pillar-body h3{font-size:22px;font-weight:800;letter-spacing:-.02em}
-  .pillar-body p{color:var(--muted);font-size:14px;margin-top:8px;flex:1;line-height:1.65}
+  .pillar-body h3{font-size:23px;font-weight:700;letter-spacing:-.02em}
+  .pillar-body p{color:var(--muted);font-size:14.5px;margin-top:8px;flex:1;line-height:1.65}
   .pillar-cta{margin-top:20px;display:flex;gap:10px;flex-wrap:wrap}
+  .pillar-ic{width:120px;height:120px;display:grid;place-items:center}
+  .pillar-ic svg{width:100%;height:100%}
   .btn-sm{font-size:13px;font-weight:600;padding:9px 18px;border-radius:999px;border:1px solid transparent;display:inline-flex;align-items:center;gap:6px;transition:.2s;cursor:pointer}
-  .btn-sm-primary{background:var(--accent);color:#1a1206}
-  .btn-sm-primary:hover{box-shadow:0 6px 20px -6px rgba(245,165,36,.6)}
-  .btn-sm-ghost{border-color:var(--border);color:var(--muted)}
-  .btn-sm-ghost:hover{border-color:var(--accent);color:var(--accent)}
-
-  /* pricing */
-  .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-  .p-card{border:1px solid var(--border);border-radius:20px;padding:32px 28px;background:var(--bg2);transition:.25s}
-  .p-card:hover{border-color:rgba(245,165,36,.3)}
-  .p-card.featured{border-color:rgba(245,165,36,.45);background:var(--bg3);position:relative}
-  .p-card.featured::before{content:"Most popular";position:absolute;top:-12px;left:50%;transform:translateX(-50%);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#1a1206;background:var(--accent);border-radius:999px;padding:4px 14px;white-space:nowrap}
-  .p-title{font-size:17px;font-weight:800;letter-spacing:-.01em;margin-bottom:6px}
-  .p-desc{font-size:13px;color:var(--muted);margin-bottom:20px;min-height:38px}
-  .p-price{font-size:clamp(36px,5vw,52px);font-weight:800;letter-spacing:-.04em;line-height:1}
-  .p-price sup{font-size:22px;vertical-align:top;margin-top:6px;font-weight:700}
-  .p-price sub{font-size:15px;font-weight:500;color:var(--muted)}
-  .p-features{list-style:none;margin:20px 0;display:flex;flex-direction:column;gap:10px}
-  .p-features li{display:flex;align-items:flex-start;gap:8px;font-size:14px;color:var(--muted)}
-  .p-features li svg{width:16px;height:16px;stroke:var(--accent);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;margin-top:3px}
-  .p-features li span{color:var(--text)}
-  .p-btn{width:100%;text-align:center;justify-content:center;margin-top:auto;padding:12px}
+  .btn-sm-primary{background:var(--grad);color:#0a0a12}
+  .btn-sm-primary:hover{box-shadow:0 6px 20px -6px rgba(162,89,255,.7)}
+  .btn-sm-ghost{border-color:var(--border);color:var(--muted);background:var(--glass)}
+  .btn-sm-ghost:hover{border-color:var(--v);color:#fff}
 
   /* featured work */
   .work-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
-  .work-card{border:1px solid var(--border);border-radius:20px;overflow:hidden;background:var(--bg2);transition:.25s;display:flex;flex-direction:column}
-  .work-card:hover{transform:translateY(-4px);border-color:rgba(245,165,36,.3)}
+  .work-card{border:1px solid var(--border);border-radius:20px;overflow:hidden;background:var(--glass);transition:.25s;display:flex;flex-direction:column}
+  .work-card:hover{transform:translateY(-4px);border-color:rgba(162,89,255,.4)}
   .work-photo{aspect-ratio:16/10;overflow:hidden}
   .work-photo img{width:100%;height:100%;object-fit:cover;transition:.5s}
   .work-card:hover .work-photo img{transform:scale(1.04)}
   .work-body{padding:22px;flex:1;display:flex;flex-direction:column}
   .tags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:12px}
   .tag{font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);border:1px solid var(--border);border-radius:999px;padding:4px 10px}
-  .work-body h3{font-size:20px;font-weight:800;letter-spacing:-.01em}
+  .work-body h3{font-size:20px;font-weight:700;letter-spacing:-.01em}
   .work-body p{color:var(--muted);font-size:14px;margin-top:8px;flex:1;line-height:1.65}
   .work-links{margin-top:16px;display:flex;gap:10px}
 
+  /* testimonials */
+  .tcards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .tcard{border:1px solid var(--border);border-radius:20px;padding:28px;background:var(--glass);backdrop-filter:blur(8px);transition:.25s;display:flex;flex-direction:column}
+  .tcard:hover{border-color:rgba(162,89,255,.35);transform:translateY(-3px)}
+  .tstars{display:flex;gap:3px;margin-bottom:14px}
+  .tstars svg{width:16px;height:16px;fill:var(--v);stroke:none}
+  .tquote{font-size:15px;color:var(--text);line-height:1.7;flex:1}
+  .tperson{display:flex;align-items:center;gap:12px;margin-top:20px;padding-top:18px;border-top:1px solid var(--border)}
+  .tav{width:42px;height:42px;border-radius:50%;background:var(--grad-soft);border:1px solid var(--border);display:grid;place-items:center;font-size:15px;font-weight:700;color:#fff;flex-shrink:0}
+  .tperson .nm{font-size:14px;font-weight:700}
+  .tperson .rl{font-size:12px;color:var(--muted)}
+
+  /* pricing */
+  .pricing-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .p-card{border:1px solid var(--border);border-radius:20px;padding:28px 24px;background:var(--glass);backdrop-filter:blur(8px);transition:.25s;display:flex;flex-direction:column}
+  .p-card:hover{border-color:rgba(162,89,255,.3);transform:translateY(-3px)}
+  .p-card.featured{border-color:transparent;background:var(--bg3);position:relative}
+  .p-card.featured::before{content:"Most popular";position:absolute;top:-12px;left:50%;transform:translateX(-50%);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#0a0a12;background:var(--grad);border-radius:999px;padding:4px 14px;white-space:nowrap}
+  .p-card.featured::after{content:"";position:absolute;inset:0;border-radius:20px;padding:1px;background:var(--grad);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+  .p-title{font-size:16px;font-weight:700;letter-spacing:-.01em;margin-bottom:6px}
+  .p-desc{font-size:13px;color:var(--muted);margin-bottom:18px;min-height:54px}
+  .p-price{font-size:clamp(34px,5vw,46px);font-weight:700;letter-spacing:-.04em;line-height:1}
+  .p-price sup{font-size:20px;vertical-align:top;margin-top:6px;font-weight:700}
+  .p-price .per{font-size:13px;font-weight:500;color:var(--muted)}
+  .p-features{list-style:none;margin:18px 0;display:flex;flex-direction:column;gap:9px;flex:1}
+  .p-features li{display:flex;align-items:flex-start;gap:8px;font-size:13.5px;color:var(--muted)}
+  .p-features li svg{width:15px;height:15px;stroke:var(--v);fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;margin-top:3px}
+  .p-features li span{color:var(--text)}
+  .p-btn{width:100%;text-align:center;justify-content:center;margin-top:auto;padding:11px;font-size:13.5px}
+
+  /* faq */
+  .faq-wrap{max-width:760px;margin:0 auto}
+  .faq{border:1px solid var(--border);border-radius:16px;background:var(--glass);margin-bottom:12px;overflow:hidden;transition:.2s}
+  .faq[open]{border-color:rgba(162,89,255,.35)}
+  .faq summary{padding:22px 24px;font-size:16px;font-weight:600;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;transition:.2s}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary:hover{color:#fff}
+  .faq summary .plus{flex-shrink:0;width:22px;height:22px;position:relative;transition:.3s}
+  .faq summary .plus::before,.faq summary .plus::after{content:"";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:var(--v);border-radius:2px}
+  .faq summary .plus::before{width:13px;height:2.2px}
+  .faq summary .plus::after{width:2.2px;height:13px;transition:.3s}
+  .faq[open] summary .plus::after{transform:translate(-50%,-50%) rotate(90deg);opacity:0}
+  .faq .faq-body{padding:0 24px 22px;color:var(--muted);font-size:15px;line-height:1.7}
+
   /* cta band */
-  .demo-band{background:radial-gradient(120% 140% at 50% 0,rgba(245,165,36,.14),transparent 55%),var(--bg2);border:1px solid var(--border);border-radius:28px;padding:72px 32px;text-align:center}
-  .demo-band h2{font-size:clamp(26px,4vw,46px);font-weight:800;letter-spacing:-.03em}
+  .demo-band{position:relative;background:var(--grad-soft);border:1px solid var(--border);border-radius:28px;padding:72px 32px;text-align:center;overflow:hidden}
+  .demo-band::before{content:"";position:absolute;top:-50%;left:50%;transform:translateX(-50%);width:700px;height:700px;background:radial-gradient(circle,rgba(162,89,255,.18),transparent 60%);pointer-events:none}
+  .demo-band>*{position:relative}
+  .demo-band h2{font-size:clamp(26px,4vw,46px);font-weight:700;letter-spacing:-.03em}
   .demo-band p{color:var(--muted);margin:14px auto 0;max-width:50ch;font-size:17px}
   .demo-band .cta{display:flex;gap:14px;justify-content:center;margin-top:30px;flex-wrap:wrap}
 
   section{padding:88px 0}
   .sec-head{max-width:60ch;margin-bottom:46px}
   .sec-head.centered{text-align:center;margin-left:auto;margin-right:auto}
-  .sec-head h2{font-size:clamp(26px,4vw,42px);font-weight:800;letter-spacing:-.025em;margin-top:12px}
+  .sec-head h2{font-size:clamp(26px,4vw,42px);font-weight:700;letter-spacing:-.025em;margin-top:12px}
   .sec-head p{color:var(--muted);margin-top:12px;font-size:17px}
 
   footer{border-top:1px solid var(--border);padding:32px 0;color:var(--faint);font-size:14px}
   .foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
-  .foot-links{display:flex;gap:20px}
+  .foot-links{display:flex;gap:20px;flex-wrap:wrap}
   .foot-links a{color:var(--faint);transition:.2s}
   .foot-links a:hover{color:var(--muted)}
 
   .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
   .reveal.in{opacity:1;transform:none}
 
-  @media(max-width:900px){.pillars{grid-template-columns:1fr}.pricing-grid{grid-template-columns:1fr;max-width:420px;margin:0 auto}.work-grid{grid-template-columns:1fr}}
+  @media(max-width:980px){.pricing-grid{grid-template-columns:repeat(2,1fr)}.tcards{grid-template-columns:1fr}}
+  @media(max-width:900px){.pillars{grid-template-columns:1fr}.work-grid{grid-template-columns:1fr}}
   @media(max-width:640px){
-    .stats{gap:24px}
-    .hero h1{letter-spacing:-.04em}
+    .stats{gap:24px}.hero h1{letter-spacing:-.04em}.pricing-grid{grid-template-columns:1fr;max-width:380px;margin:0 auto}
     .nav-links{position:fixed;inset:66px 0 auto 0;flex-direction:column;background:var(--bg2);border-bottom:1px solid var(--border);padding:18px 24px;gap:18px;display:none}
-    .nav-links.open{display:flex}
-    .nav-toggle{display:block}
+    .nav-links.open{display:flex}.nav-toggle{display:block}
   }
   @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
 </style>
@@ -136,9 +177,9 @@
 
 <header>
   <div class="wrap nav">
-    <a href="/" class="brand"><svg viewBox="0 0 360 490" height="32" style="display:block;flex-shrink:0" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="nb-bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#2b2720"/><stop offset="100%" stop-color="#0b0908"/></linearGradient><linearGradient id="nb-rim" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#9a7844"/><stop offset="48%" stop-color="#4a3c24"/><stop offset="100%" stop-color="#886438"/></linearGradient></defs><rect x="2" y="2" width="356" height="486" rx="54" fill="none" stroke="url(#nb-rim)" stroke-width="4"/><rect x="5" y="5" width="350" height="480" rx="51" fill="url(#nb-bg)"/><rect x="15" y="15" width="330" height="460" rx="42" fill="none" stroke="#3a2e1a" stroke-width="2"/><ellipse cx="180" cy="128" rx="136" ry="86" fill="rgba(255,255,255,0.10)"/><text x="176" y="318" style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;font-size:300px;fill:#f5a524" text-anchor="middle">B</text></svg> Burgos Studio</a>
+    <a href="/" class="brand"><svg viewBox="0 0 64 64" height="30" style="display:block;flex-shrink:0" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#6366f1"/><stop offset="55%" stop-color="#a259ff"/><stop offset="100%" stop-color="#22d3ee"/></linearGradient></defs><rect width="64" height="64" rx="15" fill="url(#lg)"/><text x="32" y="46" font-family="Space Grotesk,sans-serif" font-size="40" font-weight="700" fill="#0a0a12" text-anchor="middle">B</text></svg> Burgos Studio</a>
     <nav class="nav-links" id="menu">
-      <a href="/work/">Work</a>
+      <a href="/work/">Web Design</a>
       <a href="/motion/">Motion FX</a>
       <a href="/brand/">Brand</a>
       <a href="/about/">About</a>
@@ -153,19 +194,20 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-glow"></div>
+    <div class="hero-glow2"></div>
     <div class="hero-grid"></div>
     <div class="wrap">
       <div class="hero-content">
         <div class="pill reveal"><span class="dot"></span> Available for new projects</div>
-        <h1 class="reveal">Web<span class="sep">·</span><span class="hl">Motion</span><span class="sep">·</span>Brand</h1>
-        <p class="hero-sub reveal">One studio. Everything your business needs to look like the real deal — custom websites, cinematic motion graphics, and brand identity that sticks.</p>
+        <h1 class="reveal"><span class="grad-text">Web</span><span class="sep">·</span><span class="grad-text">Motion</span><span class="sep">·</span><span class="grad-text">Brand</span></h1>
+        <p class="hero-sub reveal">One studio. Everything your business needs to look like the real deal — custom websites, cinematic motion graphics, brand identity, and getting found on Google.</p>
         <div class="hero-cta reveal">
           <a href="/contact/" class="btn btn-primary">Get a free demo →</a>
           <a href="/work/" class="btn btn-ghost">See the work</a>
         </div>
         <div class="stats reveal">
-          <div class="stat"><div class="n">$350</div><div class="l">Starting price</div></div>
-          <div class="stat"><div class="n">3 services</div><div class="l">Web · Motion · Brand</div></div>
+          <div class="stat"><div class="n">$250</div><div class="l">Starting price</div></div>
+          <div class="stat"><div class="n">4 services</div><div class="l">Web · Motion · Brand · SEO</div></div>
           <div class="stat"><div class="n">2 weeks</div><div class="l">Avg. delivery</div></div>
           <div class="stat"><div class="n">1 person</div><div class="l">You work with me directly</div></div>
         </div>
@@ -173,7 +215,7 @@
     </div>
   </section>
 
-  <!-- 3 SERVICE PILLARS -->
+  <!-- SERVICE PILLARS -->
   <section style="padding-top:0">
     <div class="wrap">
       <div class="sec-head centered reveal">
@@ -185,7 +227,7 @@
 
         <div class="pillar reveal">
           <div class="pillar-media">
-            <img src="images/contractor-hero.jpeg" alt="Web Design demo — Ridgeline Pro contractor site" />
+            <img src="images/contractor-hero.jpeg" alt="Web design demo — Ridgeline Pro contractor site" />
             <div class="overlay"></div>
             <span class="price-chip">From $750</span>
           </div>
@@ -222,12 +264,10 @@
         </div>
 
         <div class="pillar reveal">
-          <div class="pillar-media" style="background:linear-gradient(145deg,#1a1508,#0d0d0f);display:flex;align-items:center;justify-content:center">
-            <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="60" cy="60" r="54" stroke="rgba(245,165,36,.15)" stroke-width="1.5"/>
-              <circle cx="60" cy="60" r="38" stroke="rgba(245,165,36,.25)" stroke-width="1"/>
-              <text x="60" y="76" style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;font-size:64px;fill:#f5a524" text-anchor="middle">B</text>
-            </svg>
+          <div class="pillar-media" style="background:linear-gradient(145deg,#171724,#0a0a12);display:flex;align-items:center;justify-content:center">
+            <div class="pillar-ic">
+              <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="bg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#6366f1"/><stop offset="55%" stop-color="#a259ff"/><stop offset="100%" stop-color="#22d3ee"/></linearGradient></defs><circle cx="60" cy="60" r="52" stroke="url(#bg1)" stroke-width="1.5" opacity=".3"/><circle cx="60" cy="60" r="36" stroke="url(#bg1)" stroke-width="1.5" opacity=".55"/><text x="60" y="76" font-family="Space Grotesk,sans-serif" font-weight="700" font-size="56" fill="url(#bg1)" text-anchor="middle">B</text></svg>
+            </div>
             <div class="overlay"></div>
             <span class="price-chip">From $350</span>
           </div>
@@ -239,6 +279,26 @@
               <!-- Replace href with Stripe Payment Link once set up at stripe.com/dashboard -->
               <a href="/contact/?s=brand" class="btn-sm btn-sm-primary">Start brand project →</a>
               <a href="/brand/" class="btn-sm btn-sm-ghost">Learn more</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="pillar reveal">
+          <div class="pillar-media" style="background:linear-gradient(145deg,#0d1422,#0a0a12);display:flex;align-items:center;justify-content:center">
+            <div class="pillar-ic">
+              <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="seo1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#6366f1"/><stop offset="55%" stop-color="#a259ff"/><stop offset="100%" stop-color="#22d3ee"/></linearGradient></defs><circle cx="52" cy="52" r="30" stroke="url(#seo1)" stroke-width="3.5" fill="none"/><line x1="74" y1="74" x2="94" y2="94" stroke="url(#seo1)" stroke-width="3.5" stroke-linecap="round"/><path d="M40 56l8-10 7 7 11-15" stroke="url(#seo1)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+            </div>
+            <div class="overlay"></div>
+            <span class="price-chip">From $250</span>
+          </div>
+          <div class="pillar-body">
+            <div class="tags"><span class="tag">SEO</span><span class="tag">Google Business</span></div>
+            <h3>Get Found on Google</h3>
+            <p>Google Business setup, local SEO, and review strategy so customers searching for what you do actually find you — not your competitors.</p>
+            <div class="pillar-cta">
+              <!-- Replace href with Stripe Payment Link once set up at stripe.com/dashboard -->
+              <a href="/contact/?s=seo" class="btn-sm btn-sm-primary">Boost my visibility →</a>
+              <a href="/contact/?s=seo" class="btn-sm btn-sm-ghost">Learn more</a>
             </div>
           </div>
         </div>
@@ -289,8 +349,37 @@
     </div>
   </section>
 
-  <!-- PRICING -->
+  <!-- TESTIMONIALS -->
   <section>
+    <div class="wrap">
+      <div class="sec-head centered reveal">
+        <span class="eyebrow">What clients say</span>
+        <h2>Businesses that leveled up.</h2>
+        <p>Real results from real projects. Your business could be next.</p>
+      </div>
+      <!-- TESTIMONIALS: swap these placeholder quotes for real ones as you collect them -->
+      <div class="tcards">
+        <div class="tcard reveal">
+          <div class="tstars"><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg></div>
+          <p class="tquote">"Marcello turned my idea into a real brand in under two weeks. The site looks like something a huge company would have — people genuinely think I'm bigger than I am."</p>
+          <div class="tperson"><div class="tav">DW</div><div><div class="nm">Dad's Wooden Spoon</div><div class="rl">Cookie Bakery · Colorado</div></div></div>
+        </div>
+        <div class="tcard reveal">
+          <div class="tstars"><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg></div>
+          <p class="tquote">"He gave me a free demo before I paid a cent. Once I saw it, it was an easy yes. Fast, no agency runaround, and he actually answers the phone."</p>
+          <div class="tperson"><div class="tav">AT</div><div><div class="nm">Apex Training</div><div class="rl">Personal Trainer</div></div></div>
+        </div>
+        <div class="tcard reveal">
+          <div class="tstars"><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg></div>
+          <p class="tquote">"The motion graphics pack made my YouTube channel look pro overnight. Dropped it straight into my editor and my intros instantly leveled up."</p>
+          <div class="tperson"><div class="tav">JR</div><div><div class="nm">Jordan R.</div><div class="rl">YouTube Creator · 40K subs</div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section style="background:var(--bg2)">
     <div class="wrap">
       <div class="sec-head centered reveal">
         <span class="eyebrow">Pricing</span>
@@ -298,6 +387,20 @@
         <p>One-time payments — no retainers, no hourly rates, no monthly fees.</p>
       </div>
       <div class="pricing-grid">
+
+        <div class="p-card reveal">
+          <div class="p-title">SEO / Google</div>
+          <div class="p-desc">Get found by customers searching for what you do.</div>
+          <div class="p-price"><sup>$</sup>250</div>
+          <ul class="p-features">
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Google Business setup</span></li>
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Local SEO optimization</span></li>
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Review strategy</span></li>
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Map & search listing</span></li>
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Keyword research</span></li>
+          </ul>
+          <a href="/contact/?s=seo" class="btn btn-ghost p-btn">Boost visibility</a>
+        </div>
 
         <div class="p-card reveal">
           <div class="p-title">Brand Identity</div>
@@ -309,7 +412,6 @@
             <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Typography pairing</span></li>
             <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Social media graphics</span></li>
             <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Brand guide PDF</span></li>
-            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>5-day delivery</span></li>
           </ul>
           <a href="/contact/?s=brand" class="btn btn-ghost p-btn">Start brand project</a>
         </div>
@@ -324,28 +426,63 @@
             <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>5–10 pages</span></li>
             <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Contact / booking form</span></li>
             <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>2 revision rounds</span></li>
-            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>2-week delivery</span></li>
           </ul>
           <a href="/contact/?s=web" class="btn btn-primary p-btn">Start web project</a>
         </div>
 
         <div class="p-card reveal">
           <div class="p-title">Motion FX Pack</div>
-          <div class="p-desc">3D animated overlays and graphics for YouTube & TikTok creators.</div>
+          <div class="p-desc">3D animated overlays for YouTube & TikTok creators.</div>
           <div class="p-price"><sup>$</sup>75</div>
           <ul class="p-features">
             <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>15-second looping clip</span></li>
             <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>16:9 + 9:16 formats</span></li>
             <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Transparent BG option</span></li>
             <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Editor-ready MP4</span></li>
-            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Commercial use license</span></li>
-            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>48-hr delivery</span></li>
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Commercial license</span></li>
           </ul>
           <a href="/contact/?s=motion" class="btn btn-ghost p-btn">Order a pack</a>
         </div>
 
       </div>
-      <p style="text-align:center;color:var(--faint);font-size:13px;margin-top:20px;class="reveal"">Bundle Brand + Web and save $100. <a href="/contact/?s=bundle" style="color:var(--muted);text-decoration:underline;text-underline-offset:3px">Ask about the bundle →</a></p>
+      <p style="text-align:center;color:var(--faint);font-size:13px;margin-top:22px">Bundle Brand + Web and save $100. <a href="/contact/?s=bundle" style="color:var(--v);text-decoration:underline;text-underline-offset:3px">Ask about the bundle →</a></p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section>
+    <div class="wrap">
+      <div class="sec-head centered reveal">
+        <span class="eyebrow">FAQ</span>
+        <h2>Questions, answered.</h2>
+        <p>Everything you might be wondering before we start.</p>
+      </div>
+      <div class="faq-wrap">
+        <details class="faq reveal">
+          <summary>How long does a project take? <span class="plus"></span></summary>
+          <div class="faq-body">Most websites go from first conversation to launch in about two weeks. Brand identity packages take about 5 business days, and motion graphics packs are delivered within 48 hours. Bigger projects can take a little longer — I'll always give you a clear timeline up front.</div>
+        </details>
+        <details class="faq reveal">
+          <summary>Do I really get a free demo first? <span class="plus"></span></summary>
+          <div class="faq-body">Yes. Before you pay anything, I'll build a working demo of your site so you can see exactly what you're getting. No deposit, no commitment, no risk. If you love it, we move forward. If not, no hard feelings.</div>
+        </details>
+        <details class="faq reveal">
+          <summary>How many revisions are included? <span class="plus"></span></summary>
+          <div class="faq-body">Every project includes two full rounds of revisions, so we can dial in the details until it feels exactly right. Most clients are happy well before we use them both.</div>
+        </details>
+        <details class="faq reveal">
+          <summary>Do I own the website and files? <span class="plus"></span></summary>
+          <div class="faq-body">100%. Once the project is paid in full, everything is yours — the website, the design files, the logo, and all source files in every format. No licensing fees, no lock-in.</div>
+        </details>
+        <details class="faq reveal">
+          <summary>Can you combine services? <span class="plus"></span></summary>
+          <div class="faq-body">Absolutely — that's the whole point of one studio. Most clients pair a website with brand identity and SEO so everything is cohesive. Bundle Brand + Web and I'll take $100 off the total.</div>
+        </details>
+        <details class="faq reveal">
+          <summary>How do payments work? <span class="plus"></span></summary>
+          <div class="faq-body">Simple flat pricing, paid securely online — no hourly billing or surprise invoices. Typically half to get started and half on launch. We'll confirm everything before any work begins.</div>
+        </details>
+      </div>
     </div>
   </section>
 
@@ -368,9 +505,9 @@
 
 <footer>
   <div class="wrap foot">
-    <span class="brand-sm" style="display:flex;align-items:center;gap:9px;font-weight:700"><svg viewBox="0 0 360 490" height="24" style="display:block;flex-shrink:0" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="fb-bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#2b2720"/><stop offset="100%" stop-color="#0b0908"/></linearGradient><linearGradient id="fb-rim" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#9a7844"/><stop offset="48%" stop-color="#4a3c24"/><stop offset="100%" stop-color="#886438"/></linearGradient></defs><rect x="2" y="2" width="356" height="486" rx="54" fill="none" stroke="url(#fb-rim)" stroke-width="4"/><rect x="5" y="5" width="350" height="480" rx="51" fill="url(#fb-bg)"/><ellipse cx="180" cy="128" rx="136" ry="86" fill="rgba(255,255,255,0.10)"/><text x="176" y="318" style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;font-size:300px;fill:#f5a524" text-anchor="middle">B</text></svg> Burgos Studio</span>
+    <span class="brand-sm" style="display:flex;align-items:center;gap:9px;font-weight:700"><svg viewBox="0 0 64 64" height="22" style="display:block;flex-shrink:0" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="fg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#6366f1"/><stop offset="55%" stop-color="#a259ff"/><stop offset="100%" stop-color="#22d3ee"/></linearGradient></defs><rect width="64" height="64" rx="15" fill="url(#fg)"/><text x="32" y="46" font-family="Space Grotesk,sans-serif" font-size="40" font-weight="700" fill="#0a0a12" text-anchor="middle">B</text></svg> Burgos Studio</span>
     <div class="foot-links">
-      <a href="/work/">Work</a>
+      <a href="/work/">Web Design</a>
       <a href="/motion/">Motion FX</a>
       <a href="/brand/">Brand</a>
       <a href="/about/">About</a>
