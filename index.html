@@ -110,7 +110,7 @@
   .btn-sm-ghost:hover{border-color:var(--v);color:#fff}
 
   /* featured work */
-  .work-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  .work-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:20px}
   .work-card{border:1px solid var(--border);border-radius:20px;overflow:hidden;background:var(--glass);transition:.25s;display:flex;flex-direction:column}
   .work-card:hover{transform:translateY(-4px);border-color:rgba(251,251,255,.4)}
   .work-photo{aspect-ratio:16/10;overflow:hidden}
@@ -478,6 +478,19 @@
             <p>A contemporary art gallery in Chelsea, New York — elegant serif type, a quiet white-cube feel, rotating exhibitions, and a collection that lets the work breathe.</p>
             <div class="work-links">
               <a href="/gallery/" class="btn-sm btn-sm-primary">View demo →</a>
+            </div>
+          </div>
+        </div>
+        <div class="work-card reveal">
+          <div class="work-photo">
+            <img src="images/model-hero.jpg" alt="VANTA — a New York modeling agency website" style="object-position:center 12%" />
+          </div>
+          <div class="work-body">
+            <div class="tags"><span class="tag">Modeling</span><span class="tag">High Fashion</span><span class="tag">Editorial</span></div>
+            <h3>Vanta</h3>
+            <p>A New York model-management agency — dark, bold and editorial, with a curated roster, a marquee of cities, and a "get scouted" open call.</p>
+            <div class="work-links">
+              <a href="/modeling/" class="btn-sm btn-sm-primary">View demo →</a>
             </div>
           </div>
         </div>
