@@ -82,6 +82,26 @@
   .reassure h4{font-size:15px;font-weight:700}
   .reassure p{font-size:13px;color:var(--muted);margin-top:4px}
 
+  .form-wrap{background:radial-gradient(120% 140% at 50% 0,rgba(255,45,146,.18),transparent 55%),var(--bg2);border:1px solid var(--border);border-radius:28px;padding:68px 48px;max-width:680px;margin:0 auto}
+  .form-wrap h2{font-size:clamp(26px,4vw,38px);font-weight:800;letter-spacing:-.025em;text-align:center}
+  .form-wrap>p{color:var(--muted);margin:14px auto 36px;max-width:50ch;font-size:17px;text-align:center}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .form-group{margin-bottom:16px}
+  .form-group label{display:block;font-size:12px;font-weight:700;color:var(--muted);margin-bottom:7px;letter-spacing:.1em;text-transform:uppercase}
+  .form-group input,.form-group select,.form-group textarea{width:100%;background:var(--bg3);border:1px solid var(--border);border-radius:12px;padding:13px 16px;color:var(--text);font-family:var(--sans);font-size:15px;transition:.2s;outline:none;-webkit-appearance:none;appearance:none}
+  .form-group input::placeholder,.form-group textarea::placeholder{color:var(--faint)}
+  .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(255,45,146,.12)}
+  .form-group textarea{resize:vertical;min-height:110px}
+  .form-group select{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%239b9bb4' stroke-width='2.5' stroke-linecap='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px;background-color:var(--bg3)}
+  .form-group select option{background:var(--bg2);color:var(--text)}
+  .form-submit{width:100%;background:var(--grad);color:#0a0a12;font-weight:700;font-size:16px;padding:16px 24px;border-radius:999px;border:0;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;transition:.25s;margin-top:8px;font-family:var(--sans)}
+  .form-submit:hover{transform:translateY(-2px);box-shadow:0 14px 36px -10px rgba(255,45,146,.6)}
+  .form-submit:disabled{opacity:.6;cursor:not-allowed;transform:none}
+  .form-hint{font-size:13px;color:var(--faint);margin-top:18px;text-align:center}
+  .form-hint a{color:var(--accent)}
+  .form-success{display:none;text-align:center;padding:24px 0}
+  @media(max-width:600px){.form-row{grid-template-columns:1fr}.form-wrap{padding:44px 24px}}
+
   footer{border-top:1px solid var(--border);padding:32px 0;color:var(--faint);font-size:14px}
   .foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
   .foot .brand-sm{display:flex;align-items:center;gap:9px;color:var(--text);font-weight:700}
@@ -187,13 +207,19 @@
           </div>
           <div class="avail">Available M–F · 9am–6pm MT</div>
         </div>
-        <a href="mailto:burgossstudio@gmail.com?subject=Free%20Demo%20Request&body=Hi%20Marcello%2C%0A%0AMy%20business%3A%20%5Bname%20%26%20industry%5D%0AWhat%20I%20sell%2Foffer%3A%20%5Bdescription%5D%0AWhat%20I%27m%20going%20for%3A%20%5Bvibe%2C%20goals%2C%20any%20examples%5D%0A%0AThanks" class="contact-card reveal">
+        <div class="contact-card reveal">
           <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
           <h3>Send an email</h3>
           <div class="contact-detail">burgossstudio@gmail.com</div>
-          <p>Prefer to write it out? I've pre-filled a quick template — just fill in your business info and hit send. I'll reply within 24 hours.</p>
+          <p>Prefer email? Shoot me a message anytime — tell me your business name, what you do, and what you're going for. I'll reply within 24 hours.</p>
+          <div class="card-actions">
+            <a href="mailto:burgossstudio@gmail.com?subject=Free%20Demo%20Request" class="card-btn card-btn-primary">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              Open email app
+            </a>
+          </div>
           <div class="avail">I reply within 24 hours · Anytime</div>
-        </a>
+        </div>
       </div>
 
       <div class="reassurance reveal" style="margin-top:56px">
@@ -224,15 +250,55 @@
 
   <section style="padding-top:0">
     <div class="wrap">
-      <div class="email-cta reveal">
-        <span class="eyebrow">Ready to go?</span>
-        <h2>Let's start with a conversation.</h2>
-        <p>Tell me what your business does and what you're going for. I'll take it from there.</p>
-        <a href="mailto:burgossstudio@gmail.com?subject=Free%20Demo%20Request&body=Hi%20Marcello%2C%0A%0AMy%20business%3A%20%5Bname%20%26%20industry%5D%0AWhat%20I%20sell%2Foffer%3A%20%5Bdescription%5D%0AWhat%20I%27m%20going%20for%3A%20%5Bvibe%2C%20goals%2C%20any%20examples%5D%0A%0AThanks" class="btn-lg">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          Email me — request a free demo
-        </a>
-        <div class="hint">Or <a href="sms:+19704123085?body=Hi%20Marcello!%20I%27m%20%5Bname%5D%2C%20I%20run%20%5Bbusiness%20name%20%26%20type%5D.%20I%27d%20love%20a%20free%20demo.%20Here%27s%20what%20I%20do%3A%20%5Bdescription%5D.%20What%20I%27m%20going%20for%3A%20%5Bvibe%2Fgoals%5D" style="color:var(--accent)">text with template</a> · <a href="tel:+19704123085" style="color:var(--accent)">call 970-412-3085</a></div>
+      <div class="form-wrap reveal">
+        <span class="eyebrow" style="display:block;text-align:center">Start here</span>
+        <h2>Tell me about your business.</h2>
+        <p>Fill this out and I'll get back to you within 24 hours — usually same day.</p>
+
+        <!-- To activate: sign up free at formspree.io → New Form → copy your ID → replace YOUR_FORM_ID below -->
+        <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Your name</label>
+              <input type="text" id="name" name="name" required placeholder="Jane Smith">
+            </div>
+            <div class="form-group">
+              <label for="email">Email address</label>
+              <input type="email" id="email" name="email" required placeholder="jane@yourbusiness.com">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="business">Business name &amp; type</label>
+            <input type="text" id="business" name="business" required placeholder="Bloom Salon — hair &amp; beauty, Denver CO">
+          </div>
+          <div class="form-group">
+            <label for="service">What are you interested in?</label>
+            <select id="service" name="service">
+              <option value="">— pick one —</option>
+              <option>Web Design ($950+)</option>
+              <option>Motion FX — AI effects &amp; emblems</option>
+              <option>Brand Identity ($450+)</option>
+              <option>Automation ($400+)</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">What are you going for?</label>
+            <textarea id="message" name="message" rows="4" placeholder="Vibe, goals, any examples you love — anything that helps me get a picture of what you want…"></textarea>
+          </div>
+          <button type="submit" class="form-submit" id="form-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            Send — let's talk
+          </button>
+        </form>
+
+        <div class="form-success" id="form-success">
+          <div style="font-size:52px;margin-bottom:12px">🎉</div>
+          <h3 style="font-size:24px;font-weight:800">Got it — I'll be in touch!</h3>
+          <p style="color:var(--muted);margin-top:10px">Usually within a few hours. Check your inbox (and spam just in case).</p>
+        </div>
+
+        <div class="form-hint">Prefer to call? <a href="tel:+19704123085">970-412-3085</a> &nbsp;·&nbsp; <a href="sms:+19704123085">text me</a></div>
       </div>
     </div>
   </section>
@@ -247,6 +313,20 @@
 
 <script>
   document.getElementById('yr').textContent = new Date().getFullYear();
+
+  var form=document.getElementById('contact-form'),btn=document.getElementById('form-btn');
+  if(form){form.addEventListener('submit',function(e){
+    e.preventDefault();
+    btn.disabled=true;btn.innerHTML='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg> Sending…';
+    fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}})
+      .then(function(r){return r.json()})
+      .then(function(d){
+        if(d.ok){form.style.display='none';document.getElementById('form-success').style.display='block';}
+        else{btn.disabled=false;btn.innerHTML='⚠ Try again';}
+      })
+      .catch(function(){btn.disabled=false;btn.innerHTML='⚠ Try again';});
+  });}
+
   var t=document.getElementById('toggle'),m=document.getElementById('menu');
   t.addEventListener('click',function(){m.classList.toggle('open')});
   m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){m.classList.remove('open')})});
