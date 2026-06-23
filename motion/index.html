@@ -155,15 +155,17 @@ nav{position:sticky;top:0;z-index:100;background:rgba(8,10,15,.9);backdrop-filte
 .like-count{position:absolute;left:50%;top:calc(50% - 82px);transform:translateX(-50%);font-family:var(--display);font-size:32px;letter-spacing:.04em;color:#fff;opacity:0;animation:countpop 2.3s ease-in-out infinite}
 @keyframes countpop{0%,62%{opacity:0;transform:translate(-50%,8px) scale(.8)}74%{opacity:1;transform:translate(-50%,0) scale(1)}100%{opacity:0;transform:translate(-50%,-6px) scale(.95)}}
 /* CSS text-messages mockup */
-.msg-mock{position:absolute;inset:0;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;gap:9px;padding:20px 22px}
-.msg{max-width:66%;padding:9px 13px;border-radius:15px;font-size:12.5px;font-weight:600;line-height:1.3;opacity:0;animation:msgflow 4.6s ease-in-out infinite}
-.msg.inc{align-self:flex-start;background:#23232e;color:#e8e8ee;border-bottom-left-radius:5px}
-.msg.out{align-self:flex-end;background:var(--grad);color:#0a0a12;border-bottom-right-radius:5px}
+.msg-mock{position:absolute;inset:0;overflow:hidden}
+.msg{position:absolute;top:0;max-width:62%;padding:8px 14px;border-radius:18px;font-size:14px;font-weight:500;line-height:1.32;color:#fff;font-family:-apple-system,'Inter',sans-serif;opacity:0;animation:msgflow 7.2s linear infinite}
+.msg.inc{left:22px;background:#3b3b3d;border-bottom-left-radius:6px}
+.msg.out{right:22px;background:linear-gradient(180deg,#1e9bff,#0a84ff);border-bottom-right-radius:6px}
+.msg.inc::after{content:"";position:absolute;z-index:-1;bottom:1px;left:-5px;width:14px;height:14px;background:#3b3b3d;border-bottom-right-radius:14px}
+.msg.out::after{content:"";position:absolute;z-index:-1;bottom:1px;right:-5px;width:14px;height:14px;background:#0a84ff;border-bottom-left-radius:14px}
 .msg:nth-child(1){animation-delay:0s}
-.msg:nth-child(2){animation-delay:1.15s}
-.msg:nth-child(3){animation-delay:2.3s}
-.msg:nth-child(4){animation-delay:3.45s}
-@keyframes msgflow{0%{opacity:0;transform:translateY(48px) scale(.92)}12%{opacity:1;transform:translateY(0) scale(1)}78%{opacity:1;transform:translateY(-98px)}100%{opacity:0;transform:translateY(-142px)}}
+.msg:nth-child(2){animation-delay:1.8s}
+.msg:nth-child(3){animation-delay:3.6s}
+.msg:nth-child(4){animation-delay:5.4s}
+@keyframes msgflow{0%{opacity:0;transform:translateY(205px) scale(.92)}8%{opacity:1;transform:translateY(178px) scale(1)}86%{opacity:1;transform:translateY(-18px)}100%{opacity:0;transform:translateY(-46px)}}
 
 /* INCLUDES */
 .includes{padding:74px 40px;background:var(--bg2)}
@@ -246,7 +248,7 @@ footer{background:#04050a;padding:36px 40px;display:flex;align-items:center;just
   <div class="hero-content">
     <div class="hero-tag">Motion Graphics for Creators</div>
     <h1>Make your<br>videos look<br><span class="grad">like a team</span><br>built them.</h1>
-    <p>Individual 3D logo emblems, animated subscribe buttons, intros, and overlays built for YouTube, TikTok, and Reels. The kind of stuff you see in the big channels — pick exactly what you need.</p>
+    <p>Transparent drop-in overlays for <em>your own</em> videos — 3D logo emblems, subscribe buttons, text messages, and more. They sit right on top of your footage, so you place them anywhere: floating in your room, over your shoulder, in the corner. Not background clips — overlays you control.</p>
     <div class="hero-actions">
       <a href="#emblems" class="btn-primary">Shop Emblems ↓</a>
       <a href="#effects" class="btn-ghost">See Creator Effects</a>
@@ -258,13 +260,13 @@ footer{background:#04050a;padding:36px 40px;display:flex;align-items:center;just
 <section class="emblems" id="emblems">
   <div class="section-tag reveal">AI Logo Emblems</div>
   <div class="section-title reveal">Pick Your <span class="grad">Emblems</span></div>
-  <p class="reveal" style="color:var(--muted);max-width:580px;margin:-38px 0 40px;font-size:15px;line-height:1.75">Individual 3D animated logos — buy only the brands you actually cover. Each one is a loop-ready clip rendered in glass &amp; chrome, delivered in 16:9 and 9:16 with a transparent version. <strong style="color:var(--text)">$75 each</strong>, or grab the whole set and save.</p>
+  <p class="reveal" style="color:var(--muted);max-width:600px;margin:-38px 0 40px;font-size:15px;line-height:1.75">Individual 3D animated logos — buy only the brands you actually cover. Each one comes as a <strong style="color:var(--text)">transparent overlay</strong> you drop straight onto your own video and place anywhere on screen — floating beside you, over your desk, wherever it fits your shot. <strong style="color:var(--text)">$75 each</strong>, or grab the whole set and save.</p>
 
   <div class="emblem-showcase reveal">
     <video autoplay muted loop playsinline>
       <source src="../images/ai-pack-chrome.mp4" type="video/mp4">
     </video>
-    <div class="tag-float">▶ See them in motion</div>
+    <div class="tag-float">▶ Shown on black — delivered transparent for your video</div>
   </div>
 
   <div class="emblem-grid">
@@ -360,7 +362,7 @@ footer{background:#04050a;padding:36px 40px;display:flex;align-items:center;just
         <div class="fx-tag">Animated</div>
       </div>
       <div class="fx-body">
-        <div><h3>Text Messages</h3><p>Animated chat bubbles that flow up behind you — perfect for storytime, reactions, and drama edits. Your convo, your colors.</p></div>
+        <div><h3>Text Messages</h3><p>Animated iMessage-style bubbles that flow up behind you — perfect for storytime, reactions, and drama edits. Transparent, so they sit right on your video.</p></div>
         <div class="fx-price-block"><div class="fx-price grad">$75</div><br><a href="/contact/?s=fx-messages" class="fx-buy">Order →</a></div>
       </div>
     </div>
@@ -396,7 +398,7 @@ footer{background:#04050a;padding:36px 40px;display:flex;align-items:center;just
   <div class="includes-grid">
     <div class="include-card reveal">
       <div class="include-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
-      <div><h3>3D Animated Video</h3><p>Fully rendered, loop-perfect.</p></div>
+      <div><h3>Place It Anywhere</h3><p>You choose where it sits on screen.</p></div>
     </div>
     <div class="include-card reveal">
       <div class="include-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
@@ -404,7 +406,7 @@ footer{background:#04050a;padding:36px 40px;display:flex;align-items:center;just
     </div>
     <div class="include-card reveal">
       <div class="include-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="15" x2="15" y2="15"/></svg></div>
-      <div><h3>Transparent Version</h3><p>Composite over any footage.</p></div>
+      <div><h3>Transparent Background</h3><p>Drops onto your own video — no backdrop.</p></div>
     </div>
     <div class="include-card reveal">
       <div class="include-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
