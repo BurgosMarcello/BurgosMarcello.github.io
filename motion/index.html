@@ -82,6 +82,56 @@ nav{position:sticky;top:0;z-index:100;background:rgba(8,10,15,.88);backdrop-filt
 .price-val{font-family:var(--display);font-size:36px;letter-spacing:.04em}
 .pack-price-block .btn-primary{margin-top:14px;font-size:13px;padding:12px 24px;white-space:nowrap}
 
+/* EMBLEMS */
+.emblems{padding:100px 40px;background:var(--bg)}
+.emblem-showcase{position:relative;aspect-ratio:21/9;max-width:1100px;border-radius:20px;overflow:hidden;border:1px solid var(--border);margin-bottom:18px}
+.emblem-showcase video{width:100%;height:100%;object-fit:cover}
+.emblem-showcase .tag-float{position:absolute;bottom:16px;left:18px;background:rgba(0,0,0,.55);backdrop-filter:blur(8px);border:1px solid var(--border);border-radius:8px;padding:6px 12px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.72)}
+.emblem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1100px}
+.emblem-card{background:var(--bg2);border:1px solid var(--border);border-radius:18px;overflow:hidden;transition:.25s;display:flex;flex-direction:column}
+.emblem-card:hover{border-color:rgba(162,89,255,.4);transform:translateY(-4px)}
+.emblem-thumb{aspect-ratio:1;background:#06060c;overflow:hidden}
+.emblem-thumb img{width:100%;height:100%;object-fit:cover;transition:.5s}
+.emblem-card:hover .emblem-thumb img{transform:scale(1.06)}
+.emblem-info{padding:18px 22px 0;display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.emblem-info h3{font-size:16px;font-weight:700}
+.emblem-info .sub{font-size:12px;color:var(--muted);margin-top:3px}
+.emblem-price{font-family:var(--display);font-size:28px;letter-spacing:.03em;line-height:1}
+.emblem-buy{display:block;text-align:center;margin:16px 22px 22px;padding:11px;border-radius:999px;background:var(--grad);color:#0a0a12;font-weight:700;font-size:13px;transition:.2s}
+.emblem-buy:hover{transform:translateY(-1px);box-shadow:0 8px 24px -8px rgba(162,89,255,.6)}
+.bundle-banner{max-width:1100px;margin-top:18px;background:linear-gradient(135deg,rgba(99,102,241,.13),rgba(162,89,255,.11),rgba(34,211,238,.1));border:1px solid rgba(162,89,255,.28);border-radius:18px;padding:24px 30px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.bundle-banner h3{font-size:19px;font-weight:700}
+.bundle-banner p{font-size:13px;color:var(--muted);margin-top:4px}
+.bundle-banner .btn-primary{font-size:13px;padding:12px 26px;white-space:nowrap}
+
+/* EFFECTS */
+.effects{padding:100px 40px;background:var(--bg2)}
+.fx-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;max-width:1100px}
+.fx-card{background:var(--bg);border:1px solid var(--border);border-radius:18px;overflow:hidden;transition:.25s;display:flex;flex-direction:column}
+.fx-card:hover{border-color:rgba(162,89,255,.32);transform:translateY(-3px)}
+.fx-preview{aspect-ratio:16/9;position:relative;overflow:hidden;background:radial-gradient(ellipse at center,#14141f,#07070d)}
+.fx-preview video{width:100%;height:100%;object-fit:cover}
+.fx-tag{position:absolute;top:12px;right:12px;background:rgba(0,0,0,.5);backdrop-filter:blur(8px);border:1px solid var(--border);border-radius:6px;padding:4px 9px;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+.fx-body{padding:22px 24px;display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex:1}
+.fx-body h3{font-size:18px;font-weight:700}
+.fx-body p{font-size:13px;color:var(--muted);margin-top:6px;line-height:1.6}
+.fx-price-block{text-align:right;flex-shrink:0}
+.fx-price{font-family:var(--display);font-size:30px;letter-spacing:.03em;line-height:1}
+.fx-buy{display:inline-block;margin-top:10px;padding:9px 18px;border-radius:999px;background:var(--grad);color:#0a0a12;font-weight:700;font-size:12px;white-space:nowrap;transition:.2s}
+.fx-buy:hover{transform:translateY(-1px);box-shadow:0 8px 22px -8px rgba(162,89,255,.6)}
+/* CSS subscribe-button mockup */
+.sub-mock{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:16px}
+.sub-btn{background:#ff0033;color:#fff;font-weight:700;font-size:16px;letter-spacing:.03em;padding:13px 24px;border-radius:9px;text-transform:uppercase;box-shadow:0 10px 30px -6px rgba(255,0,51,.65);animation:subpulse 2.2s ease-in-out infinite}
+@keyframes subpulse{0%,100%{transform:scale(1)}50%{transform:scale(1.07)}}
+.sub-bell{width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.07);border:1px solid var(--border);display:grid;place-items:center;color:#fff;transform-origin:50% 20%;animation:bellring 2.2s ease-in-out infinite}
+@keyframes bellring{0%,72%,100%{transform:rotate(0)}80%{transform:rotate(15deg)}88%{transform:rotate(-13deg)}94%{transform:rotate(7deg)}}
+/* CSS lower-thirds mockup */
+.lt-mock{position:absolute;left:26px;bottom:26px;right:26px}
+.lt-bar{display:block;background:var(--grad);height:4px;width:54px;border-radius:2px;margin-bottom:12px;animation:ltgrow 3.2s ease-in-out infinite}
+@keyframes ltgrow{0%,100%{width:28px;opacity:.55}50%{width:70px;opacity:1}}
+.lt-name{font-family:var(--display);font-size:34px;letter-spacing:.04em;line-height:.95}
+.lt-sub{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:8px}
+
 /* INCLUDES */
 .includes{padding:100px 40px;background:var(--bg2)}
 .includes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1100px}
@@ -144,11 +194,11 @@ footer{background:#04050a;padding:36px 40px;display:flex;align-items:center;just
   <a href="/" class="nav-logo">Burgos Studio <span class="nav-badge">Motion</span></a>
   <div class="nav-links">
     <a href="/work/">Web Design</a>
-    <a href="#packs">Packs</a>
+    <a href="#emblems">Emblems</a>
+    <a href="#effects">Effects</a>
     <a href="/brand/">Brand</a>
-    <a href="/contact/">Custom Order</a>
   </div>
-  <a href="/contact/" class="nav-cta">Get a Custom Pack →</a>
+  <a href="/contact/" class="nav-cta">Order Custom →</a>
 </nav>
 
 <!-- HERO -->
@@ -158,113 +208,120 @@ footer{background:#04050a;padding:36px 40px;display:flex;align-items:center;just
   <div class="hero-content">
     <div class="hero-tag">Motion Graphics for Creators</div>
     <h1>Make your<br>videos look<br><span class="grad">like a team</span><br>built them.</h1>
-    <p>Animated overlays, 3D floating icons, and motion elements built for YouTube, TikTok, and Reels. The kind of stuff you see in the big channels — now available for yours.</p>
+    <p>Individual 3D logo emblems, animated subscribe buttons, intros, and overlays built for YouTube, TikTok, and Reels. The kind of stuff you see in the big channels — pick exactly what you need.</p>
     <div class="hero-actions">
-      <a href="#packs" class="btn-primary">See the Packs ↓</a>
-      <a href="/contact/" class="btn-ghost">Order Something Custom</a>
+      <a href="#emblems" class="btn-primary">Shop Emblems ↓</a>
+      <a href="#effects" class="btn-ghost">See Creator Effects</a>
     </div>
   </div>
 </section>
 
-<!-- PACKS -->
-<section class="packs" id="packs">
-  <div class="section-tag reveal">AI Brand Series</div>
-  <div class="section-title reveal">The <span class="grad">AI Packs</span></div>
-  <div class="packs-stack">
+<!-- EMBLEMS -->
+<section class="emblems" id="emblems">
+  <div class="section-tag reveal">AI Logo Emblems</div>
+  <div class="section-title reveal">Pick Your <span class="grad">Emblems</span></div>
+  <p class="reveal" style="color:var(--muted);max-width:580px;margin:-38px 0 40px;font-size:15px;line-height:1.75">Individual 3D animated logos — buy only the brands you actually cover. Each one is a loop-ready clip rendered in glass &amp; chrome, delivered in 16:9 and 9:16 with a transparent version. <strong style="color:var(--text)">$75 each</strong>, or grab the whole set and save.</p>
 
-    <!-- Pack 1: Chrome -->
-    <div class="pack-card reveal">
-      <div class="pack-preview">
-        <video autoplay muted loop playsinline>
-          <source src="../images/ai-pack-chrome.mp4" type="video/mp4">
-          <img src="../images/ai-pack-chrome-poster.jpeg" alt="AI Chrome Pack preview">
-        </video>
-        <div class="preview-badge">▶ Preview</div>
-        <div class="preview-label">
-          <h3>AI Chrome Pack</h3>
-          <div class="sub">Glass &amp; Chrome · 3D Floating Logos</div>
+  <div class="emblem-showcase reveal">
+    <video autoplay muted loop playsinline>
+      <source src="../images/ai-pack-chrome.mp4" type="video/mp4">
+    </video>
+    <div class="tag-float">▶ See them in motion</div>
+  </div>
+
+  <div class="emblem-grid">
+    <div class="emblem-card reveal">
+      <div class="emblem-thumb"><img src="../images/emblem-chatgpt.jpeg" alt="ChatGPT 3D logo emblem"></div>
+      <div class="emblem-info"><div><h3>ChatGPT</h3><div class="sub">OpenAI · glass &amp; chrome</div></div><div class="emblem-price grad">$75</div></div>
+      <a href="/contact/?s=emblem-chatgpt" class="emblem-buy">Order this emblem →</a>
+    </div>
+    <div class="emblem-card reveal">
+      <div class="emblem-thumb"><img src="../images/emblem-claude.jpeg" alt="Claude 3D logo emblem"></div>
+      <div class="emblem-info"><div><h3>Claude</h3><div class="sub">Anthropic · amber glow</div></div><div class="emblem-price grad">$75</div></div>
+      <a href="/contact/?s=emblem-claude" class="emblem-buy">Order this emblem →</a>
+    </div>
+    <div class="emblem-card reveal">
+      <div class="emblem-thumb"><img src="../images/emblem-gemini.jpeg" alt="Gemini 3D logo emblem"></div>
+      <div class="emblem-info"><div><h3>Gemini</h3><div class="sub">Google · iridescent glass</div></div><div class="emblem-price grad">$75</div></div>
+      <a href="/contact/?s=emblem-gemini" class="emblem-buy">Order this emblem →</a>
+    </div>
+    <div class="emblem-card reveal">
+      <div class="emblem-thumb"><img src="../images/emblem-grok.jpeg" alt="Grok 3D logo emblem"></div>
+      <div class="emblem-info"><div><h3>Grok</h3><div class="sub">xAI · neon chrome</div></div><div class="emblem-price grad">$75</div></div>
+      <a href="/contact/?s=emblem-grok" class="emblem-buy">Order this emblem →</a>
+    </div>
+    <div class="emblem-card reveal">
+      <div class="emblem-thumb"><img src="../images/emblem-meta.jpeg" alt="Meta 3D logo emblem"></div>
+      <div class="emblem-info"><div><h3>Meta</h3><div class="sub">Meta AI · blue glass</div></div><div class="emblem-price grad">$75</div></div>
+      <a href="/contact/?s=emblem-meta" class="emblem-buy">Order this emblem →</a>
+    </div>
+    <div class="emblem-card reveal">
+      <div class="emblem-thumb"><img src="../images/emblem-midjourney.jpeg" alt="Midjourney 3D logo emblem"></div>
+      <div class="emblem-info"><div><h3>Midjourney</h3><div class="sub">chrome &amp; glass</div></div><div class="emblem-price grad">$75</div></div>
+      <a href="/contact/?s=emblem-midjourney" class="emblem-buy">Order this emblem →</a>
+    </div>
+  </div>
+
+  <div class="bundle-banner reveal">
+    <div>
+      <h3>Want the whole set?</h3>
+      <p>All 6 AI emblems — ChatGPT, Claude, Gemini, Grok, Meta &amp; Midjourney. <strong style="color:var(--text)">Save $101.</strong></p>
+    </div>
+    <div style="display:flex;align-items:center;gap:22px;flex-wrap:wrap">
+      <div class="emblem-price grad" style="font-size:38px">$349</div>
+      <a href="/contact/?s=emblem-bundle" class="btn-primary">Get all 6 →</a>
+    </div>
+  </div>
+</section>
+
+<!-- EFFECTS -->
+<section class="effects" id="effects">
+  <div class="section-tag reveal">More for Creators</div>
+  <div class="section-title reveal">Effects Creators<br><span class="grad">Actually Buy</span></div>
+  <div class="fx-grid">
+
+    <!-- Subscribe button (CSS-animated mockup) -->
+    <div class="fx-card reveal">
+      <div class="fx-preview">
+        <div class="sub-mock">
+          <div class="sub-btn">Subscribe</div>
+          <div class="sub-bell"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div>
         </div>
+        <div class="fx-tag">Animated</div>
       </div>
-      <div class="pack-body">
-        <div>
-          <div class="pack-desc">OpenAI, Gemini, Anthropic (Claude), Meta, and Mistral — rendered as reflective glass and chrome 3D objects drifting through dark space. Cinematic depth of field, volumetric light, particle dust. Drop it behind your talking head and it does the work.</div>
-          <div class="pack-chips">
-            <span class="chip">3D Chrome</span>
-            <span class="chip">Loop Ready</span>
-            <span class="chip">16:9 · 9:16</span>
-            <span class="chip">All Major AI Brands</span>
-            <span class="chip">Commercial License</span>
-          </div>
-        </div>
-        <div class="pack-price-block">
-          <div class="price-label">Starting at</div>
-          <div class="price-val grad">$75</div>
-          <a href="/contact/" class="btn-primary">Order This Pack →</a>
-        </div>
+      <div class="fx-body">
+        <div><h3>3D Subscribe Button</h3><p>A glossy animated subscribe + bell callout for your outro and CTA moments. The single most-used creator asset, in your brand colors.</p></div>
+        <div class="fx-price-block"><div class="fx-price grad">$75</div><br><a href="/contact/?s=fx-subscribe" class="fx-buy">Order →</a></div>
       </div>
     </div>
 
-    <!-- Pack 2: Holo -->
-    <div class="pack-card reveal">
-      <div class="pack-preview">
-        <video autoplay muted loop playsinline>
-          <source src="../images/ai-pack-holo.mp4" type="video/mp4">
-          <img src="../images/ai-pack-holo-poster.jpeg" alt="AI Holo Pack preview">
-        </video>
-        <div class="preview-badge">▶ Preview</div>
-        <div class="preview-label">
-          <h3>AI Holo Pack</h3>
-          <div class="sub">Holographic Panels · Blue &amp; Purple</div>
-        </div>
-      </div>
-      <div class="pack-body">
-        <div>
-          <div class="pack-desc">The same AI brand set — but rendered as glowing holographic glass panels in a dark void. Blue and purple rim lighting pulses as the camera sweeps. Gives your AI content a futuristic, cinematic feel that no screenshot can match.</div>
-          <div class="pack-chips">
-            <span class="chip">Holographic</span>
-            <span class="chip">Blue / Purple</span>
-            <span class="chip">Loop Ready</span>
-            <span class="chip">16:9 · 9:16</span>
-            <span class="chip">Commercial License</span>
-          </div>
-        </div>
-        <div class="pack-price-block">
-          <div class="price-label">Starting at</div>
-          <div class="price-val grad">$75</div>
-          <a href="/contact/" class="btn-primary">Order This Pack →</a>
-        </div>
+    <!-- Notification bell (video) -->
+    <div class="fx-card reveal">
+      <div class="fx-preview"><video autoplay muted loop playsinline><source src="../images/fx-bell.mp4" type="video/mp4"></video><div class="fx-tag">▶ Preview</div></div>
+      <div class="fx-body">
+        <div><h3>3D Notification Bell</h3><p>A ringing 3D bell sting for "turn on notifications" moments. Loop-ready with a transparent alpha version included.</p></div>
+        <div class="fx-price-block"><div class="fx-price grad">$75</div><br><a href="/contact/?s=fx-bell" class="fx-buy">Order →</a></div>
       </div>
     </div>
 
-    <!-- Pack 3: Claude Featured -->
-    <div class="pack-card reveal">
-      <div class="pack-preview">
-        <video autoplay muted loop playsinline>
-          <source src="../images/ai-pack-claude.mp4" type="video/mp4">
-          <img src="../images/ai-pack-claude-poster.jpeg" alt="AI Claude Pack preview">
-        </video>
-        <div class="preview-badge">▶ Preview</div>
-        <div class="preview-label">
-          <h3>Claude Featured Pack</h3>
-          <div class="sub">Anthropic · Amber Glow · 3D Center Stage</div>
-        </div>
+    <!-- Logo intro (holo video) -->
+    <div class="fx-card reveal">
+      <div class="fx-preview"><video autoplay muted loop playsinline><source src="../images/ai-pack-holo.mp4" type="video/mp4"></video><div class="fx-tag">▶ Preview</div></div>
+      <div class="fx-body">
+        <div><h3>Animated Logo Intro</h3><p>A cinematic 3D intro sting built around your logo — holographic reveal in your colors. Open every video like a real brand.</p></div>
+        <div class="fx-price-block"><div class="fx-price grad">$95</div><br><a href="/contact/?s=fx-intro" class="fx-buy">Order →</a></div>
       </div>
-      <div class="pack-body">
-        <div>
-          <div class="pack-desc">Claude front and center — the Anthropic figure rendered in glowing amber/orange 3D with the surrounding AI brand logos drifting in the background. Built for creators who cover Claude specifically, or Anthropic content. Warm, premium, and unlike anything else out there.</div>
-          <div class="pack-chips">
-            <span class="chip">Claude / Anthropic</span>
-            <span class="chip">Amber Glow</span>
-            <span class="chip">3D Featured</span>
-            <span class="chip">Loop Ready</span>
-            <span class="chip">Commercial License</span>
-          </div>
-        </div>
-        <div class="pack-price-block">
-          <div class="price-label">Starting at</div>
-          <div class="price-val grad">$75</div>
-          <a href="/contact/" class="btn-primary">Order This Pack →</a>
-        </div>
+    </div>
+
+    <!-- Lower thirds (CSS-animated mockup) -->
+    <div class="fx-card reveal">
+      <div class="fx-preview">
+        <div class="lt-mock"><span class="lt-bar"></span><div class="lt-name">YOUR NAME</div><div class="lt-sub">Creator · Your Channel</div></div>
+        <div class="fx-tag">Animated</div>
+      </div>
+      <div class="fx-body">
+        <div><h3>Lower Thirds Pack</h3><p>Animated name + title bars that slide in clean. Perfect for intros, guest names, and section labels across your videos.</p></div>
+        <div class="fx-price-block"><div class="fx-price grad">$55</div><br><a href="/contact/?s=fx-lowerthirds" class="fx-buy">Order →</a></div>
       </div>
     </div>
 
@@ -274,7 +331,7 @@ footer{background:#04050a;padding:36px 40px;display:flex;align-items:center;just
 <!-- WHAT'S INCLUDED -->
 <section class="includes" id="includes">
   <div class="section-tag reveal">What You Get</div>
-  <div class="section-title reveal">Everything<br>in the Pack</div>
+  <div class="section-title reveal">What Comes<br>in Every Order</div>
   <div class="includes-grid">
     <div class="include-card reveal">
       <div class="include-icon">
@@ -359,7 +416,7 @@ footer{background:#04050a;padding:36px 40px;display:flex;align-items:center;just
 <!-- COMING SOON -->
 <section class="coming">
   <div class="section-tag reveal">Up Next</div>
-  <div class="section-title reveal">More Packs<br>in the Works</div>
+  <div class="section-title reveal">More Drops<br>in the Works</div>
   <div class="coming-grid">
     <div class="coming-card reveal">
       <div class="coming-badge-pill">Coming Soon</div>
