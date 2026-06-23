@@ -109,7 +109,7 @@
   .tperson .rl{font-size:12px;color:var(--muted)}
 
   /* pricing */
-  .pricing-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .pricing-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
   .p-card{border:1px solid var(--border);border-radius:20px;padding:28px 24px;background:var(--glass);backdrop-filter:blur(8px);transition:.25s;display:flex;flex-direction:column}
   .p-card:hover{border-color:rgba(255,45,146,.3);transform:translateY(-3px)}
   .p-card.featured{border-color:transparent;background:var(--bg3);position:relative}
@@ -182,6 +182,7 @@
       <a href="/work/">Web Design</a>
       <a href="/motion/">Motion FX</a>
       <a href="/brand/">Brand</a>
+      <a href="/automation/">Automation</a>
       <a href="/about/">About</a>
       <a href="/contact/" class="btn btn-primary" style="padding:9px 18px">Get a free demo</a>
     </nav>
@@ -200,14 +201,14 @@
       <div class="hero-content">
         <div class="pill reveal"><span class="dot"></span> Available for new projects</div>
         <h1 class="reveal"><span class="grad-text">Web</span><span class="sep">·</span><span class="grad-text">Motion</span><span class="sep">·</span><span class="grad-text">Brand</span></h1>
-        <p class="hero-sub reveal">One studio. Everything your business needs to look like the real deal — custom websites, cinematic motion graphics, brand identity, and getting found on Google.</p>
+        <p class="hero-sub reveal">One studio. Everything your business needs to look like the real deal — custom websites, cinematic motion graphics, brand identity, getting found on Google, and automating the busywork.</p>
         <div class="hero-cta reveal">
           <a href="/contact/" class="btn btn-primary">Get a free demo →</a>
           <a href="/work/" class="btn btn-ghost">See the work</a>
         </div>
         <div class="stats reveal">
           <div class="stat"><div class="n">$300</div><div class="l">Starting price</div></div>
-          <div class="stat"><div class="n">4 services</div><div class="l">Web · Motion · Brand · SEO</div></div>
+          <div class="stat"><div class="n">5 services</div><div class="l">Web · Motion · Brand · SEO · Automation</div></div>
           <div class="stat"><div class="n">2 weeks</div><div class="l">Avg. delivery</div></div>
           <div class="stat"><div class="n">1 person</div><div class="l">You work with me directly</div></div>
         </div>
@@ -303,6 +304,21 @@
           </div>
         </div>
 
+        <div class="pillar reveal" style="grid-column:1/-1;flex-direction:row;align-items:center;gap:26px;padding:28px 30px;flex-wrap:wrap">
+          <div style="flex-shrink:0;width:88px;height:88px;border-radius:20px;background:var(--grad-soft);display:grid;place-items:center">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="auto1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#a259ff"/><stop offset="55%" stop-color="#ff2d92"/><stop offset="100%" stop-color="#ff7a45"/></linearGradient></defs><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" stroke="url(#auto1)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div style="flex:1;min-width:240px">
+            <div class="tags" style="margin-bottom:8px"><span class="tag" style="color:#0a0a12;background:var(--grad);border:0">★ New</span><span class="tag">Automation</span></div>
+            <h3 style="font-size:23px;font-weight:700;letter-spacing:-.02em">Put the busywork on autopilot</h3>
+            <p style="color:var(--muted);font-size:14.5px;margin-top:6px;max-width:64ch">Lead follow-ups, booking, review requests, reminders — I wire the repetitive stuff to run itself. Pairs perfectly with your site.</p>
+          </div>
+          <div style="flex-shrink:0;display:flex;flex-direction:column;align-items:flex-start;gap:12px">
+            <div style="font-size:13px;color:var(--muted)">from <span style="font-size:22px;font-weight:800;color:var(--text);letter-spacing:-.02em">$400</span></div>
+            <a href="/automation/" class="btn-sm btn-sm-primary">Explore Automation →</a>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -391,7 +407,7 @@
         <div class="p-card reveal">
           <div class="p-title">SEO / Google</div>
           <div class="p-desc">Get found by customers searching for what you do.</div>
-          <div class="p-price"><sup>$</sup>250</div>
+          <div class="p-price"><sup>$</sup>300</div>
           <ul class="p-features">
             <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Google Business setup</span></li>
             <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Local SEO optimization</span></li>
@@ -403,9 +419,23 @@
         </div>
 
         <div class="p-card reveal">
+          <div class="p-title">Automation</div>
+          <div class="p-desc">Put the repetitive busywork on autopilot.</div>
+          <div class="p-price"><sup>$</sup>400</div>
+          <ul class="p-features">
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>One built automation</span></li>
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Lead, booking or review flow</span></li>
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Connects your tools</span></li>
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Tested end to end</span></li>
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Live in days</span></li>
+          </ul>
+          <a href="/automation/" class="btn btn-ghost p-btn">Explore automation</a>
+        </div>
+
+        <div class="p-card reveal">
           <div class="p-title">Brand Identity</div>
           <div class="p-desc">Everything you need to look professional from day one.</div>
-          <div class="p-price"><sup>$</sup>350</div>
+          <div class="p-price"><sup>$</sup>450</div>
           <ul class="p-features">
             <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Logo + 2 variations</span></li>
             <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Color palette with codes</span></li>
@@ -419,7 +449,7 @@
         <div class="p-card featured reveal">
           <div class="p-title">Web Design</div>
           <div class="p-desc">A full custom website that makes your business look serious.</div>
-          <div class="p-price"><sup>$</sup>750</div>
+          <div class="p-price"><sup>$</sup>950</div>
           <ul class="p-features">
             <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Custom design — no templates</span></li>
             <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Mobile responsive</span></li>
@@ -510,6 +540,7 @@
       <a href="/work/">Web Design</a>
       <a href="/motion/">Motion FX</a>
       <a href="/brand/">Brand</a>
+      <a href="/automation/">Automation</a>
       <a href="/about/">About</a>
       <a href="/contact/">Contact</a>
     </div>
