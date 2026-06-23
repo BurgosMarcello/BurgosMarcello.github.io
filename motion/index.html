@@ -97,7 +97,7 @@ nav{position:sticky;top:0;z-index:100;background:rgba(8,10,15,.9);backdrop-filte
 .emblem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1100px}
 .emblem-card{background:var(--bg2);border:1px solid var(--border);border-radius:18px;overflow:hidden;transition:.25s;display:flex;flex-direction:column}
 .emblem-card:hover{border-color:rgba(255,45,146,.4);transform:translateY(-4px)}
-.emblem-thumb{aspect-ratio:1;background:#06060c;overflow:hidden}
+.emblem-thumb{aspect-ratio:1;background:radial-gradient(circle at 50% 44%,#1a1330,#08070e);overflow:hidden}
 .emblem-thumb img{width:100%;height:100%;object-fit:cover;transition:.5s}
 .emblem-card:hover .emblem-thumb img{transform:scale(1.06)}
 .emblem-info{padding:18px 22px 0;display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
@@ -149,7 +149,7 @@ nav{position:sticky;top:0;z-index:100;background:rgba(8,10,15,.9);backdrop-filte
 @media(max-width:720px){.fx-card.wide{flex-direction:column}.fx-card.wide .fx-preview{width:100%;min-height:0;aspect-ratio:16/9}}
 /* CSS thumbs-up mockup */
 .like-mock{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
-.like-btn{width:88px;height:88px;border-radius:50%;background:var(--grad);display:grid;place-items:center;color:#0a0a12;box-shadow:0 14px 44px -8px rgba(255,45,146,.6);animation:likepop 2.3s ease-in-out infinite}
+.like-btn{width:88px;height:88px;border-radius:50%;background:linear-gradient(180deg,#1e9bff,#0a84ff);display:grid;place-items:center;color:#fff;box-shadow:0 14px 44px -8px rgba(10,132,255,.6);animation:likepop 2.3s ease-in-out infinite}
 .like-btn svg{width:42px;height:42px}
 @keyframes likepop{0%,60%,100%{transform:scale(1) rotate(0)}70%{transform:scale(1.18) rotate(-10deg)}82%{transform:scale(1.06) rotate(5deg)}}
 .like-count{position:absolute;left:50%;top:calc(50% - 82px);transform:translateX(-50%);font-family:var(--display);font-size:32px;letter-spacing:.04em;color:#fff;opacity:0;animation:countpop 2.3s ease-in-out infinite}
@@ -262,41 +262,46 @@ footer{background:#04050a;padding:36px 40px;display:flex;align-items:center;just
   <div class="section-title reveal">Pick Your <span class="grad">Emblems</span></div>
   <p class="reveal" style="color:var(--muted);max-width:600px;margin:-38px 0 40px;font-size:15px;line-height:1.75">Individual 3D animated logos — buy only the brands you actually cover. Each one comes as a <strong style="color:var(--text)">transparent overlay</strong> you drop straight onto your own video and place anywhere on screen — floating beside you, over your desk, wherever it fits your shot. <strong style="color:var(--text)">$75 each</strong>, or grab the whole set and save.</p>
 
+  <div class="emblem-showcase reveal" style="aspect-ratio:16/9">
+    <img src="../images/motion-room.jpeg" alt="A 3D AI emblem dropped into a creator's video as a floating overlay" style="width:100%;height:100%;object-fit:cover">
+    <div class="tag-float">Drop any emblem into your own video — place it anywhere in your shot</div>
+  </div>
+
   <div class="emblem-showcase reveal">
     <video autoplay muted loop playsinline>
       <source src="../images/ai-pack-chrome.mp4" type="video/mp4">
     </video>
-    <div class="tag-float">▶ Shown on black — delivered transparent for your video</div>
+    <div class="tag-float">▶ The emblem itself — shown on black, delivered transparent</div>
   </div>
 
   <div class="emblem-grid">
     <div class="emblem-card reveal">
-      <div class="emblem-thumb"><img src="../images/emblem-chatgpt.jpeg" alt="ChatGPT 3D logo emblem"></div>
+      <div class="emblem-thumb"><img src="../images/emblem-chatgpt.png" alt="ChatGPT 3D logo emblem"></div>
       <div class="emblem-info"><div><h3>ChatGPT</h3><div class="sub">OpenAI · glass &amp; chrome</div></div><div class="emblem-price grad">$75</div></div>
       <a href="/contact/?s=emblem-chatgpt" class="emblem-buy">Order this emblem →</a>
     </div>
     <div class="emblem-card reveal">
-      <div class="emblem-thumb"><img src="../images/emblem-claude.jpeg" alt="Claude bot 3D character emblem"></div>
+      <div class="emblem-thumb"><img src="../images/emblem-claude.png" alt="Claude bot 3D character emblem"></div>
       <div class="emblem-info"><div><h3>Claude</h3><div class="sub">Anthropic · the Claude bot</div></div><div class="emblem-price grad">$75</div></div>
       <a href="/contact/?s=emblem-claude" class="emblem-buy">Order this emblem →</a>
     </div>
     <div class="emblem-card reveal">
-      <div class="emblem-thumb"><img src="../images/emblem-gemini.jpeg" alt="Gemini 3D logo emblem"></div>
+      <div class="emblem-thumb"><img src="../images/emblem-gemini.png" alt="Gemini 3D logo emblem"></div>
       <div class="emblem-info"><div><h3>Gemini</h3><div class="sub">Google · iridescent glass</div></div><div class="emblem-price grad">$75</div></div>
       <a href="/contact/?s=emblem-gemini" class="emblem-buy">Order this emblem →</a>
     </div>
     <div class="emblem-card reveal">
-      <div class="emblem-thumb"><img src="../images/emblem-grok.jpeg" alt="Grok 3D logo emblem"></div>
+      <div class="emblem-thumb"><img src="../images/emblem-grok.png" alt="Grok 3D logo emblem"></div>
       <div class="emblem-info"><div><h3>Grok</h3><div class="sub">xAI · neon chrome</div></div><div class="emblem-price grad">$75</div></div>
       <a href="/contact/?s=emblem-grok" class="emblem-buy">Order this emblem →</a>
     </div>
     <div class="emblem-card reveal">
-      <div class="emblem-thumb"><img src="../images/emblem-meta.jpeg" alt="Meta 3D logo emblem"></div>
+      <div class="emblem-thumb"><img src="../images/emblem-meta.png" alt="Meta 3D logo emblem"></div>
       <div class="emblem-info"><div><h3>Meta</h3><div class="sub">Meta AI · blue glass</div></div><div class="emblem-price grad">$75</div></div>
       <a href="/contact/?s=emblem-meta" class="emblem-buy">Order this emblem →</a>
     </div>
     <div class="emblem-card reveal">
-      <div class="emblem-thumb"><img src="../images/emblem-midjourney.jpeg" alt="Midjourney 3D logo emblem"></div>
+      <div class="emblem-thumb"><img src="../images/emblem-midjourney.png" alt="Midjourney 3D logo emblem"></div>
       <div class="emblem-info"><div><h3>Midjourney</h3><div class="sub">chrome &amp; glass</div></div><div class="emblem-price grad">$75</div></div>
       <a href="/contact/?s=emblem-midjourney" class="emblem-buy">Order this emblem →</a>
     </div>
