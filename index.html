@@ -190,16 +190,16 @@
 @media(max-width:900px){.nav-links{position:fixed;inset:66px 0 auto 0;flex-direction:column;background:var(--bg2);border-bottom:1px solid var(--border);padding:18px 24px;gap:18px;display:none}.nav-links.open{display:flex}.nav-toggle{display:block}}</style>
 </head>
 <body>
+<script>document.documentElement.className+=' js';</script>
 
 <header>
   <div class="wrap nav">
     <a href="/" class="brand"><svg viewBox="0 0 64 64" height="30" style="display:block;flex-shrink:0" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#a259ff"/><stop offset="55%" stop-color="#ff2d92"/><stop offset="100%" stop-color="#ff7a45"/></linearGradient></defs><rect width="64" height="64" rx="15" fill="url(#lg)"/><text x="32" y="46" font-family="Space Grotesk,sans-serif" font-size="40" font-weight="700" fill="#0a0a12" text-anchor="middle">B</text></svg> Burgos Studio</a>
     <nav class="nav-links" id="menu">
-      <a href="/work/">Web Design</a>
-      <a href="/motion/">Motion FX</a>
-      <a href="/brand/">Brand</a>
-      <a href="/automation/">Automation</a>
+      <a href="/#work">Work</a>
+      <a href="/#pricing">Pricing</a>
       <a href="/about/">About</a>
+      <a href="/contact-me/">Contact me</a>
       <a href="/contact/" class="btn btn-primary" style="padding:9px 18px">Get a free demo</a>
     </nav>
     <button class="nav-toggle" id="toggle" aria-label="Menu">☰</button>
@@ -264,6 +264,53 @@
     })();
   </script>
 
+  <!-- AD REEL + TABS styling -->
+  <style>
+    .ad-section{padding-top:0}
+    .ad-frame{position:relative;aspect-ratio:16/9;border:1px solid var(--border);border-radius:24px;overflow:hidden;background:var(--bg2);box-shadow:0 34px 90px -34px rgba(255,45,146,.4)}
+    .ad-frame video{width:100%;height:100%;object-fit:cover;display:block}
+    .ad-dots{display:flex;gap:7px;justify-content:center;margin-top:16px}
+    .ad-dots i{width:8px;height:8px;border-radius:50%;background:var(--border);transition:.25s;cursor:pointer}
+    .ad-dots i.on{background:var(--grad);width:22px;border-radius:4px}
+    [hidden]{display:none}
+    .tabs{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:0 auto 32px;padding:0 24px}
+    .tab{font:inherit;font-weight:600;font-size:14px;padding:11px 22px;border-radius:999px;border:1px solid var(--border);background:var(--glass);color:var(--muted);cursor:pointer;transition:.2s}
+    .tab:hover{color:var(--text);border-color:var(--v)}
+    .tab[aria-selected="true"]{background:var(--grad);color:#0a0a12;border-color:transparent}
+    .tab:focus-visible{outline:none;box-shadow:0 0 0 3px rgba(255,45,146,.4)}
+    html.js .tabpanel[hidden]{display:none}
+    html:not(.js) .tabs{display:none}
+    html:not(.js) .tabpanel[hidden]{display:block!important}
+    .craft-clip{position:relative;z-index:1;width:100%;max-width:360px;aspect-ratio:16/9;object-fit:cover;border-radius:16px;border:1px solid var(--border);box-shadow:0 24px 46px -16px rgba(0,0,0,.6)}
+  </style>
+
+  <!-- AD REEL — our products in real use (always visible, above the tabs) -->
+  <section class="ad-section">
+    <div class="wrap">
+      <div class="sec-head centered reveal" style="margin-bottom:22px">
+        <span class="eyebrow">In action</span>
+        <h2>Our products, in the real world.</h2>
+        <p>Real websites, real motion graphics, real brand work — here's what you're actually buying.</p>
+      </div>
+      <figure class="ad-reel reveal" style="margin:0">
+        <div class="ad-frame">
+          <video id="ad-video" muted playsinline autoplay></video>
+        </div>
+        <div class="ad-dots" id="ad-dots" aria-hidden="true"></div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- TABS -->
+  <div class="tabs" role="tablist" aria-label="Browse the studio">
+    <button class="tab" role="tab" id="tab-services" aria-selected="true" aria-controls="panel-services" tabindex="0">Services</button>
+    <button class="tab" role="tab" id="tab-work" aria-selected="false" aria-controls="panel-work" tabindex="-1">Work &amp; Proof</button>
+    <button class="tab" role="tab" id="tab-pricing" aria-selected="false" aria-controls="panel-pricing" tabindex="-1">Pricing</button>
+    <button class="tab" role="tab" id="tab-faq" aria-selected="false" aria-controls="panel-faq" tabindex="-1">FAQ</button>
+  </div>
+
+  <div class="tabpanel" id="panel-services" role="tabpanel" aria-labelledby="tab-services" tabindex="0">
+
   <!-- SERVICE PILLARS -->
   <section style="padding-top:0">
     <div class="wrap">
@@ -306,7 +353,7 @@
             <p>3D animated overlays, floating logo packs, and cinematic motion graphics built for YouTube and TikTok creators. Ready to drop into any editor.</p>
             <div class="pillar-cta">
               <!-- Replace href with Polar checkout link once set up at polar.sh (merchant-of-record — handles sales tax/VAT for you) -->
-              <a href="/contact/?s=motion" class="btn-sm btn-sm-primary">Order a pack →</a>
+              <a href="/motion/" class="btn-sm btn-sm-primary">Order a pack →</a>
               <a href="/motion/" class="btn-sm btn-sm-ghost">See packs</a>
             </div>
           </div>
@@ -370,7 +417,9 @@
       </div>
     </div>
   </section>
+  </div><!-- /panel-services -->
 
+  <div class="tabpanel" id="panel-work" role="tabpanel" aria-labelledby="tab-work" tabindex="0" hidden>
   <!-- FEATURED WORK -->
   <section style="background:var(--bg2)">
     <div class="wrap">
@@ -449,10 +498,12 @@
 
         <div class="craft-stage reveal">
           <div class="glow"></div>
-          <img class="craft-emblem" src="images/emblem-chatgpt.png" alt="A 3D glass and chrome motion emblem — a real Burgos Studio product" />
+          <video class="craft-clip" muted loop autoplay playsinline aria-label="Our claudebot motion emblem walking on a creator's desk">
+            <source src="images/claudebot-emblem.mp4" type="video/mp4">
+          </video>
           <div class="craft-cap">
-            <div class="t">A real motion emblem</div>
-            <div class="d">3D glass &amp; chrome, animated to drop into any video.<br><a href="/motion/" style="color:var(--v);text-decoration:underline;text-underline-offset:3px">See the motion packs →</a></div>
+            <div class="t">Your emblem, alive in real videos</div>
+            <div class="d">3D motion emblems &amp; overlays creators actually use.<br><a href="/motion/" style="color:var(--v);text-decoration:underline;text-underline-offset:3px">See the motion packs →</a></div>
           </div>
         </div>
 
@@ -512,7 +563,9 @@
       </div>
     </div>
   </section>
+  </div><!-- /panel-work -->
 
+  <div class="tabpanel" id="panel-pricing" role="tabpanel" aria-labelledby="tab-pricing" tabindex="0" hidden>
   <!-- PRICING -->
   <section style="background:var(--bg2)">
     <div class="wrap">
@@ -590,14 +643,16 @@
             <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Editor-ready MP4</span></li>
             <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Commercial license</span></li>
           </ul>
-          <a href="/contact/?s=motion" class="btn btn-ghost p-btn">Order a pack</a>
+          <a href="/motion/" class="btn btn-ghost p-btn">Order a pack</a>
         </div>
 
       </div>
       <p style="text-align:center;color:var(--faint);font-size:13px;margin-top:22px">Bundle Brand + Web and save $100. <a href="/contact/?s=bundle" style="color:var(--v);text-decoration:underline;text-underline-offset:3px">Ask about the bundle →</a></p>
     </div>
   </section>
+  </div><!-- /panel-pricing -->
 
+  <div class="tabpanel" id="panel-faq" role="tabpanel" aria-labelledby="tab-faq" tabindex="0" hidden>
   <!-- FAQ -->
   <section>
     <div class="wrap">
@@ -634,6 +689,7 @@
       </div>
     </div>
   </section>
+  </div><!-- /panel-faq -->
 
   <!-- CTA BAND -->
   <section style="padding-bottom:88px">
@@ -656,12 +712,12 @@
   <div class="wrap foot">
     <span class="brand-sm" style="display:flex;align-items:center;gap:9px;font-weight:700"><svg viewBox="0 0 64 64" height="22" style="display:block;flex-shrink:0" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="fg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#a259ff"/><stop offset="55%" stop-color="#ff2d92"/><stop offset="100%" stop-color="#ff7a45"/></linearGradient></defs><rect width="64" height="64" rx="15" fill="url(#fg)"/><text x="32" y="46" font-family="Space Grotesk,sans-serif" font-size="40" font-weight="700" fill="#0a0a12" text-anchor="middle">B</text></svg> Burgos Studio</span>
     <div class="foot-links">
-      <a href="/work/">Web Design</a>
+      <a href="/#work">Work</a>
+      <a href="/#pricing">Pricing</a>
       <a href="/motion/">Motion FX</a>
-      <a href="/brand/">Brand</a>
-      <a href="/automation/">Automation</a>
       <a href="/about/">About</a>
-      <a href="/contact/">Contact</a>
+      <a href="/contact-me/">Contact me</a>
+      <a href="/contact/">Free demo</a>
     </div>
     <span>© <span id="yr"></span> Burgos Studio</span>
   </div>
@@ -674,6 +730,43 @@
   m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){m.classList.remove('open')})});
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.08,rootMargin:'0px 0px -40px 0px'});
   document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+
+  /* ===== Tabs ===== */
+  var tabs=[].slice.call(document.querySelectorAll('.tab'));
+  function activate(tab,setHash){
+    tabs.forEach(function(t){
+      var sel=t===tab; t.setAttribute('aria-selected',sel); t.tabIndex=sel?0:-1;
+      var p=document.getElementById(t.getAttribute('aria-controls'));
+      if(sel){ p.removeAttribute('hidden'); p.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in')}); }
+      else{ p.setAttribute('hidden',''); }
+    });
+    if(setHash){ var id=tab.id.replace('tab-',''); history.replaceState(null,'', id==='services'?location.pathname:'#'+id); }
+  }
+  tabs.forEach(function(t){ t.addEventListener('click',function(){activate(t,true);t.focus();}); });
+  var tablist=document.querySelector('[role="tablist"]');
+  if(tablist){ tablist.addEventListener('keydown',function(e){
+    var i=tabs.indexOf(document.activeElement),n=tabs.length; if(i<0)return;
+    var k=e.key,j=-1;
+    if(k==='ArrowRight')j=(i+1)%n; else if(k==='ArrowLeft')j=(i-1+n)%n; else if(k==='Home')j=0; else if(k==='End')j=n-1;
+    if(j>-1){ e.preventDefault(); activate(tabs[j],true); tabs[j].focus(); }
+  }); }
+  function openFromHash(){
+    var h=(location.hash||'').replace('#',''), map={work:'tab-work',pricing:'tab-pricing',faq:'tab-faq',services:'tab-services'};
+    if(map[h]){ activate(document.getElementById(map[h]),false); }
+  }
+  openFromHash();
+  window.addEventListener('hashchange',openFromHash);
+
+  /* ===== Ad reel — play the product clips as one continuous reel ===== */
+  (function(){
+    var v=document.getElementById('ad-video'); if(!v) return;
+    var clips=['images/ad-web.mp4','images/ad-motion.mp4','images/ad-phone.mp4'], i=0;
+    var wrap=document.getElementById('ad-dots');
+    var dots=clips.map(function(_,k){ var d=document.createElement('i'); d.addEventListener('click',function(){go(k)}); wrap.appendChild(d); return d; });
+    function go(k){ i=k; v.src=clips[i]; v.load(); v.play().catch(function(){}); dots.forEach(function(d,x){d.classList.toggle('on',x===i)}); }
+    v.addEventListener('ended',function(){ go((i+1)%clips.length); });
+    go(0);
+  })();
 </script>
 </body>
 </html>

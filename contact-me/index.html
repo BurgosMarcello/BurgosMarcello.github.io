@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Contact Me — Burgos Studio</title>
+<meta name="description" content="Reach Marcello directly — call, text, or email. For a new project, grab a free demo." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%23a259ff'/%3E%3Cstop offset='55%25' stop-color='%23ff2d92'/%3E%3Cstop offset='100%25' stop-color='%23ff7a45'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='url(%23g)'/%3E%3Ctext x='32' y='46' font-family='system-ui,sans-serif' font-size='42' font-weight='800' fill='%230a0a12' text-anchor='middle'%3EB%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{--bg:#0a0a12;--bg2:#101019;--bg3:#171724;--text:#f4f4f8;--muted:#9b9bb4;--faint:#62627c;--i:#a259ff;--v:#ff2d92;--c:#ff7a45;--accent:#ff2d92;--accent-soft:rgba(255,45,146,.13);--grad:linear-gradient(135deg,#a259ff 0%,#ff2d92 52%,#ff7a45 100%);--grad-soft:linear-gradient(135deg,rgba(162,89,255,.16),rgba(255,45,146,.16),rgba(255,122,69,.16));--border:rgba(255,255,255,.08);--glass:rgba(255,255,255,.035);--maxw:1140px;--sans:"Space Grotesk",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;line-height:1.6;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  .eyebrow{font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14px;padding:13px 24px;border-radius:999px;transition:.25s;cursor:pointer;border:1px solid transparent}
+  .btn-primary{background:var(--grad);color:#0a0a12;box-shadow:0 6px 24px -8px rgba(255,45,146,.5)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 36px -10px rgba(255,45,146,.7)}
+
+  header{position:sticky;top:0;z-index:50;backdrop-filter:blur(16px);background:rgba(10,10,18,.72);border-bottom:1px solid var(--border)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:66px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:-.01em;font-size:17px}
+  .nav-links{display:flex;align-items:center;gap:32px}
+  .nav-links a{font-size:14px;color:var(--muted);font-weight:500;transition:.2s}
+  .nav-links a:hover,.nav-links a.active{color:var(--text)}
+  .nav-toggle{display:none;background:none;border:0;color:var(--text);font-size:24px;cursor:pointer}
+
+  .contact-hero{padding:88px 0 56px;text-align:center;position:relative}
+  .contact-hero::before{content:"";position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:640px;height:640px;background:radial-gradient(circle,rgba(255,45,146,.14),transparent 60%);pointer-events:none;z-index:-1}
+  .contact-hero .eyebrow{margin-bottom:18px}
+  .contact-hero h1{font-size:clamp(36px,6.5vw,68px);font-weight:800;letter-spacing:-.035em;line-height:1.05;max-width:16ch;margin:0 auto}
+  .contact-hero h1 .hl{color:var(--accent)}
+  .contact-hero p{color:var(--muted);font-size:clamp(17px,2.5vw,20px);max-width:52ch;margin:22px auto 0}
+  .demo-link{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--text);border:1px solid var(--border);border-radius:999px;padding:10px 20px;margin-top:28px;background:var(--glass);transition:.25s}
+  .demo-link:hover{border-color:var(--v);box-shadow:0 0 0 1px rgba(255,45,146,.4)}
+  .demo-link span{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;font-weight:700}
+
+  section{padding:64px 0 80px}
+
+  .contact-options{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:860px;margin:0 auto}
+  .contact-card{background:var(--bg2);border:1px solid var(--border);border-radius:24px;padding:44px 38px;transition:.25s;display:block}
+  .contact-card:hover{border-color:rgba(255,45,146,.4);transform:translateY(-4px)}
+  .card-actions{display:flex;flex-direction:column;gap:10px;margin-top:20px;border-top:1px solid var(--border);padding-top:20px}
+  .card-btn{display:flex;align-items:center;justify-content:center;gap:8px;font-size:14px;font-weight:600;padding:12px 20px;border-radius:999px;transition:.25s;text-align:center;border:1px solid transparent}
+  .card-btn-primary{background:var(--accent);color:#0a0a12}
+  .card-btn-primary:hover{box-shadow:0 8px 24px -8px rgba(255,45,146,.5);transform:translateY(-1px)}
+  .card-btn-ghost{border-color:var(--border);color:var(--muted)}
+  .card-btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+  .contact-icon{width:56px;height:56px;border-radius:16px;background:var(--accent-soft);display:grid;place-items:center;margin-bottom:24px}
+  .contact-icon svg{width:26px;height:26px;stroke:var(--accent);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .contact-card h3{font-size:24px;font-weight:800;letter-spacing:-.02em}
+  .contact-card .contact-detail{font-size:20px;font-weight:700;color:var(--accent);margin-top:6px}
+  .contact-card p{color:var(--muted);font-size:15px;margin-top:14px;line-height:1.6}
+  .contact-card .avail{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;letter-spacing:.04em;color:var(--faint);margin-top:18px;border-top:1px solid var(--border);padding-top:16px;width:100%}
+  .back-line{text-align:center;color:var(--muted);margin-top:44px;font-size:15px}
+  .back-line a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+
+  footer{border-top:1px solid var(--border);padding:32px 0;color:var(--faint);font-size:14px}
+  .foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+  .foot .brand-sm{display:flex;align-items:center;gap:9px;color:var(--text);font-weight:700}
+
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:860px){.contact-options{grid-template-columns:1fr}}
+  @media(max-width:900px){.nav-links{position:fixed;inset:66px 0 auto 0;flex-direction:column;background:var(--bg2);border-bottom:1px solid var(--border);padding:18px 24px;gap:18px;display:none}.nav-links.open{display:flex}.nav-toggle{display:block}}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="/" class="brand"><svg viewBox="0 0 64 64" height="32" style="display:block;flex-shrink:0" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="cmlg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#a259ff"/><stop offset="55%" stop-color="#ff2d92"/><stop offset="100%" stop-color="#ff7a45"/></linearGradient></defs><rect width="64" height="64" rx="15" fill="url(#cmlg)"/><text x="32" y="46" font-family="Space Grotesk,sans-serif" font-size="40" font-weight="700" fill="#0a0a12" text-anchor="middle">B</text></svg> Burgos Studio</a>
+    <nav class="nav-links" id="menu">
+      <a href="/#work">Work</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/about/">About</a>
+      <a href="/contact-me/" class="active">Contact me</a>
+      <a href="/contact/" class="btn btn-primary" style="padding:9px 18px">Get a free demo</a>
+    </nav>
+    <button class="nav-toggle" id="toggle" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<main>
+  <div class="contact-hero reveal">
+    <div class="wrap">
+      <div class="eyebrow">Contact</div>
+      <h1>Reach me <span class="hl">directly.</span></h1>
+      <p>Questions, a quick hello, or anything that isn't a project request — here's how to get me, person to person.</p>
+      <a href="/contact/" class="demo-link">Looking to start a project? <span>Get a free demo →</span></a>
+    </div>
+  </div>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="contact-options">
+        <div class="contact-card reveal">
+          <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.37 2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 6.29 6.29l.98-.98a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7a2 2 0 0 1 1.72 2z"/></svg></div>
+          <h3>Call or text</h3>
+          <div class="contact-detail">970-412-3085</div>
+          <p>Fastest way to reach me. I respond quickly — usually same day.</p>
+          <div class="card-actions">
+            <a href="sms:+19704123085?body=Hi%20Marcello!%20I%27m%20%5Bname%5D%20%E2%80%94%20" class="card-btn card-btn-primary">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              Text me
+            </a>
+            <a href="tel:+19704123085" class="card-btn card-btn-ghost">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.37 2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 6.29 6.29l.98-.98a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7a2 2 0 0 1 1.72 2z"/></svg>
+              Or just call
+            </a>
+          </div>
+          <div class="avail">Available M–F · 9am–6pm MT</div>
+        </div>
+        <div class="contact-card reveal">
+          <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <h3>Send an email</h3>
+          <div class="contact-detail">burgossstudio@gmail.com</div>
+          <p>Prefer email? Drop me a line anytime — I'll get back to you within 24 hours.</p>
+          <div class="card-actions">
+            <a href="mailto:burgossstudio@gmail.com?subject=Hi%20Marcello" class="card-btn card-btn-primary">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              Open email app
+            </a>
+          </div>
+          <div class="avail">I reply within 24 hours · Anytime</div>
+        </div>
+      </div>
+      <p class="back-line reveal">Ready to see what I'd build for you? <a href="/contact/">Get a free demo →</a></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span class="brand-sm"><svg viewBox="0 0 64 64" height="24" style="display:block;flex-shrink:0" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="cmfg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#a259ff"/><stop offset="55%" stop-color="#ff2d92"/><stop offset="100%" stop-color="#ff7a45"/></linearGradient></defs><rect width="64" height="64" rx="15" fill="url(#cmfg)"/><text x="32" y="46" font-family="Space Grotesk,sans-serif" font-size="40" font-weight="700" fill="#0a0a12" text-anchor="middle">B</text></svg> Burgos Studio</span>
+    <span>© <span id="yr"></span> Burgos Studio — designed &amp; built by Marcello.</span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  var t=document.getElementById('toggle'),m=document.getElementById('menu');
+  t.addEventListener('click',function(){m.classList.toggle('open')});
+  m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){m.classList.remove('open')})});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.08,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+</script>
+</body>
+</html>
