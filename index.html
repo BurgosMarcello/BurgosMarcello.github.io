@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Burgos Studio — Web Design & Development</title>
-<meta name="description" content="Websites that make small businesses look like big ones. Design, dev, and brand from one studio — starting at $750." />
+<title>Burgos Studio — Web · Motion · Brand</title>
+<meta name="description" content="One studio. Three ways to make your business unforgettable. Web design, motion graphics, and brand identity — starting at $350." />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23f5a524'/%3E%3Ctext x='32' y='46' font-family='system-ui,sans-serif' font-size='42' font-weight='800' fill='%231a1206' text-anchor='middle'%3EB%3C/text%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,86 +15,119 @@
   html{scroll-behavior:smooth}
   body{font-family:var(--sans);background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;line-height:1.6;overflow-x:hidden}
   a{color:inherit;text-decoration:none}
-  img{display:block;max-width:100%}
+  img,video{display:block;max-width:100%}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
-  .eyebrow{font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--accent)}
+  .eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--accent)}
   .btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14px;padding:13px 24px;border-radius:999px;transition:.25s;cursor:pointer;border:1px solid transparent}
   .btn-primary{background:var(--accent);color:#1a1206}
   .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 30px -10px rgba(245,165,36,.6)}
   .btn-ghost{border-color:var(--border);color:var(--text)}
   .btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
-  .btn-sm{font-size:13px;font-weight:600;padding:9px 18px;border-radius:999px;border:1px solid transparent;display:inline-flex;align-items:center;gap:6px;transition:.2s}
-  .btn-sm-primary{background:var(--accent);color:#1a1206}
-  .btn-sm-primary:hover{box-shadow:0 8px 24px -8px rgba(245,165,36,.5)}
-  .btn-sm-ghost{border-color:var(--border);color:var(--muted)}
-  .btn-sm-ghost:hover{border-color:var(--accent);color:var(--accent)}
 
-  header{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(13,13,15,.8);border-bottom:1px solid var(--border)}
+  header{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(13,13,15,.85);border-bottom:1px solid var(--border)}
   .nav{display:flex;align-items:center;justify-content:space-between;height:66px}
   .brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:-.01em;font-size:17px}
-  .nav-links{display:flex;align-items:center;gap:32px}
+  .nav-links{display:flex;align-items:center;gap:28px}
   .nav-links a{font-size:14px;color:var(--muted);font-weight:500;transition:.2s}
   .nav-links a:hover{color:var(--text)}
   .nav-toggle{display:none;background:none;border:0;color:var(--text);font-size:24px;cursor:pointer}
 
-  .hero{position:relative;padding:96px 0 80px}
-  .hero::before{content:"";position:absolute;top:-120px;left:50%;transform:translateX(-50%);width:680px;height:680px;background:radial-gradient(circle,var(--accent-soft),transparent 60%);pointer-events:none;z-index:-1}
-  .pill{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);border:1px solid var(--border);border-radius:999px;padding:6px 14px;margin-bottom:26px}
-  .pill .dot{width:8px;height:8px;border-radius:50%;background:#46d369;box-shadow:0 0 0 4px rgba(70,211,105,.18)}
-  .hero h1{font-size:clamp(38px,7vw,72px);line-height:1.02;font-weight:800;letter-spacing:-.03em;max-width:14ch}
+  /* hero */
+  .hero{position:relative;padding:104px 0 88px;text-align:center;overflow:hidden}
+  .hero-glow{position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:900px;height:900px;background:radial-gradient(circle,var(--accent-soft),transparent 55%);pointer-events:none;z-index:0}
+  .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse 80% 70% at 50% 40%,black,transparent);pointer-events:none;z-index:0}
+  .hero-content{position:relative;z-index:1;max-width:860px;margin:0 auto}
+  .pill{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);border:1px solid var(--border);border-radius:999px;padding:6px 16px;margin-bottom:28px}
+  .pill .dot{width:7px;height:7px;border-radius:50%;background:#46d369;box-shadow:0 0 0 4px rgba(70,211,105,.18)}
+  .hero h1{font-size:clamp(48px,9vw,96px);line-height:.95;font-weight:800;letter-spacing:-.05em}
   .hero h1 .hl{color:var(--accent)}
-  .hero p.lead{font-size:clamp(17px,2.4vw,21px);color:var(--muted);max-width:56ch;margin-top:24px}
-  .hero .cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:38px}
-  .stats{display:flex;gap:44px;margin-top:64px;flex-wrap:wrap;padding-top:44px;border-top:1px solid var(--border)}
-  .stat .n{font-size:22px;font-weight:800;letter-spacing:-.02em}
+  .hero h1 .sep{color:var(--faint);margin:0 .15em}
+  .hero-sub{font-size:clamp(16px,2.2vw,20px);color:var(--muted);max-width:52ch;margin:26px auto 0;line-height:1.65}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:38px}
+  .stats{display:flex;justify-content:center;gap:44px;margin-top:64px;flex-wrap:wrap;padding-top:40px;border-top:1px solid var(--border)}
+  .stat .n{font-size:21px;font-weight:800;letter-spacing:-.02em;color:var(--text)}
   .stat .l{font-size:13px;color:var(--muted);margin-top:2px}
 
-  section{padding:90px 0}
-  .sec-head{max-width:60ch;margin-bottom:48px}
-  .sec-head h2{font-size:clamp(28px,4.5vw,44px);font-weight:800;letter-spacing:-.025em;margin-top:14px}
-  .sec-head p{color:var(--muted);margin-top:14px;font-size:17px}
+  /* service pillars */
+  .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .pillar{border:1px solid var(--border);border-radius:22px;overflow:hidden;background:var(--bg2);transition:.3s;display:flex;flex-direction:column}
+  .pillar:hover{transform:translateY(-5px);border-color:rgba(245,165,36,.35)}
+  .pillar-media{aspect-ratio:4/3;overflow:hidden;position:relative}
+  .pillar-media img,.pillar-media video{width:100%;height:100%;object-fit:cover;transition:.6s}
+  .pillar:hover .pillar-media img{transform:scale(1.05)}
+  .pillar-media .overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(13,13,15,.7) 0%,transparent 50%)}
+  .pillar-media .price-chip{position:absolute;bottom:14px;left:14px;font-size:12px;font-weight:700;color:#1a1206;background:var(--accent);border-radius:999px;padding:4px 12px}
+  .pillar-body{padding:24px;flex:1;display:flex;flex-direction:column}
+  .pillar-body .tags{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:12px}
+  .pillar-body .tag{font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);border:1px solid var(--border);border-radius:999px;padding:4px 10px}
+  .pillar-body h3{font-size:22px;font-weight:800;letter-spacing:-.02em}
+  .pillar-body p{color:var(--muted);font-size:14px;margin-top:8px;flex:1;line-height:1.65}
+  .pillar-cta{margin-top:20px;display:flex;gap:10px;flex-wrap:wrap}
+  .btn-sm{font-size:13px;font-weight:600;padding:9px 18px;border-radius:999px;border:1px solid transparent;display:inline-flex;align-items:center;gap:6px;transition:.2s;cursor:pointer}
+  .btn-sm-primary{background:var(--accent);color:#1a1206}
+  .btn-sm-primary:hover{box-shadow:0 6px 20px -6px rgba(245,165,36,.6)}
+  .btn-sm-ghost{border-color:var(--border);color:var(--muted)}
+  .btn-sm-ghost:hover{border-color:var(--accent);color:var(--accent)}
 
-  .preview-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-  .preview-card{border:1px solid var(--border);border-radius:20px;overflow:hidden;background:var(--bg2);transition:.25s;display:flex;flex-direction:column}
-  .preview-card:hover{transform:translateY(-4px);border-color:rgba(245,165,36,.35)}
-  .preview-photo{aspect-ratio:3/4;overflow:hidden}
-  .preview-photo img{width:100%;height:100%;object-fit:cover;transition:.5s}
-  .preview-card:hover .preview-photo img{transform:scale(1.05)}
-  .preview-body{padding:24px;flex:1;display:flex;flex-direction:column}
-  .tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
-  .tag{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);border:1px solid var(--border);border-radius:999px;padding:5px 11px}
-  .preview-body h3{font-size:20px;font-weight:800;letter-spacing:-.01em}
-  .preview-body p{color:var(--muted);font-size:14px;margin-top:8px;flex:1;line-height:1.6}
-  .preview-links{margin-top:18px;display:flex;gap:10px;flex-wrap:wrap}
+  /* pricing */
+  .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .p-card{border:1px solid var(--border);border-radius:20px;padding:32px 28px;background:var(--bg2);transition:.25s}
+  .p-card:hover{border-color:rgba(245,165,36,.3)}
+  .p-card.featured{border-color:rgba(245,165,36,.45);background:var(--bg3);position:relative}
+  .p-card.featured::before{content:"Most popular";position:absolute;top:-12px;left:50%;transform:translateX(-50%);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#1a1206;background:var(--accent);border-radius:999px;padding:4px 14px;white-space:nowrap}
+  .p-title{font-size:17px;font-weight:800;letter-spacing:-.01em;margin-bottom:6px}
+  .p-desc{font-size:13px;color:var(--muted);margin-bottom:20px;min-height:38px}
+  .p-price{font-size:clamp(36px,5vw,52px);font-weight:800;letter-spacing:-.04em;line-height:1}
+  .p-price sup{font-size:22px;vertical-align:top;margin-top:6px;font-weight:700}
+  .p-price sub{font-size:15px;font-weight:500;color:var(--muted)}
+  .p-features{list-style:none;margin:20px 0;display:flex;flex-direction:column;gap:10px}
+  .p-features li{display:flex;align-items:flex-start;gap:8px;font-size:14px;color:var(--muted)}
+  .p-features li svg{width:16px;height:16px;stroke:var(--accent);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;margin-top:3px}
+  .p-features li span{color:var(--text)}
+  .p-btn{width:100%;text-align:center;justify-content:center;margin-top:auto;padding:12px}
 
-  .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-  .card{border:1px solid var(--border);border-radius:20px;padding:30px;background:var(--bg2);transition:.25s}
-  .card:hover{transform:translateY(-4px);border-color:rgba(245,165,36,.4)}
-  .card .ic{width:46px;height:46px;border-radius:13px;background:var(--accent-soft);display:grid;place-items:center;margin-bottom:18px}
-  .card .ic svg{width:23px;height:23px;stroke:var(--accent);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-  .card h3{font-size:20px;font-weight:700;letter-spacing:-.01em}
-  .card p{color:var(--muted);margin-top:8px;font-size:15px}
+  /* featured work */
+  .work-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  .work-card{border:1px solid var(--border);border-radius:20px;overflow:hidden;background:var(--bg2);transition:.25s;display:flex;flex-direction:column}
+  .work-card:hover{transform:translateY(-4px);border-color:rgba(245,165,36,.3)}
+  .work-photo{aspect-ratio:16/10;overflow:hidden}
+  .work-photo img{width:100%;height:100%;object-fit:cover;transition:.5s}
+  .work-card:hover .work-photo img{transform:scale(1.04)}
+  .work-body{padding:22px;flex:1;display:flex;flex-direction:column}
+  .tags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:12px}
+  .tag{font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);border:1px solid var(--border);border-radius:999px;padding:4px 10px}
+  .work-body h3{font-size:20px;font-weight:800;letter-spacing:-.01em}
+  .work-body p{color:var(--muted);font-size:14px;margin-top:8px;flex:1;line-height:1.65}
+  .work-links{margin-top:16px;display:flex;gap:10px}
 
-  .demo-band{background:radial-gradient(120% 140% at 50% 0,rgba(245,165,36,.16),transparent 55%),var(--bg2);border:1px solid var(--border);border-radius:28px;padding:72px 32px;text-align:center}
-  .demo-band h2{font-size:clamp(28px,4.5vw,48px);font-weight:800;letter-spacing:-.03em}
-  .demo-band p{color:var(--muted);margin:16px auto 0;max-width:50ch;font-size:18px}
-  .demo-band .cta{display:flex;gap:14px;justify-content:center;margin-top:32px;flex-wrap:wrap}
+  /* cta band */
+  .demo-band{background:radial-gradient(120% 140% at 50% 0,rgba(245,165,36,.14),transparent 55%),var(--bg2);border:1px solid var(--border);border-radius:28px;padding:72px 32px;text-align:center}
+  .demo-band h2{font-size:clamp(26px,4vw,46px);font-weight:800;letter-spacing:-.03em}
+  .demo-band p{color:var(--muted);margin:14px auto 0;max-width:50ch;font-size:17px}
+  .demo-band .cta{display:flex;gap:14px;justify-content:center;margin-top:30px;flex-wrap:wrap}
+
+  section{padding:88px 0}
+  .sec-head{max-width:60ch;margin-bottom:46px}
+  .sec-head.centered{text-align:center;margin-left:auto;margin-right:auto}
+  .sec-head h2{font-size:clamp(26px,4vw,42px);font-weight:800;letter-spacing:-.025em;margin-top:12px}
+  .sec-head p{color:var(--muted);margin-top:12px;font-size:17px}
 
   footer{border-top:1px solid var(--border);padding:32px 0;color:var(--faint);font-size:14px}
   .foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
-  .foot .brand-sm{display:flex;align-items:center;gap:9px;color:var(--text);font-weight:700}
+  .foot-links{display:flex;gap:20px}
+  .foot-links a{color:var(--faint);transition:.2s}
+  .foot-links a:hover{color:var(--muted)}
 
-  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
   .reveal.in{opacity:1;transform:none}
 
-  @media(max-width:860px){.preview-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:900px){.pillars{grid-template-columns:1fr}.pricing-grid{grid-template-columns:1fr;max-width:420px;margin:0 auto}.work-grid{grid-template-columns:1fr}}
   @media(max-width:640px){
-    .preview-grid{grid-template-columns:1fr}
-    .cards{grid-template-columns:1fr}
+    .stats{gap:24px}
+    .hero h1{letter-spacing:-.04em}
     .nav-links{position:fixed;inset:66px 0 auto 0;flex-direction:column;background:var(--bg2);border-bottom:1px solid var(--border);padding:18px 24px;gap:18px;display:none}
     .nav-links.open{display:flex}
     .nav-toggle{display:block}
-    .stats{gap:28px}
   }
   @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
 </style>
@@ -107,6 +140,7 @@
     <nav class="nav-links" id="menu">
       <a href="/work/">Work</a>
       <a href="/motion/">Motion FX</a>
+      <a href="/brand/">Brand</a>
       <a href="/about/">About</a>
       <a href="/contact/" class="btn btn-primary" style="padding:9px 18px">Get a free demo</a>
     </nav>
@@ -115,104 +149,208 @@
 </header>
 
 <main>
+
+  <!-- HERO -->
   <section class="hero">
+    <div class="hero-glow"></div>
+    <div class="hero-grid"></div>
     <div class="wrap">
-      <div class="pill reveal"><span class="dot"></span> Available for new projects</div>
-      <h1 class="reveal">Websites that make small businesses look like <span class="hl">big ones.</span></h1>
-      <p class="lead reveal">I handle the whole thing — brand, design, and build. You run your business, I'll make it look the part.</p>
-      <div class="cta reveal">
-        <a href="/contact/" class="btn btn-primary">Get a free demo →</a>
-        <a href="/work/" class="btn btn-ghost">See the work</a>
-      </div>
-      <div class="stats reveal">
-        <div class="stat"><div class="n">Brand → Build</div><div class="l">One person, full stack</div></div>
-        <div class="stat"><div class="n">$750</div><div class="l">Starting price</div></div>
-        <div class="stat"><div class="n">2 weeks</div><div class="l">Avg. delivery</div></div>
-        <div class="stat"><div class="n">Worldwide</div><div class="l">Remote — work with anyone</div></div>
+      <div class="hero-content">
+        <div class="pill reveal"><span class="dot"></span> Available for new projects</div>
+        <h1 class="reveal">Web<span class="sep">·</span><span class="hl">Motion</span><span class="sep">·</span>Brand</h1>
+        <p class="hero-sub reveal">One studio. Everything your business needs to look like the real deal — custom websites, cinematic motion graphics, and brand identity that sticks.</p>
+        <div class="hero-cta reveal">
+          <a href="/contact/" class="btn btn-primary">Get a free demo →</a>
+          <a href="/work/" class="btn btn-ghost">See the work</a>
+        </div>
+        <div class="stats reveal">
+          <div class="stat"><div class="n">$350</div><div class="l">Starting price</div></div>
+          <div class="stat"><div class="n">3 services</div><div class="l">Web · Motion · Brand</div></div>
+          <div class="stat"><div class="n">2 weeks</div><div class="l">Avg. delivery</div></div>
+          <div class="stat"><div class="n">1 person</div><div class="l">You work with me directly</div></div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section>
+  <!-- 3 SERVICE PILLARS -->
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head centered reveal">
+        <span class="eyebrow">Services</span>
+        <h2>Pick what your business needs.</h2>
+        <p>Each service stands alone — or stack them for a complete brand presence.</p>
+      </div>
+      <div class="pillars">
+
+        <div class="pillar reveal">
+          <div class="pillar-media">
+            <img src="images/contractor-hero.jpeg" alt="Web Design demo — Ridgeline Pro contractor site" />
+            <div class="overlay"></div>
+            <span class="price-chip">From $750</span>
+          </div>
+          <div class="pillar-body">
+            <div class="tags"><span class="tag">Web Design</span><span class="tag">Development</span></div>
+            <h3>Custom Websites</h3>
+            <p>A real website — not a template. Designed for your business, built to convert, delivered in 2 weeks. Works beautifully on every device.</p>
+            <div class="pillar-cta">
+              <!-- Replace href with Stripe Payment Link once set up at stripe.com/dashboard -->
+              <a href="/contact/?s=web" class="btn-sm btn-sm-primary">Start a project →</a>
+              <a href="/work/" class="btn-sm btn-sm-ghost">See demos</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="pillar reveal">
+          <div class="pillar-media" style="background:#080a0f;overflow:hidden">
+            <video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover">
+              <source src="images/ai-pack-chrome.mp4" type="video/mp4">
+            </video>
+            <div class="overlay"></div>
+            <span class="price-chip">From $75 / pack</span>
+          </div>
+          <div class="pillar-body">
+            <div class="tags"><span class="tag">Motion FX</span><span class="tag">Creator Tools</span></div>
+            <h3>Motion Graphics</h3>
+            <p>3D animated overlays, floating logo packs, and cinematic motion graphics built for YouTube and TikTok creators. Ready to drop into any editor.</p>
+            <div class="pillar-cta">
+              <!-- Replace href with Stripe Payment Link once set up at stripe.com/dashboard -->
+              <a href="/contact/?s=motion" class="btn-sm btn-sm-primary">Order a pack →</a>
+              <a href="/motion/" class="btn-sm btn-sm-ghost">See packs</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="pillar reveal">
+          <div class="pillar-media" style="background:linear-gradient(145deg,#1a1508,#0d0d0f);display:flex;align-items:center;justify-content:center">
+            <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="60" cy="60" r="54" stroke="rgba(245,165,36,.15)" stroke-width="1.5"/>
+              <circle cx="60" cy="60" r="38" stroke="rgba(245,165,36,.25)" stroke-width="1"/>
+              <text x="60" y="76" style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;font-size:64px;fill:#f5a524" text-anchor="middle">B</text>
+            </svg>
+            <div class="overlay"></div>
+            <span class="price-chip">From $350</span>
+          </div>
+          <div class="pillar-body">
+            <div class="tags"><span class="tag">Brand Identity</span><span class="tag">Logo Design</span></div>
+            <h3>Brand Identity</h3>
+            <p>Logo, color system, typography, social graphics, and a brand guide — everything you need to look consistent and professional from day one.</p>
+            <div class="pillar-cta">
+              <!-- Replace href with Stripe Payment Link once set up at stripe.com/dashboard -->
+              <a href="/contact/?s=brand" class="btn-sm btn-sm-primary">Start brand project →</a>
+              <a href="/brand/" class="btn-sm btn-sm-ghost">Learn more</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED WORK -->
+  <section style="background:var(--bg2)">
     <div class="wrap">
       <div class="sec-head reveal">
-        <span class="eyebrow">The work</span>
+        <span class="eyebrow">Featured work</span>
         <h2>Real sites, built for real businesses.</h2>
         <p>Every project is custom — designed and built from scratch to match the business, not a template.</p>
       </div>
-      <div class="preview-grid">
-        <div class="preview-card reveal">
-          <div class="preview-photo">
-            <img src="images/dws-doodle-bop.jpeg" alt="Dad's Wooden Spoon — organic cookie bakery">
+      <div class="work-grid">
+        <div class="work-card reveal">
+          <div class="work-photo">
+            <img src="images/dws-doodle-bop.jpeg" alt="Dad's Wooden Spoon cookie bakery e-commerce site" />
           </div>
-          <div class="preview-body">
+          <div class="work-body">
             <div class="tags"><span class="tag">Bakery</span><span class="tag">E-commerce</span><span class="tag">Branding</span></div>
             <h3>Dad's Wooden Spoon</h3>
-            <p>A home cookie bakery turned into a premium-feeling brand — logo, color system, photo shoot, and full online store.</p>
-            <div class="preview-links">
+            <p>A home cookie bakery turned into a premium-feeling brand — full identity, cookie photography, and a complete online store with cart and checkout.</p>
+            <div class="work-links">
               <a href="/work/" class="btn-sm btn-sm-primary">Full case study →</a>
             </div>
           </div>
         </div>
-        <div class="preview-card reveal">
-          <div class="preview-photo">
-            <img src="images/trainer-hero.jpeg" alt="Apex Training — personal trainer website">
+        <div class="work-card reveal">
+          <div class="work-photo">
+            <img src="images/trainer-hero.jpeg" alt="Apex Training personal trainer website" />
           </div>
-          <div class="preview-body">
+          <div class="work-body">
             <div class="tags"><span class="tag">Fitness</span><span class="tag">Web Design</span></div>
             <h3>Apex Training</h3>
-            <p>A bold, conversion-focused site for a personal training studio — dark aesthetic, pricing, client results, one-tap booking.</p>
-            <div class="preview-links">
+            <p>A dark, conversion-focused site for a personal training studio — bold layout, pricing tiers, client results, and one-tap booking built to close.</p>
+            <div class="work-links">
               <a href="/trainer/" class="btn-sm btn-sm-primary">View demo →</a>
             </div>
           </div>
         </div>
-        <div class="preview-card reveal">
-          <div class="preview-photo">
-            <img src="images/contractor-hero.jpeg" alt="Ridgeline Pro — contractor website">
-          </div>
-          <div class="preview-body">
-            <div class="tags"><span class="tag">Contractor</span><span class="tag">Home Services</span></div>
-            <h3>Ridgeline Pro</h3>
-            <p>A trust-first site for a home services contractor — license badges, reviews, service breakdown, free-quote CTA.</p>
-            <div class="preview-links">
-              <a href="/contractor/" class="btn-sm btn-sm-primary">View demo →</a>
-            </div>
-          </div>
-        </div>
+      </div>
+      <div style="text-align:center;margin-top:36px">
+        <a href="/work/" class="btn btn-ghost reveal">See all demos →</a>
       </div>
     </div>
   </section>
 
-  <section style="background:var(--bg2);padding:90px 0">
-    <div class="wrap">
-      <div class="sec-head reveal">
-        <span class="eyebrow">What I do</span>
-        <h2>Everything your site needs, under one roof.</h2>
-        <p>You talk to me directly — no account managers, no outsourcing, no surprises.</p>
-      </div>
-      <div class="cards">
-        <div class="card reveal">
-          <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5z"/></svg></div>
-          <h3>Web Design</h3><p>Clean, modern layouts that build trust fast and guide visitors toward action.</p>
-        </div>
-        <div class="card reveal">
-          <div class="ic"><svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
-          <h3>Web Development</h3><p>Fast, responsive builds on a modern stack — smooth on every device.</p>
-        </div>
-        <div class="card reveal">
-          <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l2.1 5.4L19.5 10l-5.4 1.6L12 17l-2.1-5.4L4.5 10l5.4-1.6z"/></svg></div>
-          <h3>Branding &amp; Identity</h3><p>Logos, color systems, and typography that make your business unmistakable.</p>
-        </div>
-        <div class="card reveal">
-          <div class="ic"><svg viewBox="0 0 24 24"><path d="M6 7h12l-1 13H7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg></div>
-          <h3>E-commerce</h3><p>Online stores and ordering flows designed to turn browsers into buyers.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
+  <!-- PRICING -->
   <section>
+    <div class="wrap">
+      <div class="sec-head centered reveal">
+        <span class="eyebrow">Pricing</span>
+        <h2>Simple, flat pricing. No surprises.</h2>
+        <p>One-time payments — no retainers, no hourly rates, no monthly fees.</p>
+      </div>
+      <div class="pricing-grid">
+
+        <div class="p-card reveal">
+          <div class="p-title">Brand Identity</div>
+          <div class="p-desc">Everything you need to look professional from day one.</div>
+          <div class="p-price"><sup>$</sup>350</div>
+          <ul class="p-features">
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Logo + 2 variations</span></li>
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Color palette with codes</span></li>
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Typography pairing</span></li>
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Social media graphics</span></li>
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Brand guide PDF</span></li>
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>5-day delivery</span></li>
+          </ul>
+          <a href="/contact/?s=brand" class="btn btn-ghost p-btn">Start brand project</a>
+        </div>
+
+        <div class="p-card featured reveal">
+          <div class="p-title">Web Design</div>
+          <div class="p-desc">A full custom website that makes your business look serious.</div>
+          <div class="p-price"><sup>$</sup>750</div>
+          <ul class="p-features">
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Custom design — no templates</span></li>
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Mobile responsive</span></li>
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>5–10 pages</span></li>
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Contact / booking form</span></li>
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>2 revision rounds</span></li>
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>2-week delivery</span></li>
+          </ul>
+          <a href="/contact/?s=web" class="btn btn-primary p-btn">Start web project</a>
+        </div>
+
+        <div class="p-card reveal">
+          <div class="p-title">Motion FX Pack</div>
+          <div class="p-desc">3D animated overlays and graphics for YouTube & TikTok creators.</div>
+          <div class="p-price"><sup>$</sup>75</div>
+          <ul class="p-features">
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>15-second looping clip</span></li>
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>16:9 + 9:16 formats</span></li>
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Transparent BG option</span></li>
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Editor-ready MP4</span></li>
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Commercial use license</span></li>
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>48-hr delivery</span></li>
+          </ul>
+          <a href="/contact/?s=motion" class="btn btn-ghost p-btn">Order a pack</a>
+        </div>
+
+      </div>
+      <p style="text-align:center;color:var(--faint);font-size:13px;margin-top:20px;class="reveal"">Bundle Brand + Web and save $100. <a href="/contact/?s=bundle" style="color:var(--muted);text-decoration:underline;text-underline-offset:3px">Ask about the bundle →</a></p>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section style="padding-bottom:88px">
     <div class="wrap">
       <div class="demo-band reveal">
         <span class="eyebrow">Free demo</span>
@@ -225,12 +363,20 @@
       </div>
     </div>
   </section>
+
 </main>
 
 <footer>
   <div class="wrap foot">
-    <span class="brand-sm"><svg viewBox="0 0 360 490" height="24" style="display:block;flex-shrink:0" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="fb-bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#2b2720"/><stop offset="100%" stop-color="#0b0908"/></linearGradient><linearGradient id="fb-rim" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#9a7844"/><stop offset="48%" stop-color="#4a3c24"/><stop offset="100%" stop-color="#886438"/></linearGradient></defs><rect x="2" y="2" width="356" height="486" rx="54" fill="none" stroke="url(#fb-rim)" stroke-width="4"/><rect x="5" y="5" width="350" height="480" rx="51" fill="url(#fb-bg)"/><ellipse cx="180" cy="128" rx="136" ry="86" fill="rgba(255,255,255,0.10)"/><text x="176" y="318" style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;font-size:300px;fill:#f5a524" text-anchor="middle">B</text></svg> Burgos Studio</span>
-    <span>© <span id="yr"></span> Burgos Studio — designed &amp; built by Marcello.</span>
+    <span class="brand-sm" style="display:flex;align-items:center;gap:9px;font-weight:700"><svg viewBox="0 0 360 490" height="24" style="display:block;flex-shrink:0" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="fb-bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#2b2720"/><stop offset="100%" stop-color="#0b0908"/></linearGradient><linearGradient id="fb-rim" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#9a7844"/><stop offset="48%" stop-color="#4a3c24"/><stop offset="100%" stop-color="#886438"/></linearGradient></defs><rect x="2" y="2" width="356" height="486" rx="54" fill="none" stroke="url(#fb-rim)" stroke-width="4"/><rect x="5" y="5" width="350" height="480" rx="51" fill="url(#fb-bg)"/><ellipse cx="180" cy="128" rx="136" ry="86" fill="rgba(255,255,255,0.10)"/><text x="176" y="318" style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;font-size:300px;fill:#f5a524" text-anchor="middle">B</text></svg> Burgos Studio</span>
+    <div class="foot-links">
+      <a href="/work/">Work</a>
+      <a href="/motion/">Motion FX</a>
+      <a href="/brand/">Brand</a>
+      <a href="/about/">About</a>
+      <a href="/contact/">Contact</a>
+    </div>
+    <span>© <span id="yr"></span> Burgos Studio</span>
   </div>
 </footer>
 
@@ -239,7 +385,7 @@
   var t=document.getElementById('toggle'),m=document.getElementById('menu');
   t.addEventListener('click',function(){m.classList.toggle('open')});
   m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){m.classList.remove('open')})});
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.08,rootMargin:'0px 0px -40px 0px'});
   document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
 </script>
 </body>
