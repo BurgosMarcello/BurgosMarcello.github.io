@@ -102,6 +102,27 @@
   .form-success{display:none;text-align:center;padding:24px 0}
   @media(max-width:600px){.form-row{grid-template-columns:1fr}.form-wrap{padding:44px 24px}}
 
+  .sc-overlay{position:fixed;inset:0;background:rgba(10,10,18,.88);backdrop-filter:blur(10px);display:flex;align-items:flex-end;justify-content:center;z-index:200;padding:0 16px;opacity:0;pointer-events:none;transition:opacity .35s}
+  .sc-overlay.show{opacity:1;pointer-events:all}
+  .sc-modal{background:var(--bg2);border:1px solid rgba(255,45,146,.3);border-radius:28px 28px 0 0;padding:48px 44px 44px;max-width:520px;width:100%;transform:translateY(100%);transition:transform .45s cubic-bezier(.22,1,.36,1)}
+  .sc-overlay.show .sc-modal{transform:translateY(0)}
+  .sc-badge{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);border-radius:999px;padding:5px 14px;margin-bottom:20px}
+  .sc-modal h3{font-size:clamp(22px,4vw,28px);font-weight:800;letter-spacing:-.02em;line-height:1.2}
+  .sc-modal>p{color:var(--muted);margin-top:12px;font-size:16px;line-height:1.6}
+  .sc-price{font-size:36px;font-weight:800;letter-spacing:-.03em;margin-top:22px}
+  .sc-price span{font-size:16px;font-weight:500;color:var(--muted)}
+  .sc-features{display:flex;flex-direction:column;gap:9px;margin-top:18px}
+  .sc-feature{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--muted)}
+  .sc-feature::before{content:"✓";color:var(--accent);font-weight:700;flex-shrink:0}
+  .sc-actions{display:flex;flex-direction:column;gap:10px;margin-top:28px}
+  .sc-yes{background:var(--grad);color:#0a0a12;font-weight:700;font-size:16px;padding:16px 24px;border-radius:999px;border:0;cursor:pointer;font-family:var(--sans);transition:.25s}
+  .sc-yes:hover{transform:translateY(-2px);box-shadow:0 14px 36px -10px rgba(255,45,146,.6)}
+  .sc-no{background:none;border:0;color:var(--faint);font-size:14px;cursor:pointer;font-family:var(--sans);padding:8px;transition:.2s}
+  .sc-no:hover{color:var(--text)}
+  .sc-confirmed{display:none;text-align:center;padding:8px 0}
+  .sc-confirmed p{color:var(--accent);font-weight:600;font-size:16px;margin-top:6px}
+  @media(max-width:560px){.sc-modal{padding:36px 24px 32px}}
+
   footer{border-top:1px solid var(--border);padding:32px 0;color:var(--faint);font-size:14px}
   .foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
   .foot .brand-sm{display:flex;align-items:center;gap:9px;color:var(--text);font-weight:700}
@@ -311,21 +332,67 @@
   </div>
 </footer>
 
+<div class="sc-overlay" id="sc-overlay">
+  <div class="sc-modal">
+    <div class="sc-badge">One more thing</div>
+    <h3>Want to protect your site after launch?</h3>
+    <p>Most clients add <strong>Site Care</strong> — ongoing support so your site never goes stale or breaks without you knowing.</p>
+    <div class="sc-price">$75 <span>/ month &nbsp;·&nbsp; cancel anytime</span></div>
+    <div class="sc-features">
+      <div class="sc-feature">Monthly updates &amp; minor edits</div>
+      <div class="sc-feature">Uptime monitoring</div>
+      <div class="sc-feature">Regular backups</div>
+      <div class="sc-feature">Priority response when something breaks</div>
+    </div>
+    <div class="sc-actions">
+      <button class="sc-yes" id="sc-yes">Yes, add Site Care — $75/month</button>
+      <button class="sc-no" id="sc-no">No thanks, I'll handle it myself</button>
+    </div>
+    <div class="sc-confirmed" id="sc-confirmed">
+      <div style="font-size:36px">🛡️</div>
+      <p>Perfect — I'll include Site Care in your proposal.</p>
+    </div>
+  </div>
+</div>
+
 <script>
   document.getElementById('yr').textContent = new Date().getFullYear();
 
   var form=document.getElementById('contact-form'),btn=document.getElementById('form-btn');
+  var scOverlay=document.getElementById('sc-overlay');
+  var submittedEmail='';
+
   if(form){form.addEventListener('submit',function(e){
     e.preventDefault();
+    submittedEmail=form.querySelector('#email').value;
     btn.disabled=true;btn.innerHTML='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg> Sending…';
     fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}})
       .then(function(r){return r.json()})
       .then(function(d){
-        if(d.ok){form.style.display='none';document.getElementById('form-success').style.display='block';}
-        else{btn.disabled=false;btn.innerHTML='⚠ Try again';}
+        if(d.ok){
+          form.style.display='none';
+          document.getElementById('form-success').style.display='block';
+          setTimeout(function(){scOverlay.classList.add('show');},1500);
+        } else{btn.disabled=false;btn.innerHTML='⚠ Try again';}
       })
       .catch(function(){btn.disabled=false;btn.innerHTML='⚠ Try again';});
   });}
+
+  document.getElementById('sc-no').addEventListener('click',function(){
+    scOverlay.classList.remove('show');
+  });
+
+  document.getElementById('sc-yes').addEventListener('click',function(){
+    var actions=document.querySelector('.sc-actions');
+    actions.style.display='none';
+    document.getElementById('sc-confirmed').style.display='block';
+    fetch('https://formspree.io/f/xwvdpknd',{
+      method:'POST',
+      body:JSON.stringify({email:submittedEmail,_subject:'Site Care Add-On Request',message:'Client requested Site Care ($75/month) add-on after form submission.'}),
+      headers:{'Accept':'application/json','Content-Type':'application/json'}
+    });
+    setTimeout(function(){scOverlay.classList.remove('show');},2800);
+  });
 
   var t=document.getElementById('toggle'),m=document.getElementById('menu');
   t.addEventListener('click',function(){m.classList.toggle('open')});
