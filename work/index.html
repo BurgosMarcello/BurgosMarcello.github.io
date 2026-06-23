@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Web Design — Burgos Studio</title>
 <meta name="description" content="Portfolio of Burgos Studio — real websites built for real businesses." />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%23a259ff'/%3E%3Cstop offset='55%25' stop-color='%23ff2d92'/%3E%3Cstop offset='100%25' stop-color='%23ff7a45'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='url(%23g)'/%3E%3Ctext x='32' y='46' font-family='system-ui,sans-serif' font-size='42' font-weight='800' fill='%230a0a12' text-anchor='middle'%3EB%3C/text%3E%3C/svg%3E" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%23b6b6c4'/%3E%3Cstop offset='55%25' stop-color='%23fbfbff'/%3E%3Cstop offset='100%25' stop-color='%238c8c9c'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='url(%23g)'/%3E%3Ctext x='32' y='46' font-family='system-ui,sans-serif' font-size='42' font-weight='800' fill='%230a0a12' text-anchor='middle'%3EB%3C/text%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
 <style>
-  :root{--bg:#0a0a12;--bg2:#101019;--bg3:#171724;--text:#f4f4f8;--muted:#9b9bb4;--faint:#62627c;--i:#a259ff;--v:#ff2d92;--c:#ff7a45;--accent:#ff2d92;--accent-soft:rgba(255,45,146,.13);--grad:linear-gradient(135deg,#a259ff 0%,#ff2d92 52%,#ff7a45 100%);--grad-soft:linear-gradient(135deg,rgba(162,89,255,.16),rgba(255,45,146,.16),rgba(255,122,69,.16));--border:rgba(255,255,255,.08);--glass:rgba(255,255,255,.035);--maxw:1140px;--sans:"Space Grotesk",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+  :root{--bg:#0a0a12;--bg2:#101019;--bg3:#171724;--text:#f4f4f8;--muted:#9b9bb4;--faint:#62627c;--i:#b6b6c4;--v:#fbfbff;--c:#8c8c9c;--accent:#fbfbff;--accent-soft:rgba(251,251,255,.13);--grad:linear-gradient(135deg,#b6b6c4 0%,#fbfbff 52%,#8c8c9c 100%);--grad-soft:linear-gradient(135deg,rgba(182,182,196,.16),rgba(251,251,255,.16),rgba(140,140,156,.16));--border:rgba(255,255,255,.08);--glass:rgba(255,255,255,.035);--maxw:1140px;--sans:"Space Grotesk",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
   body{font-family:var(--sans);background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;line-height:1.6;overflow-x:hidden}
@@ -19,10 +19,10 @@
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
   .eyebrow{font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
   .btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14px;padding:13px 24px;border-radius:999px;transition:.25s;cursor:pointer;border:1px solid transparent}
-  .btn-primary{background:var(--grad);color:#0a0a12;box-shadow:0 6px 24px -8px rgba(255,45,146,.5)}
-  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 36px -10px rgba(255,45,146,.7)}
+  .btn-primary{background:var(--grad);color:#0a0a12;box-shadow:0 6px 24px -8px rgba(251,251,255,.5)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 36px -10px rgba(251,251,255,.7)}
   .btn-ghost{border-color:var(--border);color:var(--text);background:var(--glass)}
-  .btn-ghost:hover{border-color:var(--v);color:#fff;box-shadow:0 0 0 1px rgba(255,45,146,.4)}
+  .btn-ghost:hover{border-color:var(--v);color:#fff;box-shadow:0 0 0 1px rgba(251,251,255,.4)}
 
   header{position:sticky;top:0;z-index:50;backdrop-filter:blur(16px);background:rgba(10,10,18,.72);border-bottom:1px solid var(--border)}
   .nav{display:flex;align-items:center;justify-content:space-between;height:66px}
@@ -70,7 +70,7 @@
 
   .mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:56px}
   .mini-card{background:var(--bg2);border:1px solid var(--border);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;transition:.25s}
-  .mini-card:hover{transform:translateY(-4px);border-color:rgba(255,45,146,.4)}
+  .mini-card:hover{transform:translateY(-4px);border-color:rgba(251,251,255,.4)}
   .mini-photo{aspect-ratio:3/4;overflow:hidden}
   .mini-photo img{width:100%;height:100%;object-fit:cover;transition:.5s}
   .mini-card:hover .mini-photo img{transform:scale(1.05)}
@@ -120,7 +120,7 @@
 
 <header>
   <div class="wrap nav">
-    <a href="/" class="brand"><svg viewBox="0 0 64 64" height="30" style="display:block;flex-shrink:0" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="wlg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#a259ff"/><stop offset="55%" stop-color="#ff2d92"/><stop offset="100%" stop-color="#ff7a45"/></linearGradient></defs><rect width="64" height="64" rx="15" fill="url(#wlg)"/><text x="32" y="46" font-family="Space Grotesk,sans-serif" font-size="40" font-weight="700" fill="#0a0a12" text-anchor="middle">B</text></svg> Burgos Studio</a>
+    <a href="/" class="brand"><svg viewBox="0 0 64 64" height="30" style="display:block;flex-shrink:0" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="wlg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#b6b6c4"/><stop offset="55%" stop-color="#fbfbff"/><stop offset="100%" stop-color="#8c8c9c"/></linearGradient></defs><rect width="64" height="64" rx="15" fill="url(#wlg)"/><text x="32" y="46" font-family="Space Grotesk,sans-serif" font-size="40" font-weight="700" fill="#0a0a12" text-anchor="middle">B</text></svg> Burgos Studio</a>
     <nav class="nav-links" id="menu">
       <a href="/#work" class="active">Work</a>
       <a href="/#pricing">Pricing</a>
@@ -264,7 +264,7 @@
 
 <footer>
   <div class="wrap foot">
-    <span class="brand-sm"><svg viewBox="0 0 64 64" height="22" style="display:block;flex-shrink:0" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="wfg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#a259ff"/><stop offset="55%" stop-color="#ff2d92"/><stop offset="100%" stop-color="#ff7a45"/></linearGradient></defs><rect width="64" height="64" rx="15" fill="url(#wfg)"/><text x="32" y="46" font-family="Space Grotesk,sans-serif" font-size="40" font-weight="700" fill="#0a0a12" text-anchor="middle">B</text></svg> Burgos Studio</span>
+    <span class="brand-sm"><svg viewBox="0 0 64 64" height="22" style="display:block;flex-shrink:0" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="wfg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#b6b6c4"/><stop offset="55%" stop-color="#fbfbff"/><stop offset="100%" stop-color="#8c8c9c"/></linearGradient></defs><rect width="64" height="64" rx="15" fill="url(#wfg)"/><text x="32" y="46" font-family="Space Grotesk,sans-serif" font-size="40" font-weight="700" fill="#0a0a12" text-anchor="middle">B</text></svg> Burgos Studio</span>
     <span>© <span id="yr"></span> Burgos Studio — designed &amp; built by Marcello.</span>
   </div>
 </footer>

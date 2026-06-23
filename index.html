@@ -5,17 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Burgos Studio — Web · Motion · Brand</title>
 <meta name="description" content="One studio. Everything your business needs to look unforgettable — web design, motion graphics, brand identity, and SEO. Starting at $300." />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%23a259ff'/%3E%3Cstop offset='55%25' stop-color='%23ff2d92'/%3E%3Cstop offset='100%25' stop-color='%23ff7a45'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='url(%23g)'/%3E%3Ctext x='32' y='46' font-family='system-ui,sans-serif' font-size='42' font-weight='800' fill='%230a0a12' text-anchor='middle'%3EB%3C/text%3E%3C/svg%3E" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%23b6b6c4'/%3E%3Cstop offset='55%25' stop-color='%23fbfbff'/%3E%3Cstop offset='100%25' stop-color='%238c8c9c'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='url(%23g)'/%3E%3Ctext x='32' y='46' font-family='system-ui,sans-serif' font-size='42' font-weight='800' fill='%230a0a12' text-anchor='middle'%3EB%3C/text%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
 <style>
   :root{
     --bg:#0a0a12;--bg2:#101019;--bg3:#171724;--text:#f4f4f8;--muted:#9b9bb4;--faint:#62627c;
-    --i:#a259ff;--v:#ff2d92;--c:#ff7a45;
-    --accent:#ff2d92;--accent-soft:rgba(255,45,146,.13);
-    --grad:linear-gradient(135deg,#a259ff 0%,#ff2d92 52%,#ff7a45 100%);
-    --grad-soft:linear-gradient(135deg,rgba(162,89,255,.16),rgba(255,45,146,.16),rgba(255,122,69,.16));
+    --i:#b6b6c4;--v:#fbfbff;--c:#8c8c9c;
+    --accent:#fbfbff;--accent-soft:rgba(251,251,255,.13);
+    --grad:linear-gradient(135deg,#b6b6c4 0%,#fbfbff 52%,#8c8c9c 100%);
+    --grad-soft:linear-gradient(135deg,rgba(182,182,196,.16),rgba(251,251,255,.16),rgba(140,140,156,.16));
     --border:rgba(255,255,255,.08);--glass:rgba(255,255,255,.035);
     --maxw:1140px;--sans:"Space Grotesk",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif
   }
@@ -28,10 +28,10 @@
   .grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
   .eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
   .btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14px;padding:13px 24px;border-radius:999px;transition:.25s;cursor:pointer;border:1px solid transparent}
-  .btn-primary{background:var(--grad);color:#0a0a12;box-shadow:0 6px 24px -8px rgba(255,45,146,.5)}
-  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 36px -10px rgba(255,45,146,.7)}
+  .btn-primary{background:var(--grad);color:#0a0a12;box-shadow:0 6px 24px -8px rgba(251,251,255,.5)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 36px -10px rgba(251,251,255,.7)}
   .btn-ghost{border-color:var(--border);color:var(--text);background:var(--glass)}
-  .btn-ghost:hover{border-color:var(--v);color:#fff;box-shadow:0 0 0 1px rgba(255,45,146,.4)}
+  .btn-ghost:hover{border-color:var(--v);color:#fff;box-shadow:0 0 0 1px rgba(251,251,255,.4)}
 
   header{position:sticky;top:0;z-index:50;backdrop-filter:blur(16px);background:rgba(10,10,18,.72);border-bottom:1px solid var(--border)}
   .nav{display:flex;align-items:center;justify-content:space-between;height:66px}
@@ -43,12 +43,12 @@
 
   /* hero */
   .hero{position:relative;padding:58px 0 82px;text-align:center;overflow:hidden}
-  .hero-glow{position:absolute;top:-220px;left:50%;transform:translateX(-50%);width:1000px;height:1000px;background:radial-gradient(circle,rgba(255,45,146,.18),rgba(162,89,255,.08) 35%,transparent 60%);pointer-events:none;z-index:0}
-  .hero-glow2{position:absolute;top:60px;right:-120px;width:520px;height:520px;background:radial-gradient(circle,rgba(255,122,69,.12),transparent 62%);pointer-events:none;z-index:0}
+  .hero-glow{position:absolute;top:-220px;left:50%;transform:translateX(-50%);width:1000px;height:1000px;background:radial-gradient(circle,rgba(251,251,255,.18),rgba(182,182,196,.08) 35%,transparent 60%);pointer-events:none;z-index:0}
+  .hero-glow2{position:absolute;top:60px;right:-120px;width:520px;height:520px;background:radial-gradient(circle,rgba(140,140,156,.12),transparent 62%);pointer-events:none;z-index:0}
   .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse 80% 70% at 50% 38%,black,transparent);pointer-events:none;z-index:0}
   .hero-content{position:relative;z-index:1;max-width:880px;margin:0 auto}
   .pill{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);border:1px solid var(--border);border-radius:999px;padding:6px 16px;margin-bottom:28px;background:var(--glass)}
-  .pill .dot{width:7px;height:7px;border-radius:50%;background:var(--c);box-shadow:0 0 0 4px rgba(255,122,69,.2)}
+  .pill .dot{width:7px;height:7px;border-radius:50%;background:var(--c);box-shadow:0 0 0 4px rgba(140,140,156,.2)}
   .hero h1{font-size:clamp(48px,9vw,100px);line-height:.94;font-weight:700;letter-spacing:-.05em}
   .hero h1 .sep{color:var(--faint);margin:0 .12em;-webkit-text-fill-color:var(--faint)}
   .hero-sub{font-size:clamp(16px,2.2vw,20px);color:var(--muted);max-width:54ch;margin:26px auto 0;line-height:1.65}
@@ -59,11 +59,11 @@
 
   /* hero 3D B medallion */
   .b-stage{position:relative;width:142px;height:142px;margin:0 auto 22px;perspective:760px;z-index:2}
-  .b-aura{position:absolute;top:50%;left:50%;width:240px;height:240px;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,rgba(255,45,146,.5),rgba(162,89,255,.28) 45%,transparent 70%);filter:blur(30px);animation:bAura 5s ease-in-out infinite;z-index:0;pointer-events:none}
+  .b-aura{position:absolute;top:50%;left:50%;width:240px;height:240px;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,rgba(251,251,255,.5),rgba(182,182,196,.28) 45%,transparent 70%);filter:blur(30px);animation:bAura 5s ease-in-out infinite;z-index:0;pointer-events:none}
   .b-medallion{position:absolute;inset:0;transform-style:preserve-3d;transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .3s ease-out;z-index:1}
   .b-spin{position:absolute;inset:0;transform-style:preserve-3d;animation:bFloat 7s ease-in-out infinite}
-  .b-spin .slab{position:absolute;inset:0;border-radius:31%;background:linear-gradient(150deg,#5a2350,#241026);transform:translateZ(var(--z))}
-  .b-face{position:absolute;inset:0;border-radius:31%;background:var(--grad);display:grid;place-items:center;overflow:hidden;box-shadow:inset 0 2px 7px rgba(255,255,255,.5),inset 0 -12px 26px rgba(0,0,0,.3),0 22px 46px -12px rgba(255,45,146,.55)}
+  .b-spin .slab{position:absolute;inset:0;border-radius:31%;background:linear-gradient(150deg,#3a3a46,#16161c);transform:translateZ(var(--z))}
+  .b-face{position:absolute;inset:0;border-radius:31%;background:var(--grad);display:grid;place-items:center;overflow:hidden;box-shadow:inset 0 2px 7px rgba(255,255,255,.5),inset 0 -12px 26px rgba(0,0,0,.3),0 22px 46px -12px rgba(251,251,255,.55)}
   .b-face .glyph{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:82px;line-height:1;color:#0a0a12;z-index:1}
   .b-gloss{position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.6),rgba(255,255,255,0) 44%);pointer-events:none;z-index:0}
   .b-sheen{position:absolute;top:-60%;left:0;width:46%;height:220%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.6),transparent);transform:translateX(-130%) rotate(18deg);animation:bSheen 6s ease-in-out infinite;pointer-events:none;z-index:2}
@@ -94,14 +94,14 @@
   .pillar-ic svg{width:100%;height:100%}
   .btn-sm{font-size:13px;font-weight:600;padding:9px 18px;border-radius:999px;border:1px solid transparent;display:inline-flex;align-items:center;gap:6px;transition:.2s;cursor:pointer}
   .btn-sm-primary{background:var(--grad);color:#0a0a12}
-  .btn-sm-primary:hover{box-shadow:0 6px 20px -6px rgba(255,45,146,.7)}
+  .btn-sm-primary:hover{box-shadow:0 6px 20px -6px rgba(251,251,255,.7)}
   .btn-sm-ghost{border-color:var(--border);color:var(--muted);background:var(--glass)}
   .btn-sm-ghost:hover{border-color:var(--v);color:#fff}
 
   /* featured work */
   .work-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
   .work-card{border:1px solid var(--border);border-radius:20px;overflow:hidden;background:var(--glass);transition:.25s;display:flex;flex-direction:column}
-  .work-card:hover{transform:translateY(-4px);border-color:rgba(255,45,146,.4)}
+  .work-card:hover{transform:translateY(-4px);border-color:rgba(251,251,255,.4)}
   .work-photo{aspect-ratio:16/10;overflow:hidden}
   .work-photo img{width:100%;height:100%;object-fit:cover;transition:.5s}
   .work-card:hover .work-photo img{transform:scale(1.04)}
@@ -115,7 +115,7 @@
   /* testimonials */
   .tcards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
   .tcard{border:1px solid var(--border);border-radius:20px;padding:28px;background:var(--glass);backdrop-filter:blur(8px);transition:.25s;display:flex;flex-direction:column}
-  .tcard:hover{border-color:rgba(255,45,146,.35);transform:translateY(-3px)}
+  .tcard:hover{border-color:rgba(251,251,255,.35);transform:translateY(-3px)}
   .tstars{display:flex;gap:3px;margin-bottom:14px}
   .tstars svg{width:16px;height:16px;fill:var(--v);stroke:none}
   .tquote{font-size:15px;color:var(--text);line-height:1.7;flex:1}
@@ -127,7 +127,7 @@
   /* pricing */
   .pricing-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
   .p-card{border:1px solid var(--border);border-radius:20px;padding:28px 24px;background:var(--glass);backdrop-filter:blur(8px);transition:.25s;display:flex;flex-direction:column}
-  .p-card:hover{border-color:rgba(255,45,146,.3);transform:translateY(-3px)}
+  .p-card:hover{border-color:rgba(251,251,255,.3);transform:translateY(-3px)}
   .p-card.featured{border-color:transparent;background:var(--bg3);position:relative}
   .p-card.featured::before{content:"Most popular";position:absolute;top:-12px;left:50%;transform:translateX(-50%);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#0a0a12;background:var(--grad);border-radius:999px;padding:4px 14px;white-space:nowrap}
   .p-card.featured::after{content:"";position:absolute;inset:0;border-radius:20px;padding:1px;background:var(--grad);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
@@ -145,7 +145,7 @@
   /* faq */
   .faq-wrap{max-width:760px;margin:0 auto}
   .faq{border:1px solid var(--border);border-radius:16px;background:var(--glass);margin-bottom:12px;overflow:hidden;transition:.2s}
-  .faq[open]{border-color:rgba(255,45,146,.35)}
+  .faq[open]{border-color:rgba(251,251,255,.35)}
   .faq summary{padding:22px 24px;font-size:16px;font-weight:600;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;transition:.2s}
   .faq summary::-webkit-details-marker{display:none}
   .faq summary:hover{color:#fff}
@@ -158,7 +158,7 @@
 
   /* cta band */
   .demo-band{position:relative;background:var(--grad-soft);border:1px solid var(--border);border-radius:28px;padding:72px 32px;text-align:center;overflow:hidden}
-  .demo-band::before{content:"";position:absolute;top:-50%;left:50%;transform:translateX(-50%);width:700px;height:700px;background:radial-gradient(circle,rgba(255,45,146,.18),transparent 60%);pointer-events:none}
+  .demo-band::before{content:"";position:absolute;top:-50%;left:50%;transform:translateX(-50%);width:700px;height:700px;background:radial-gradient(circle,rgba(251,251,255,.18),transparent 60%);pointer-events:none}
   .demo-band>*{position:relative}
   .demo-band h2{font-size:clamp(26px,4vw,46px);font-weight:700;letter-spacing:-.03em}
   .demo-band p{color:var(--muted);margin:14px auto 0;max-width:50ch;font-size:17px}
@@ -194,7 +194,7 @@
 
 <header>
   <div class="wrap nav">
-    <a href="/" class="brand"><svg viewBox="0 0 64 64" height="30" style="display:block;flex-shrink:0" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#a259ff"/><stop offset="55%" stop-color="#ff2d92"/><stop offset="100%" stop-color="#ff7a45"/></linearGradient></defs><rect width="64" height="64" rx="15" fill="url(#lg)"/><text x="32" y="46" font-family="Space Grotesk,sans-serif" font-size="40" font-weight="700" fill="#0a0a12" text-anchor="middle">B</text></svg> Burgos Studio</a>
+    <a href="/" class="brand"><svg viewBox="0 0 64 64" height="30" style="display:block;flex-shrink:0" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#b6b6c4"/><stop offset="55%" stop-color="#fbfbff"/><stop offset="100%" stop-color="#8c8c9c"/></linearGradient></defs><rect width="64" height="64" rx="15" fill="url(#lg)"/><text x="32" y="46" font-family="Space Grotesk,sans-serif" font-size="40" font-weight="700" fill="#0a0a12" text-anchor="middle">B</text></svg> Burgos Studio</a>
     <nav class="nav-links" id="menu">
       <a href="/#work">Work</a>
       <a href="/#pricing">Pricing</a>
@@ -267,7 +267,7 @@
   <!-- AD REEL + TABS styling -->
   <style>
     .ad-section{padding-top:0}
-    .ad-frame{position:relative;aspect-ratio:16/9;border:1px solid var(--border);border-radius:24px;overflow:hidden;background:var(--bg2);box-shadow:0 34px 90px -34px rgba(255,45,146,.4)}
+    .ad-frame{position:relative;aspect-ratio:16/9;border:1px solid var(--border);border-radius:24px;overflow:hidden;background:var(--bg2);box-shadow:0 34px 90px -34px rgba(251,251,255,.4)}
     .ad-frame video{width:100%;height:100%;object-fit:cover;display:block}
     .ad-dots{display:flex;gap:7px;justify-content:center;margin-top:16px}
     .ad-dots i{width:8px;height:8px;border-radius:50%;background:var(--border);transition:.25s;cursor:pointer}
@@ -277,7 +277,7 @@
     .tab{font:inherit;font-weight:600;font-size:14px;padding:11px 22px;border-radius:999px;border:1px solid var(--border);background:var(--glass);color:var(--muted);cursor:pointer;transition:.2s}
     .tab:hover{color:var(--text);border-color:var(--v)}
     .tab[aria-selected="true"]{background:var(--grad);color:#0a0a12;border-color:transparent}
-    .tab:focus-visible{outline:none;box-shadow:0 0 0 3px rgba(255,45,146,.4)}
+    .tab:focus-visible{outline:none;box-shadow:0 0 0 3px rgba(251,251,255,.4)}
     html.js .tabpanel[hidden]{display:none}
     html:not(.js) .tabs{display:none}
     html:not(.js) .tabpanel[hidden]{display:block!important}
@@ -362,7 +362,7 @@
         <div class="pillar reveal">
           <div class="pillar-media" style="background:linear-gradient(145deg,#171724,#0a0a12);display:flex;align-items:center;justify-content:center">
             <div class="pillar-ic">
-              <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="bg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#a259ff"/><stop offset="55%" stop-color="#ff2d92"/><stop offset="100%" stop-color="#ff7a45"/></linearGradient></defs><circle cx="60" cy="60" r="52" stroke="url(#bg1)" stroke-width="1.5" opacity=".3"/><circle cx="60" cy="60" r="36" stroke="url(#bg1)" stroke-width="1.5" opacity=".55"/><text x="60" y="76" font-family="Space Grotesk,sans-serif" font-weight="700" font-size="56" fill="url(#bg1)" text-anchor="middle">B</text></svg>
+              <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="bg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#b6b6c4"/><stop offset="55%" stop-color="#fbfbff"/><stop offset="100%" stop-color="#8c8c9c"/></linearGradient></defs><circle cx="60" cy="60" r="52" stroke="url(#bg1)" stroke-width="1.5" opacity=".3"/><circle cx="60" cy="60" r="36" stroke="url(#bg1)" stroke-width="1.5" opacity=".55"/><text x="60" y="76" font-family="Space Grotesk,sans-serif" font-weight="700" font-size="56" fill="url(#bg1)" text-anchor="middle">B</text></svg>
             </div>
             <div class="overlay"></div>
             <span class="price-chip">From $450</span>
@@ -382,7 +382,7 @@
         <div class="pillar reveal">
           <div class="pillar-media" style="background:linear-gradient(145deg,#0d1422,#0a0a12);display:flex;align-items:center;justify-content:center">
             <div class="pillar-ic">
-              <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="seo1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#a259ff"/><stop offset="55%" stop-color="#ff2d92"/><stop offset="100%" stop-color="#ff7a45"/></linearGradient></defs><circle cx="52" cy="52" r="30" stroke="url(#seo1)" stroke-width="3.5" fill="none"/><line x1="74" y1="74" x2="94" y2="94" stroke="url(#seo1)" stroke-width="3.5" stroke-linecap="round"/><path d="M40 56l8-10 7 7 11-15" stroke="url(#seo1)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+              <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="seo1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#b6b6c4"/><stop offset="55%" stop-color="#fbfbff"/><stop offset="100%" stop-color="#8c8c9c"/></linearGradient></defs><circle cx="52" cy="52" r="30" stroke="url(#seo1)" stroke-width="3.5" fill="none"/><line x1="74" y1="74" x2="94" y2="94" stroke="url(#seo1)" stroke-width="3.5" stroke-linecap="round"/><path d="M40 56l8-10 7 7 11-15" stroke="url(#seo1)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
             </div>
             <div class="overlay"></div>
             <span class="price-chip">From $300</span>
@@ -401,7 +401,7 @@
 
         <div class="pillar reveal" style="grid-column:1/-1;flex-direction:row;align-items:center;gap:26px;padding:28px 30px;flex-wrap:wrap">
           <div style="flex-shrink:0;width:88px;height:88px;border-radius:20px;background:var(--grad-soft);display:grid;place-items:center">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="auto1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#a259ff"/><stop offset="55%" stop-color="#ff2d92"/><stop offset="100%" stop-color="#ff7a45"/></linearGradient></defs><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" stroke="url(#auto1)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="auto1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#b6b6c4"/><stop offset="55%" stop-color="#fbfbff"/><stop offset="100%" stop-color="#8c8c9c"/></linearGradient></defs><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" stroke="url(#auto1)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
           <div style="flex:1;min-width:240px">
             <div class="tags" style="margin-bottom:8px"><span class="tag" style="color:#0a0a12;background:var(--grad);border:0">★ New</span><span class="tag">Automation</span></div>
@@ -467,8 +467,8 @@
     @keyframes craftFloat{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-18px) rotate(2deg)}}
     @keyframes craftGlow{0%,100%{opacity:.5;transform:translate(-50%,-50%) scale(1)}50%{opacity:.82;transform:translate(-50%,-50%) scale(1.1)}}
     .craft-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:30px;align-items:stretch;margin-top:14px}
-    .craft-stage{position:relative;border:1px solid var(--border);border-radius:24px;background:radial-gradient(120% 120% at 50% 0,rgba(162,89,255,.10),transparent 60%),var(--glass);backdrop-filter:blur(8px);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:42px 28px;overflow:hidden;min-height:360px}
-    .craft-stage .glow{position:absolute;top:42%;left:50%;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(255,45,146,.45),rgba(162,89,255,.26) 45%,transparent 70%);filter:blur(34px);animation:craftGlow 6s ease-in-out infinite;z-index:0;pointer-events:none}
+    .craft-stage{position:relative;border:1px solid var(--border);border-radius:24px;background:radial-gradient(120% 120% at 50% 0,rgba(182,182,196,.10),transparent 60%),var(--glass);backdrop-filter:blur(8px);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:42px 28px;overflow:hidden;min-height:360px}
+    .craft-stage .glow{position:absolute;top:42%;left:50%;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(251,251,255,.45),rgba(182,182,196,.26) 45%,transparent 70%);filter:blur(34px);animation:craftGlow 6s ease-in-out infinite;z-index:0;pointer-events:none}
     .craft-emblem{position:relative;z-index:1;width:min(72%,236px);filter:drop-shadow(0 26px 42px rgba(0,0,0,.55));animation:craftFloat 5.5s ease-in-out infinite}
     .craft-cap{position:relative;z-index:1;margin-top:24px;text-align:center}
     .craft-cap .t{font-weight:700;font-size:15px}
@@ -509,13 +509,13 @@
 
         <div class="craft-pals">
           <div class="pal-card reveal">
-            <div class="pal-head"><span class="nm">Sunset Electric</span><span class="src">This studio</span></div>
+            <div class="pal-head"><span class="nm">Platinum Mono</span><span class="src">This studio</span></div>
             <div class="pal-row">
-              <div class="pal-sw"><div class="pal-chip" style="background:#a259ff"></div><div class="pal-hex">#A259FF</div></div>
-              <div class="pal-sw"><div class="pal-chip" style="background:#ff2d92"></div><div class="pal-hex">#FF2D92</div></div>
-              <div class="pal-sw"><div class="pal-chip" style="background:#ff7a45"></div><div class="pal-hex">#FF7A45</div></div>
+              <div class="pal-sw"><div class="pal-chip" style="background:#fbfbff"></div><div class="pal-hex">#FBFBFF</div></div>
+              <div class="pal-sw"><div class="pal-chip" style="background:#b6b6c4"></div><div class="pal-hex">#B6B6C4</div></div>
+              <div class="pal-sw"><div class="pal-chip" style="background:#8c8c9c"></div><div class="pal-hex">#8C8C9C</div></div>
+              <div class="pal-sw"><div class="pal-chip" style="background:#171724;border-color:rgba(255,255,255,.14)"></div><div class="pal-hex">#171724</div></div>
               <div class="pal-sw"><div class="pal-chip" style="background:#0a0a12;border-color:rgba(255,255,255,.14)"></div><div class="pal-hex">#0A0A12</div></div>
-              <div class="pal-sw"><div class="pal-chip" style="background:#9b9bb4"></div><div class="pal-hex">#9B9BB4</div></div>
             </div>
           </div>
           <div class="pal-card reveal">
@@ -710,7 +710,7 @@
 
 <footer>
   <div class="wrap foot">
-    <span class="brand-sm" style="display:flex;align-items:center;gap:9px;font-weight:700"><svg viewBox="0 0 64 64" height="22" style="display:block;flex-shrink:0" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="fg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#a259ff"/><stop offset="55%" stop-color="#ff2d92"/><stop offset="100%" stop-color="#ff7a45"/></linearGradient></defs><rect width="64" height="64" rx="15" fill="url(#fg)"/><text x="32" y="46" font-family="Space Grotesk,sans-serif" font-size="40" font-weight="700" fill="#0a0a12" text-anchor="middle">B</text></svg> Burgos Studio</span>
+    <span class="brand-sm" style="display:flex;align-items:center;gap:9px;font-weight:700"><svg viewBox="0 0 64 64" height="22" style="display:block;flex-shrink:0" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="fg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#b6b6c4"/><stop offset="55%" stop-color="#fbfbff"/><stop offset="100%" stop-color="#8c8c9c"/></linearGradient></defs><rect width="64" height="64" rx="15" fill="url(#fg)"/><text x="32" y="46" font-family="Space Grotesk,sans-serif" font-size="40" font-weight="700" fill="#0a0a12" text-anchor="middle">B</text></svg> Burgos Studio</span>
     <div class="foot-links">
       <a href="/#work">Work</a>
       <a href="/#pricing">Pricing</a>
