@@ -154,6 +154,16 @@ nav{position:sticky;top:0;z-index:100;background:rgba(8,10,15,.9);backdrop-filte
 @keyframes likepop{0%,60%,100%{transform:scale(1) rotate(0)}70%{transform:scale(1.18) rotate(-10deg)}82%{transform:scale(1.06) rotate(5deg)}}
 .like-count{position:absolute;left:50%;top:calc(50% - 82px);transform:translateX(-50%);font-family:var(--display);font-size:32px;letter-spacing:.04em;color:#fff;opacity:0;animation:countpop 2.3s ease-in-out infinite}
 @keyframes countpop{0%,62%{opacity:0;transform:translate(-50%,8px) scale(.8)}74%{opacity:1;transform:translate(-50%,0) scale(1)}100%{opacity:0;transform:translate(-50%,-6px) scale(.95)}}
+/* CSS text-messages mockup */
+.msg-mock{position:absolute;inset:0;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;gap:9px;padding:20px 22px}
+.msg{max-width:66%;padding:9px 13px;border-radius:15px;font-size:12.5px;font-weight:600;line-height:1.3;opacity:0;animation:msgflow 4.6s ease-in-out infinite}
+.msg.inc{align-self:flex-start;background:#23232e;color:#e8e8ee;border-bottom-left-radius:5px}
+.msg.out{align-self:flex-end;background:var(--grad);color:#0a0a12;border-bottom-right-radius:5px}
+.msg:nth-child(1){animation-delay:0s}
+.msg:nth-child(2){animation-delay:1.15s}
+.msg:nth-child(3){animation-delay:2.3s}
+.msg:nth-child(4){animation-delay:3.45s}
+@keyframes msgflow{0%{opacity:0;transform:translateY(48px) scale(.92)}12%{opacity:1;transform:translateY(0) scale(1)}78%{opacity:1;transform:translateY(-98px)}100%{opacity:0;transform:translateY(-142px)}}
 
 /* INCLUDES */
 .includes{padding:74px 40px;background:var(--bg2)}
@@ -293,10 +303,10 @@ footer{background:#04050a;padding:36px 40px;display:flex;align-items:center;just
   <div class="bundle-banner reveal">
     <div>
       <h3>Want the whole set?</h3>
-      <p>All 6 AI emblems — ChatGPT, Claude, Gemini, Grok, Meta &amp; Midjourney. <strong style="color:var(--text)">Save $101.</strong></p>
+      <p>All 6 AI emblems — ChatGPT, Claude, Gemini, Grok, Meta &amp; Midjourney. <strong style="color:var(--text)">Save $75.</strong></p>
     </div>
     <div style="display:flex;align-items:center;gap:22px;flex-wrap:wrap">
-      <div class="emblem-price grad" style="font-size:38px">$349</div>
+      <div class="emblem-price grad" style="font-size:38px">$375</div>
       <a href="/contact/?s=emblem-bundle" class="btn-primary">Get all 6 →</a>
     </div>
   </div>
@@ -338,12 +348,29 @@ footer{background:#04050a;padding:36px 40px;display:flex;align-items:center;just
       </div>
     </div>
 
+    <!-- Text messages (CSS-animated mockup) -->
+    <div class="fx-card reveal">
+      <div class="fx-preview">
+        <div class="msg-mock">
+          <div class="msg inc">wait you made this?? 🔥</div>
+          <div class="msg out">yep — all custom</div>
+          <div class="msg inc">it looks so clean omg</div>
+          <div class="msg out">drop it behind your talking head</div>
+        </div>
+        <div class="fx-tag">Animated</div>
+      </div>
+      <div class="fx-body">
+        <div><h3>Text Messages</h3><p>Animated chat bubbles that flow up behind you — perfect for storytime, reactions, and drama edits. Your convo, your colors.</p></div>
+        <div class="fx-price-block"><div class="fx-price grad">$75</div><br><a href="/contact/?s=fx-messages" class="fx-buy">Order →</a></div>
+      </div>
+    </div>
+
     <!-- Logo intro (holo video) -->
     <div class="fx-card reveal">
       <div class="fx-preview"><video autoplay muted loop playsinline><source src="../images/ai-pack-holo.mp4" type="video/mp4"></video><div class="fx-tag">▶ Preview</div></div>
       <div class="fx-body">
         <div><h3>Animated Logo Intro</h3><p>A cinematic 3D intro sting built around your logo — holographic reveal in your colors. Open every video like a real brand.</p></div>
-        <div class="fx-price-block"><div class="fx-price grad">$95</div><br><a href="/contact/?s=fx-intro" class="fx-buy">Order →</a></div>
+        <div class="fx-price-block"><div class="fx-price grad">$120</div><br><a href="/contact/?s=fx-intro" class="fx-buy">Order →</a></div>
       </div>
     </div>
 
@@ -355,7 +382,7 @@ footer{background:#04050a;padding:36px 40px;display:flex;align-items:center;just
       </div>
       <div class="fx-body">
         <div><h3>Lower Thirds Pack</h3><p>Animated name + title bars that slide in clean. Perfect for intros, guest names, and section labels across your videos.</p></div>
-        <div class="fx-price-block"><div class="fx-price grad">$55</div><br><a href="/contact/?s=fx-lowerthirds" class="fx-buy">Order →</a></div>
+        <div class="fx-price-block"><div class="fx-price grad">$65</div><br><a href="/contact/?s=fx-lowerthirds" class="fx-buy">Order →</a></div>
       </div>
     </div>
 
@@ -413,6 +440,46 @@ footer{background:#04050a;padding:36px 40px;display:flex;align-items:center;just
       <div class="usecase-num grad">03</div>
       <h3>Intro / Outro</h3>
       <p>Use it as a transition into your AI segment or as a branded end screen backdrop. Clean, professional, repeatable.</p>
+    </div>
+  </div>
+</section>
+
+<!-- COMING SOON -->
+<section class="coming">
+  <div class="section-tag reveal">Up Next</div>
+  <div class="section-title reveal">More Drops<br>in the Works</div>
+  <div class="coming-grid">
+    <div class="coming-card reveal">
+      <div class="coming-badge-pill">Coming Soon</div>
+      <div class="coming-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/>
+        </svg>
+      </div>
+      <h3>Custom Charts &amp; Crypto</h3>
+      <p>Animated trading charts, coin logos, and live market-data graphics for finance, stocks, and crypto creators.</p>
+    </div>
+    <div class="coming-card reveal">
+      <div class="coming-badge-pill">Coming Soon</div>
+      <div class="coming-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18" stroke-width="2.5"/>
+        </svg>
+      </div>
+      <h3>App Store Pack</h3>
+      <p>Floating app icons for tech reviews — iPhone, Android, and SaaS tools. Built for "best apps" content.</p>
+    </div>
+    <div class="coming-card reveal">
+      <div class="coming-badge-pill">Coming Soon</div>
+      <div class="coming-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="6" y1="12" x2="10" y2="12"/><line x1="8" y1="10" x2="8" y2="14"/>
+          <circle cx="15" cy="11" r=".6" fill="currentColor"/><circle cx="17" cy="13" r=".6" fill="currentColor"/>
+          <rect x="2" y="6" width="20" height="12" rx="6"/>
+        </svg>
+      </div>
+      <h3>Gaming Pack</h3>
+      <p>Platform logos, controller animations, and glitch effects for gaming content on YouTube and Twitch.</p>
     </div>
   </div>
 </section>
