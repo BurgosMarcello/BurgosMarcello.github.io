@@ -42,7 +42,7 @@
   .nav-toggle{display:none;background:none;border:0;color:var(--text);font-size:24px;cursor:pointer}
 
   /* hero */
-  .hero{position:relative;padding:104px 0 88px;text-align:center;overflow:hidden}
+  .hero{position:relative;padding:58px 0 82px;text-align:center;overflow:hidden}
   .hero-glow{position:absolute;top:-220px;left:50%;transform:translateX(-50%);width:1000px;height:1000px;background:radial-gradient(circle,rgba(255,45,146,.18),rgba(162,89,255,.08) 35%,transparent 60%);pointer-events:none;z-index:0}
   .hero-glow2{position:absolute;top:60px;right:-120px;width:520px;height:520px;background:radial-gradient(circle,rgba(255,122,69,.12),transparent 62%);pointer-events:none;z-index:0}
   .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse 80% 70% at 50% 38%,black,transparent);pointer-events:none;z-index:0}
@@ -56,6 +56,22 @@
   .stats{display:flex;justify-content:center;gap:44px;margin-top:64px;flex-wrap:wrap;padding-top:40px;border-top:1px solid var(--border)}
   .stat .n{font-size:21px;font-weight:700;letter-spacing:-.02em;color:var(--text)}
   .stat .l{font-size:13px;color:var(--muted);margin-top:2px}
+
+  /* hero 3D B medallion */
+  .b-stage{position:relative;width:142px;height:142px;margin:0 auto 22px;perspective:760px;z-index:2}
+  .b-aura{position:absolute;top:50%;left:50%;width:240px;height:240px;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,rgba(255,45,146,.5),rgba(162,89,255,.28) 45%,transparent 70%);filter:blur(30px);animation:bAura 5s ease-in-out infinite;z-index:0;pointer-events:none}
+  .b-medallion{position:absolute;inset:0;transform-style:preserve-3d;transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .3s ease-out;z-index:1}
+  .b-spin{position:absolute;inset:0;transform-style:preserve-3d;animation:bFloat 7s ease-in-out infinite}
+  .b-spin .slab{position:absolute;inset:0;border-radius:31%;background:linear-gradient(150deg,#5a2350,#241026);transform:translateZ(var(--z))}
+  .b-face{position:absolute;inset:0;border-radius:31%;background:var(--grad);display:grid;place-items:center;overflow:hidden;box-shadow:inset 0 2px 7px rgba(255,255,255,.5),inset 0 -12px 26px rgba(0,0,0,.3),0 22px 46px -12px rgba(255,45,146,.55)}
+  .b-face .glyph{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:82px;line-height:1;color:#0a0a12;z-index:1}
+  .b-gloss{position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.6),rgba(255,255,255,0) 44%);pointer-events:none;z-index:0}
+  .b-sheen{position:absolute;top:-60%;left:0;width:46%;height:220%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.6),transparent);transform:translateX(-130%) rotate(18deg);animation:bSheen 6s ease-in-out infinite;pointer-events:none;z-index:2}
+  @keyframes bFloat{0%,100%{transform:translateY(0) rotateY(-15deg) rotateX(6deg)}50%{transform:translateY(-12px) rotateY(15deg) rotateX(-5deg)}}
+  @keyframes bAura{0%,100%{opacity:.55;transform:translate(-50%,-50%) scale(1)}50%{opacity:.9;transform:translate(-50%,-50%) scale(1.12)}}
+  @keyframes bSheen{0%,38%{transform:translateX(-130%) rotate(18deg)}62%,100%{transform:translateX(360%) rotate(18deg)}}
+  @media(max-width:640px){.b-stage{width:116px;height:116px;margin-bottom:18px}.b-face .glyph{font-size:66px}}
+  @media(prefers-reduced-motion:reduce){.b-spin,.b-aura,.b-sheen{animation:none}.b-medallion{transform:rotateY(-8deg) rotateX(4deg)}}
 
   /* service pillars */
   .pillars{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
@@ -199,6 +215,21 @@
     <div class="hero-grid"></div>
     <div class="wrap">
       <div class="hero-content">
+        <div class="b-stage" aria-hidden="true">
+          <div class="b-aura"></div>
+          <div class="b-medallion">
+            <div class="b-spin">
+              <span class="slab" style="--z:-6px"></span>
+              <span class="slab" style="--z:-12px"></span>
+              <span class="slab" style="--z:-18px"></span>
+              <div class="b-face">
+                <div class="b-gloss"></div>
+                <span class="glyph">B</span>
+                <div class="b-sheen"></div>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="pill reveal"><span class="dot"></span> Available for new projects</div>
         <h1 class="reveal"><span class="grad-text">Web</span><span class="sep">·</span><span class="grad-text">Motion</span><span class="sep">·</span><span class="grad-text">Brand</span></h1>
         <p class="hero-sub reveal">One studio. Everything your business needs to look like the real deal — custom websites, cinematic motion graphics, brand identity, getting found on Google, and automating the busywork.</p>
@@ -215,6 +246,23 @@
       </div>
     </div>
   </section>
+  <script>
+    /* hero medallion — tilt toward the cursor (parallax on top of the idle float) */
+    (function(){
+      var hero=document.querySelector('.hero'), med=document.querySelector('.b-medallion');
+      if(!hero||!med) return;
+      if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      hero.addEventListener('pointermove',function(e){
+        var r=hero.getBoundingClientRect();
+        var x=(e.clientX-r.left)/r.width-0.5, y=(e.clientY-r.top)/r.height-0.5;
+        med.style.setProperty('--ry',(x*24).toFixed(1)+'deg');
+        med.style.setProperty('--rx',(-y*16).toFixed(1)+'deg');
+      });
+      hero.addEventListener('pointerleave',function(){
+        med.style.setProperty('--ry','0deg'); med.style.setProperty('--rx','0deg');
+      });
+    })();
+  </script>
 
   <!-- SERVICE PILLARS -->
   <section style="padding-top:0">
@@ -228,7 +276,7 @@
 
         <div class="pillar reveal">
           <div class="pillar-media">
-            <img src="images/contractor-hero.jpeg" alt="Web design demo — Ridgeline Pro contractor site" />
+            <img src="images/medspa-suite.jpg" alt="Web design demo — Glow Aesthetics med spa site" />
             <div class="overlay"></div>
             <span class="price-chip">From $950</span>
           </div>
@@ -237,7 +285,7 @@
             <h3>Custom Websites</h3>
             <p>A real website — not a template. Designed for your business, built to convert, delivered in 2 weeks. Works beautifully on every device.</p>
             <div class="pillar-cta">
-              <!-- Replace href with Stripe Payment Link once set up at stripe.com/dashboard -->
+              <!-- Replace href with Polar checkout link once set up at polar.sh (merchant-of-record — handles sales tax/VAT for you) -->
               <a href="/contact/?s=web" class="btn-sm btn-sm-primary">Start a project →</a>
               <a href="/work/" class="btn-sm btn-sm-ghost">See demos</a>
             </div>
@@ -257,7 +305,7 @@
             <h3>Motion Graphics</h3>
             <p>3D animated overlays, floating logo packs, and cinematic motion graphics built for YouTube and TikTok creators. Ready to drop into any editor.</p>
             <div class="pillar-cta">
-              <!-- Replace href with Stripe Payment Link once set up at stripe.com/dashboard -->
+              <!-- Replace href with Polar checkout link once set up at polar.sh (merchant-of-record — handles sales tax/VAT for you) -->
               <a href="/contact/?s=motion" class="btn-sm btn-sm-primary">Order a pack →</a>
               <a href="/motion/" class="btn-sm btn-sm-ghost">See packs</a>
             </div>
@@ -277,7 +325,7 @@
             <h3>Brand Identity</h3>
             <p>Logo, color system, typography, social graphics, and a brand guide — everything you need to look consistent and professional from day one.</p>
             <div class="pillar-cta">
-              <!-- Replace href with Stripe Payment Link once set up at stripe.com/dashboard -->
+              <!-- Replace href with Polar checkout link once set up at polar.sh (merchant-of-record — handles sales tax/VAT for you) -->
               <a href="/contact/?s=brand" class="btn-sm btn-sm-primary">Start brand project →</a>
               <a href="/brand/" class="btn-sm btn-sm-ghost">Learn more</a>
             </div>
@@ -297,7 +345,7 @@
             <h3>Get Found on Google</h3>
             <p>Google Business setup, local SEO, and review strategy so customers searching for what you do actually find you — not your competitors.</p>
             <div class="pillar-cta">
-              <!-- Replace href with Stripe Payment Link once set up at stripe.com/dashboard -->
+              <!-- Replace href with Polar checkout link once set up at polar.sh (merchant-of-record — handles sales tax/VAT for you) -->
               <a href="/contact/?s=seo" class="btn-sm btn-sm-primary">Boost my visibility →</a>
               <a href="/contact/?s=seo" class="btn-sm btn-sm-ghost">Learn more</a>
             </div>
@@ -334,33 +382,104 @@
       <div class="work-grid">
         <div class="work-card reveal">
           <div class="work-photo">
-            <img src="images/dws-doodle-bop.jpeg" alt="Dad's Wooden Spoon cookie bakery e-commerce site" />
+            <img src="images/medspa-consult.jpg" alt="Glow Aesthetics med spa website — client consultation" />
           </div>
           <div class="work-body">
-            <div class="tags"><span class="tag">Bakery</span><span class="tag">E-commerce</span><span class="tag">Branding</span></div>
-            <h3>Dad's Wooden Spoon</h3>
-            <p>A home cookie bakery turned into a premium-feeling brand — full identity, cookie photography, and a complete online store with cart and checkout.</p>
+            <div class="tags"><span class="tag">Med Spa</span><span class="tag">Booking</span><span class="tag">Memberships</span></div>
+            <h3>Glow Aesthetics</h3>
+            <p>A boutique Boulder injectables studio with a premium, editorial feel — transparent treatment menu, a recurring membership offer, and one-tap consult booking.</p>
             <div class="work-links">
-              <a href="/work/" class="btn-sm btn-sm-primary">Full case study →</a>
+              <a href="/medspa/" class="btn-sm btn-sm-primary">View demo →</a>
             </div>
           </div>
         </div>
         <div class="work-card reveal">
-          <div class="work-photo">
-            <img src="images/trainer-hero.jpeg" alt="Apex Training personal trainer website" />
+          <div class="work-photo" style="display:flex;align-items:center;justify-content:center;background:linear-gradient(150deg,#efe3d3,#e6d3bf 52%,#dcc4ad)">
+            <span style="font-family:Georgia,serif;font-style:italic;font-size:21px;color:#7a5a52;text-align:center;padding:0 26px;line-height:1.4">Art galleries &amp; modeling<br>— in the studio now</span>
           </div>
           <div class="work-body">
-            <div class="tags"><span class="tag">Fitness</span><span class="tag">Web Design</span></div>
-            <h3>Apex Training</h3>
-            <p>A dark, conversion-focused site for a personal training studio — bold layout, pricing tiers, client results, and one-tap booking built to close.</p>
+            <div class="tags"><span class="tag">Galleries</span><span class="tag">Modeling</span></div>
+            <h3>Coming soon</h3>
+            <p>Design-led demos for art galleries and modeling portfolios are in progress — calm, editorial, image-forward. Want yours featured?</p>
             <div class="work-links">
-              <a href="/trainer/" class="btn-sm btn-sm-primary">View demo →</a>
+              <a href="/contact/" class="btn-sm btn-sm-primary">Get a free demo →</a>
             </div>
           </div>
         </div>
       </div>
       <div style="text-align:center;margin-top:36px">
         <a href="/work/" class="btn btn-ghost reveal">See all demos →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE CRAFT — color systems + a real animated motion emblem -->
+  <style>
+    @keyframes craftFloat{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-18px) rotate(2deg)}}
+    @keyframes craftGlow{0%,100%{opacity:.5;transform:translate(-50%,-50%) scale(1)}50%{opacity:.82;transform:translate(-50%,-50%) scale(1.1)}}
+    .craft-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:30px;align-items:stretch;margin-top:14px}
+    .craft-stage{position:relative;border:1px solid var(--border);border-radius:24px;background:radial-gradient(120% 120% at 50% 0,rgba(162,89,255,.10),transparent 60%),var(--glass);backdrop-filter:blur(8px);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:42px 28px;overflow:hidden;min-height:360px}
+    .craft-stage .glow{position:absolute;top:42%;left:50%;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(255,45,146,.45),rgba(162,89,255,.26) 45%,transparent 70%);filter:blur(34px);animation:craftGlow 6s ease-in-out infinite;z-index:0;pointer-events:none}
+    .craft-emblem{position:relative;z-index:1;width:min(72%,236px);filter:drop-shadow(0 26px 42px rgba(0,0,0,.55));animation:craftFloat 5.5s ease-in-out infinite}
+    .craft-cap{position:relative;z-index:1;margin-top:24px;text-align:center}
+    .craft-cap .t{font-weight:700;font-size:15px}
+    .craft-cap .d{color:var(--muted);font-size:13px;margin-top:4px;line-height:1.6}
+    .craft-pals{display:flex;flex-direction:column;gap:18px;justify-content:center}
+    .pal-card{border:1px solid var(--border);border-radius:20px;background:var(--glass);backdrop-filter:blur(8px);padding:20px 20px 18px}
+    .pal-head{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:14px}
+    .pal-head .nm{font-weight:700;font-size:15px;letter-spacing:-.01em}
+    .pal-head .src{font-size:10px;color:var(--faint);text-transform:uppercase;letter-spacing:.14em}
+    .pal-row{display:grid;grid-template-columns:repeat(5,1fr);gap:9px}
+    .pal-row.six{grid-template-columns:repeat(6,1fr)}
+    .pal-sw{display:flex;flex-direction:column;gap:6px}
+    .pal-chip{height:56px;border-radius:11px;border:1px solid rgba(255,255,255,.07);transition:transform .25s}
+    .pal-sw:hover .pal-chip{transform:translateY(-5px)}
+    .pal-hex{font-size:9.5px;color:var(--muted);text-align:center;letter-spacing:.01em;font-variant-numeric:tabular-nums}
+    @media(max-width:920px){.craft-grid{grid-template-columns:1fr}.craft-stage{min-height:300px}}
+    @media(prefers-reduced-motion:reduce){.craft-emblem,.craft-stage .glow{animation:none}}
+  </style>
+  <section>
+    <div class="wrap">
+      <div class="sec-head centered reveal">
+        <span class="eyebrow">The craft</span>
+        <h2>It's all in the details.</h2>
+        <p>Every build starts with an intentional color system and ships with motion that feels alive. This is the level of craft baked into the work — not a stock template in sight.</p>
+      </div>
+      <div class="craft-grid">
+
+        <div class="craft-stage reveal">
+          <div class="glow"></div>
+          <img class="craft-emblem" src="images/emblem-chatgpt.png" alt="A 3D glass and chrome motion emblem — a real Burgos Studio product" />
+          <div class="craft-cap">
+            <div class="t">A real motion emblem</div>
+            <div class="d">3D glass &amp; chrome, animated to drop into any video.<br><a href="/motion/" style="color:var(--v);text-decoration:underline;text-underline-offset:3px">See the motion packs →</a></div>
+          </div>
+        </div>
+
+        <div class="craft-pals">
+          <div class="pal-card reveal">
+            <div class="pal-head"><span class="nm">Sunset Electric</span><span class="src">This studio</span></div>
+            <div class="pal-row">
+              <div class="pal-sw"><div class="pal-chip" style="background:#a259ff"></div><div class="pal-hex">#A259FF</div></div>
+              <div class="pal-sw"><div class="pal-chip" style="background:#ff2d92"></div><div class="pal-hex">#FF2D92</div></div>
+              <div class="pal-sw"><div class="pal-chip" style="background:#ff7a45"></div><div class="pal-hex">#FF7A45</div></div>
+              <div class="pal-sw"><div class="pal-chip" style="background:#0a0a12;border-color:rgba(255,255,255,.14)"></div><div class="pal-hex">#0A0A12</div></div>
+              <div class="pal-sw"><div class="pal-chip" style="background:#9b9bb4"></div><div class="pal-hex">#9B9BB4</div></div>
+            </div>
+          </div>
+          <div class="pal-card reveal">
+            <div class="pal-head"><span class="nm">Quiet Luxury</span><span class="src">Glow Aesthetics</span></div>
+            <div class="pal-row six">
+              <div class="pal-sw"><div class="pal-chip" style="background:#f4ede2"></div><div class="pal-hex">#F4EDE2</div></div>
+              <div class="pal-sw"><div class="pal-chip" style="background:#e9ddcc"></div><div class="pal-hex">#E9DDCC</div></div>
+              <div class="pal-sw"><div class="pal-chip" style="background:#b98c7d"></div><div class="pal-hex">#B98C7D</div></div>
+              <div class="pal-sw"><div class="pal-chip" style="background:#9a6d5e"></div><div class="pal-hex">#9A6D5E</div></div>
+              <div class="pal-sw"><div class="pal-chip" style="background:#b39a6a"></div><div class="pal-hex">#B39A6A</div></div>
+              <div class="pal-sw"><div class="pal-chip" style="background:#2a2521;border-color:rgba(255,255,255,.14)"></div><div class="pal-hex">#2A2521</div></div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -377,13 +496,13 @@
       <div class="tcards">
         <div class="tcard reveal">
           <div class="tstars"><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg></div>
-          <p class="tquote">"Marcello turned my idea into a real brand in under two weeks. The site looks like something a huge company would have — people genuinely think I'm bigger than I am."</p>
-          <div class="tperson"><div class="tav">DW</div><div><div class="nm">Dad's Wooden Spoon</div><div class="rl">Cookie Bakery · Colorado</div></div></div>
+          <p class="tquote">"Marcello built us a site that feels as high-end as our treatments. Consult bookings jumped the week we launched — clients tell us the site is what made them trust us."</p>
+          <div class="tperson"><div class="tav">GA</div><div><div class="nm">Glow Aesthetics</div><div class="rl">Med Spa · Boulder, CO</div></div></div>
         </div>
         <div class="tcard reveal">
           <div class="tstars"><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg></div>
           <p class="tquote">"He gave me a free demo before I paid a cent. Once I saw it, it was an easy yes. Fast, no agency runaround, and he actually answers the phone."</p>
-          <div class="tperson"><div class="tav">AT</div><div><div class="nm">Apex Training</div><div class="rl">Personal Trainer</div></div></div>
+          <div class="tperson"><div class="tav">VG</div><div><div class="nm">Vellum Gallery</div><div class="rl">Art Gallery · Denver, CO</div></div></div>
         </div>
         <div class="tcard reveal">
           <div class="tstars"><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg></div>
