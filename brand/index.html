@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
 <style>
-  :root{--bg:#0a0a12;--bg2:#101019;--bg3:#171724;--text:#f4f4f8;--muted:#9b9bb4;--faint:#62627c;--accent:#fbfbff;--gold:#fbfbff;--v:#fbfbff;--c:#8c8c9c;--grad:linear-gradient(135deg,#b6b6c4 0%,#fbfbff 52%,#8c8c9c 100%);--grad-soft:linear-gradient(135deg,rgba(182,182,196,.16),rgba(251,251,255,.16),rgba(140,140,156,.16));--glass:rgba(255,255,255,.035);--border:rgba(255,255,255,.08);--maxw:1140px;--sans:"Space Grotesk",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+  :root{--bg:#0a0a12;--bg2:#101019;--bg3:#171724;--text:#f4f4f8;--muted:#9b9bb4;--faint:#8e8ea6;--accent:#fbfbff;--gold:#fbfbff;--v:#fbfbff;--c:#8c8c9c;--grad:linear-gradient(135deg,#b6b6c4 0%,#fbfbff 52%,#8c8c9c 100%);--grad-soft:linear-gradient(135deg,rgba(182,182,196,.16),rgba(251,251,255,.16),rgba(140,140,156,.16));--glass:rgba(255,255,255,.035);--border:rgba(255,255,255,.08);--maxw:1140px;--sans:"Space Grotesk",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
   body{font-family:var(--sans);background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;line-height:1.6;overflow-x:hidden}
@@ -112,6 +112,7 @@
   .btn::after,.btn-sm::after,.card-btn::after,.form-submit::after,.nav-cta::after{content:"";position:absolute;top:0;bottom:0;left:-130%;width:62%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.5),transparent);transform:skewX(-18deg);pointer-events:none}
   .btn:hover::after,.btn-sm:hover::after,.card-btn:hover::after,.form-submit:hover::after,.nav-cta:hover::after{animation:btnSheen .85s ease}
   @keyframes btnSheen{from{left:-130%}to{left:130%}}
+  a:focus-visible,button:focus-visible,summary:focus-visible,.btn:focus-visible,.btn-sm:focus-visible,.card-btn:focus-visible,.nav-toggle:focus-visible,.tab:focus-visible{outline:2px solid var(--v);outline-offset:3px;border-radius:8px}
   .btn-ghost,.btn-sm-ghost,.card-btn-ghost{background:linear-gradient(145deg,#24242f,#0c0c12)!important;border:1px solid rgba(255,255,255,.14)!important;color:var(--text)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.15),0 6px 20px -10px rgba(0,0,0,.85)}
   .btn-ghost:hover,.btn-sm-ghost:hover,.card-btn-ghost:hover{transform:translateY(-2px);border-color:rgba(255,255,255,.34)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 16px 34px -12px rgba(0,0,0,.95)!important;color:#fff!important}
   @media(prefers-reduced-motion:reduce){.btn:hover::after,.btn-sm:hover::after,.card-btn:hover::after,.form-submit:hover::after,.nav-cta:hover::after{animation:none}}

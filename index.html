@@ -11,7 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
 <style>
   :root{
-    --bg:#0a0a12;--bg2:#101019;--bg3:#171724;--text:#f4f4f8;--muted:#9b9bb4;--faint:#62627c;
+    --bg:#0a0a12;--bg2:#101019;--bg3:#171724;--text:#f4f4f8;--muted:#9b9bb4;--faint:#8e8ea6;
     --i:#b6b6c4;--v:#fbfbff;--c:#8c8c9c;
     --accent:#fbfbff;--accent-soft:rgba(251,251,255,.13);
     --grad:linear-gradient(135deg,#b6b6c4 0%,#fbfbff 52%,#8c8c9c 100%);
@@ -197,6 +197,7 @@
   .btn::after,.btn-sm::after{content:"";position:absolute;top:0;bottom:0;left:-130%;width:62%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.5),transparent);transform:skewX(-18deg);pointer-events:none}
   .btn:hover::after,.btn-sm:hover::after{animation:btnSheen .85s ease}
   @keyframes btnSheen{from{left:-130%}to{left:130%}}
+  a:focus-visible,button:focus-visible,summary:focus-visible,.btn:focus-visible,.btn-sm:focus-visible,.card-btn:focus-visible,.nav-toggle:focus-visible,.tab:focus-visible{outline:2px solid var(--v);outline-offset:3px;border-radius:8px}
   /* secondary buttons → glossy black (mirrors the glossy white primaries) */
   .btn-ghost,.btn-sm-ghost{background:linear-gradient(145deg,#24242f,#0c0c12)!important;border:1px solid rgba(255,255,255,.14)!important;color:var(--text)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.15),0 6px 20px -10px rgba(0,0,0,.85)}
   .btn-ghost:hover,.btn-sm-ghost:hover{transform:translateY(-2px);border-color:rgba(255,255,255,.34)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 16px 34px -12px rgba(0,0,0,.95)!important;color:#fff!important}
@@ -308,7 +309,7 @@
       </div>
       <figure class="ad-reel reveal" style="margin:0">
         <div class="ad-frame">
-          <video id="ad-video" muted playsinline autoplay></video>
+          <video id="ad-video" muted playsinline autoplay preload="metadata"><source src="images/ad-web.mp4" type="video/mp4"></video>
         </div>
         <div class="ad-dots" id="ad-dots" aria-hidden="true"></div>
       </figure>
@@ -553,28 +554,22 @@
   <section>
     <div class="wrap">
       <div class="sec-head centered reveal">
-        <span class="eyebrow">What clients say</span>
-        <h2>Businesses that leveled up.</h2>
-        <p>Real results from real projects. Your business could be next.</p>
+        <span class="eyebrow">Straight up</span>
+        <h2>No fake reviews here.</h2>
+        <p>I'm building my first client roster — so instead of made-up testimonials, here's the honest deal, and a founding-client offer.</p>
       </div>
-      <!-- TESTIMONIALS: swap these placeholder quotes for real ones as you collect them -->
       <div class="tcards">
         <div class="tcard reveal">
-          <div class="tstars"><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg></div>
-          <p class="tquote">"Marcello built us a site that feels as high-end as our treatments. Consult bookings jumped the week we launched — clients tell us the site is what made them trust us."</p>
-          <div class="tperson"><div class="tav">GA</div><div><div class="nm">Glow Aesthetics</div><div class="rl">Med Spa · Boulder, CO</div></div></div>
+          <p class="tquote"><strong style="color:#fff">Free demo, zero risk.</strong> I build a working demo of your site before you pay a cent. Love it, we launch it. Don't, there's no bill and no hard feelings.</p>
         </div>
         <div class="tcard reveal">
-          <div class="tstars"><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg></div>
-          <p class="tquote">"He gave me a free demo before I paid a cent. Once I saw it, it was an easy yes. Fast, no agency runaround, and he actually answers the phone."</p>
-          <div class="tperson"><div class="tav">VG</div><div><div class="nm">Vellum Gallery</div><div class="rl">Art Gallery · Denver, CO</div></div></div>
+          <p class="tquote"><strong style="color:#fff">You work with me directly.</strong> No agency, no handoffs, no runaround. The person who designs and builds it is the same person who answers the phone.</p>
         </div>
         <div class="tcard reveal">
-          <div class="tstars"><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg></div>
-          <p class="tquote">"The motion graphics pack made my YouTube channel look pro overnight. Dropped it straight into my editor and my intros instantly leveled up."</p>
-          <div class="tperson"><div class="tav">JR</div><div><div class="nm">Jordan R.</div><div class="rl">YouTube Creator · 40K subs</div></div></div>
+          <p class="tquote"><strong style="color:#fff">Founding-client offer.</strong> My first few clients get a special rate — in exchange for an honest review once your project is done. Want one of those spots?</p>
         </div>
       </div>
+      <div style="text-align:center;margin-top:30px"><a href="/contact/" class="btn btn-primary reveal">Claim a founding spot →</a></div>
     </div>
   </section>
   </div><!-- /panel-work -->

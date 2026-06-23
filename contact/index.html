@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
 <style>
-  :root{--bg:#0a0a12;--bg2:#101019;--bg3:#171724;--text:#f4f4f8;--muted:#9b9bb4;--faint:#62627c;--i:#b6b6c4;--v:#fbfbff;--c:#8c8c9c;--accent:#fbfbff;--accent-soft:rgba(251,251,255,.13);--grad:linear-gradient(135deg,#b6b6c4 0%,#fbfbff 52%,#8c8c9c 100%);--grad-soft:linear-gradient(135deg,rgba(182,182,196,.16),rgba(251,251,255,.16),rgba(140,140,156,.16));--border:rgba(255,255,255,.08);--glass:rgba(255,255,255,.035);--maxw:1140px;--sans:"Space Grotesk",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+  :root{--bg:#0a0a12;--bg2:#101019;--bg3:#171724;--text:#f4f4f8;--muted:#9b9bb4;--faint:#8e8ea6;--i:#b6b6c4;--v:#fbfbff;--c:#8c8c9c;--accent:#fbfbff;--accent-soft:rgba(251,251,255,.13);--grad:linear-gradient(135deg,#b6b6c4 0%,#fbfbff 52%,#8c8c9c 100%);--grad-soft:linear-gradient(135deg,rgba(182,182,196,.16),rgba(251,251,255,.16),rgba(140,140,156,.16));--border:rgba(255,255,255,.08);--glass:rgba(255,255,255,.035);--maxw:1140px;--sans:"Space Grotesk",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
   body{font-family:var(--sans);background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;line-height:1.6;overflow-x:hidden}
@@ -150,6 +150,7 @@
   .btn::after,.btn-sm::after,.card-btn::after,.form-submit::after,.nav-cta::after{content:"";position:absolute;top:0;bottom:0;left:-130%;width:62%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.5),transparent);transform:skewX(-18deg);pointer-events:none}
   .btn:hover::after,.btn-sm:hover::after,.card-btn:hover::after,.form-submit:hover::after,.nav-cta:hover::after{animation:btnSheen .85s ease}
   @keyframes btnSheen{from{left:-130%}to{left:130%}}
+  a:focus-visible,button:focus-visible,summary:focus-visible,.btn:focus-visible,.btn-sm:focus-visible,.card-btn:focus-visible,.nav-toggle:focus-visible,.tab:focus-visible{outline:2px solid var(--v);outline-offset:3px;border-radius:8px}
   .btn-ghost,.btn-sm-ghost,.card-btn-ghost{background:linear-gradient(145deg,#24242f,#0c0c12)!important;border:1px solid rgba(255,255,255,.14)!important;color:var(--text)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.15),0 6px 20px -10px rgba(0,0,0,.85)}
   .btn-ghost:hover,.btn-sm-ghost:hover,.card-btn-ghost:hover{transform:translateY(-2px);border-color:rgba(255,255,255,.34)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 16px 34px -12px rgba(0,0,0,.95)!important;color:#fff!important}
   @media(prefers-reduced-motion:reduce){.btn:hover::after,.btn-sm:hover::after,.card-btn:hover::after,.form-submit:hover::after,.nav-cta:hover::after{animation:none}}
@@ -304,39 +305,13 @@
   </div>
 </footer>
 
-<div class="sc-overlay" id="sc-overlay">
-  <div class="sc-modal">
-    <div class="sc-badge">One more thing</div>
-    <h3>Want to protect your site after launch?</h3>
-    <p>Most clients add <strong>Site Care</strong> — ongoing support so your site never goes stale or breaks without you knowing.</p>
-    <div class="sc-price">$75 <span>/ month &nbsp;·&nbsp; cancel anytime</span></div>
-    <div class="sc-features">
-      <div class="sc-feature">Monthly updates &amp; minor edits</div>
-      <div class="sc-feature">Uptime monitoring</div>
-      <div class="sc-feature">Regular backups</div>
-      <div class="sc-feature">Priority response when something breaks</div>
-    </div>
-    <div class="sc-actions">
-      <button class="sc-yes" id="sc-yes">Yes, add Site Care — $75/month</button>
-      <button class="sc-no" id="sc-no">No thanks, I'll handle it myself</button>
-    </div>
-    <div class="sc-confirmed" id="sc-confirmed">
-      <div style="font-size:36px">🛡️</div>
-      <p>Perfect — I'll include Site Care in your proposal.</p>
-    </div>
-  </div>
-</div>
-
 <script>
   document.getElementById('yr').textContent = new Date().getFullYear();
 
   var form=document.getElementById('contact-form'),btn=document.getElementById('form-btn');
-  var scOverlay=document.getElementById('sc-overlay');
-  var submittedEmail='';
 
   if(form){form.addEventListener('submit',function(e){
     e.preventDefault();
-    submittedEmail=form.querySelector('#email').value;
     btn.disabled=true;btn.innerHTML='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg> Sending…';
     fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}})
       .then(function(r){return r.json()})
@@ -344,27 +319,10 @@
         if(d.ok){
           form.style.display='none';
           document.getElementById('form-success').style.display='block';
-          setTimeout(function(){scOverlay.classList.add('show');},1500);
         } else{btn.disabled=false;btn.innerHTML='⚠ Try again';}
       })
       .catch(function(){btn.disabled=false;btn.innerHTML='⚠ Try again';});
   });}
-
-  document.getElementById('sc-no').addEventListener('click',function(){
-    scOverlay.classList.remove('show');
-  });
-
-  document.getElementById('sc-yes').addEventListener('click',function(){
-    var actions=document.querySelector('.sc-actions');
-    actions.style.display='none';
-    document.getElementById('sc-confirmed').style.display='block';
-    fetch('https://formspree.io/f/xwvdpknd',{
-      method:'POST',
-      body:JSON.stringify({email:submittedEmail,_subject:'Site Care Add-On Request',message:'Client requested Site Care ($75/month) add-on after form submission.'}),
-      headers:{'Accept':'application/json','Content-Type':'application/json'}
-    });
-    setTimeout(function(){scOverlay.classList.remove('show');},2800);
-  });
 
   var t=document.getElementById('toggle'),m=document.getElementById('menu');
   t.addEventListener('click',function(){m.classList.toggle('open')});
