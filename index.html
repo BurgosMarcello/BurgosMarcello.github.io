@@ -191,6 +191,20 @@
 </head>
 <body>
 <script>document.documentElement.className+=' js';</script>
+<style id="polish">
+  /* every button glimmers — a sheen sweep on hover */
+  .btn,.btn-sm{position:relative;overflow:hidden}
+  .btn::after,.btn-sm::after{content:"";position:absolute;top:0;bottom:0;left:-130%;width:62%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.5),transparent);transform:skewX(-18deg);pointer-events:none}
+  .btn:hover::after,.btn-sm:hover::after{animation:btnSheen .85s ease}
+  @keyframes btnSheen{from{left:-130%}to{left:130%}}
+  /* secondary buttons → glossy black (mirrors the glossy white primaries) */
+  .btn-ghost,.btn-sm-ghost{background:linear-gradient(145deg,#24242f,#0c0c12)!important;border:1px solid rgba(255,255,255,.14)!important;color:var(--text)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.15),0 6px 20px -10px rgba(0,0,0,.85)}
+  .btn-ghost:hover,.btn-sm-ghost:hover{transform:translateY(-2px);border-color:rgba(255,255,255,.34)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 16px 34px -12px rgba(0,0,0,.95)!important;color:#fff!important}
+  /* chrome shimmer sweeping across the hero wordmark */
+  .hero h1 .grad-text{background:linear-gradient(110deg,#8c8c9c 0%,#c4c4d2 32%,#ffffff 50%,#c4c4d2 68%,#8c8c9c 100%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:chromeShine 5.5s ease-in-out infinite}
+  @keyframes chromeShine{0%{background-position:175% 0}100%{background-position:-75% 0}}
+  @media(prefers-reduced-motion:reduce){.hero h1 .grad-text{animation:none}.btn:hover::after,.btn-sm:hover::after{animation:none}}
+</style>
 
 <header>
   <div class="wrap nav">
@@ -499,7 +513,7 @@
         <div class="craft-stage reveal">
           <div class="glow"></div>
           <video class="craft-clip" muted loop autoplay playsinline aria-label="Our claudebot motion emblem walking on a creator's desk">
-            <source src="images/claudebot-emblem.mp4" type="video/mp4">
+            <source src="images/claudebot-v2.mp4" type="video/mp4">
           </video>
           <div class="craft-cap">
             <div class="t">Your emblem, alive in real videos</div>
@@ -760,7 +774,7 @@
   /* ===== Ad reel — play the product clips as one continuous reel ===== */
   (function(){
     var v=document.getElementById('ad-video'); if(!v) return;
-    var clips=['images/ad-web.mp4','images/ad-motion.mp4','images/ad-phone.mp4'], i=0;
+    var clips=['images/ad-web.mp4','images/ad-subscribe.mp4','images/ad-phone.mp4'], i=0;
     var wrap=document.getElementById('ad-dots');
     var dots=clips.map(function(_,k){ var d=document.createElement('i'); d.addEventListener('click',function(){go(k)}); wrap.appendChild(d); return d; });
     function go(k){ i=k; v.src=clips[i]; v.load(); v.play().catch(function(){}); dots.forEach(function(d,x){d.classList.toggle('on',x===i)}); }
