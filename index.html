@@ -3,19 +3,19 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Burgos Studio — Web · Motion · Brand</title>
-<meta name="description" content="One studio. Everything your business needs to look unforgettable — web design, motion graphics, brand identity, and SEO. Starting at $300." />
-<link rel="canonical" href="https://burgosmarcello.github.io/" />
+<title>Burgos Studio — Marketing Studio for Aesthetic Brands</title>
+<meta name="description" content="Burgos Studio is the boutique marketing studio for med spas, galleries, and fashion brands — websites, brand, motion, and SEO that turn attention into booked clients. See a free demo before you pay." />
+<link rel="canonical" href="https://burgosstudio.com/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Burgos Studio" />
-<meta property="og:title" content="Burgos Studio — Web · Motion · Brand" />
-<meta property="og:description" content="One studio. Everything your business needs to look unforgettable — web design, motion graphics, brand identity, and SEO. Starting at $300." />
-<meta property="og:url" content="https://burgosmarcello.github.io/" />
-<meta property="og:image" content="https://burgosmarcello.github.io/images/og-cover.jpg" />
+<meta property="og:title" content="Burgos Studio — Marketing Studio for Aesthetic Brands" />
+<meta property="og:description" content="Burgos Studio is the boutique marketing studio for med spas, galleries, and fashion brands — websites, brand, motion, and SEO that turn attention into booked clients. See a free demo before you pay." />
+<meta property="og:url" content="https://burgosstudio.com/" />
+<meta property="og:image" content="https://burgosstudio.com/images/og-cover.jpg" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Burgos Studio — Web · Motion · Brand" />
-<meta name="twitter:description" content="One studio. Everything your business needs to look unforgettable — web design, motion graphics, brand identity, and SEO. Starting at $300." />
-<meta name="twitter:image" content="https://burgosmarcello.github.io/images/og-cover.jpg" />
+<meta name="twitter:title" content="Burgos Studio — Marketing Studio for Aesthetic Brands" />
+<meta name="twitter:description" content="Burgos Studio is the boutique marketing studio for med spas, galleries, and fashion brands — websites, brand, motion, and SEO that turn attention into booked clients. See a free demo before you pay." />
+<meta name="twitter:image" content="https://burgosstudio.com/images/og-cover.jpg" />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%23b6b6c4'/%3E%3Cstop offset='55%25' stop-color='%23fbfbff'/%3E%3Cstop offset='100%25' stop-color='%238c8c9c'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='url(%23g)'/%3E%3Ctext x='32' y='46' font-family='system-ui,sans-serif' font-size='42' font-weight='800' fill='%230a0a12' text-anchor='middle'%3EB%3C/text%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -81,8 +81,10 @@
   @keyframes bFloat{0%,100%{transform:translateY(0) rotateY(-15deg) rotateX(6deg)}50%{transform:translateY(-12px) rotateY(15deg) rotateX(-5deg)}}
   @keyframes bAura{0%,100%{opacity:.55;transform:translate(-50%,-50%) scale(1)}50%{opacity:.9;transform:translate(-50%,-50%) scale(1.12)}}
   @keyframes bSheen{0%,38%{transform:translateX(-130%) rotate(18deg)}62%,100%{transform:translateX(360%) rotate(18deg)}}
+  .b-logo{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;animation:bLogoFloat 6s ease-in-out infinite;filter:drop-shadow(0 18px 38px rgba(0,0,0,.6))}
+  @keyframes bLogoFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
   @media(max-width:640px){.b-stage{width:116px;height:116px;margin-bottom:18px}.b-face .glyph{font-size:66px}}
-  @media(prefers-reduced-motion:reduce){.b-spin,.b-aura,.b-sheen{animation:none}.b-medallion{transform:rotateY(-8deg) rotateX(4deg)}}
+  @media(prefers-reduced-motion:reduce){.b-spin,.b-aura,.b-sheen,.b-logo{animation:none}.b-medallion{transform:rotateY(-8deg) rotateX(4deg)}}
 
   /* service pillars */
   .pillars{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
@@ -261,31 +263,20 @@
       <div class="hero-content">
         <div class="b-stage" aria-hidden="true">
           <div class="b-aura"></div>
-          <div class="b-medallion">
-            <div class="b-spin">
-              <span class="slab" style="--z:-6px"></span>
-              <span class="slab" style="--z:-12px"></span>
-              <span class="slab" style="--z:-18px"></span>
-              <div class="b-face">
-                <div class="b-gloss"></div>
-                <span class="glyph">B</span>
-                <div class="b-sheen"></div>
-              </div>
-            </div>
-          </div>
+          <div class="b-medallion"><img class="b-logo" src="images/logo-b.png" alt="Burgos Studio chrome B logo" /></div>
         </div>
-        <div class="pill reveal"><span class="dot"></span> Available for new projects</div>
-        <h1 class="reveal"><span class="grad-text">Web</span><span class="sep">·</span><span class="grad-text">Motion</span><span class="sep">·</span><span class="grad-text">Brand</span></h1>
-        <p class="hero-sub reveal">One studio. Everything your business needs to look like the real deal — custom websites, cinematic motion graphics, brand identity, getting found on Google, and automating the busywork.</p>
+        <div class="pill reveal"><span class="dot"></span> Taking new clients</div>
+        <h1 class="reveal" style="font-size:clamp(40px,7vw,78px)">Marketing as <span class="grad-text">polished</span> as your work.</h1>
+        <p class="hero-sub reveal">The boutique marketing studio for med spas, galleries, and fashion brands. We design the website, brand, and content that turn attention into booked clients — and you see a free demo before you pay.</p>
         <div class="hero-cta reveal">
           <a href="/contact/" class="btn btn-primary">Get a free demo →</a>
           <a href="/work/" class="btn btn-ghost">See the work</a>
         </div>
         <div class="stats reveal">
-          <div class="stat"><div class="n">$300</div><div class="l">Starting price</div></div>
-          <div class="stat"><div class="n">5 services</div><div class="l">Web · Motion · Brand · SEO · Automation</div></div>
-          <div class="stat"><div class="n">2 weeks</div><div class="l">Avg. delivery</div></div>
-          <div class="stat"><div class="n">1 person</div><div class="l">You work with me directly</div></div>
+          <div class="stat"><div class="n">Free demo</div><div class="l">Before you pay a cent</div></div>
+          <div class="stat"><div class="n">1 studio</div><div class="l">Your whole marketing presence</div></div>
+          <div class="stat"><div class="n">100% custom</div><div class="l">No templates, ever</div></div>
+          <div class="stat"><div class="n">~2 weeks</div><div class="l">From kickoff to launch</div></div>
         </div>
       </div>
     </div>
@@ -333,8 +324,8 @@
     <div class="wrap">
       <div class="sec-head centered reveal" style="margin-bottom:22px">
         <span class="eyebrow">In action</span>
-        <h2>Our products, in the real world.</h2>
-        <p>Real websites, real motion graphics, real brand work — here's what you're actually buying.</p>
+        <h2>The work, in the real world.</h2>
+        <p>Real websites, real brand work, real motion — the kind of presence we build for aesthetic brands.</p>
       </div>
       <figure class="ad-reel reveal" style="margin:0">
         <div class="ad-frame">
@@ -359,9 +350,9 @@
   <section style="padding-top:0">
     <div class="wrap">
       <div class="sec-head centered reveal">
-        <span class="eyebrow">Services</span>
-        <h2>Pick what your business needs.</h2>
-        <p>Each service stands alone — or stack them for a complete brand presence.</p>
+        <span class="eyebrow">What we do</span>
+        <h2>One studio. Your whole marketing presence.</h2>
+        <p>Five layers, one goal — turn attention into booked clients. Take the full system, or start with what you need most.</p>
       </div>
       <div class="pillars">
 
@@ -369,12 +360,12 @@
           <div class="pillar-media">
             <img src="images/medspa-suite.jpg" alt="Web design demo — Glow Aesthetics med spa site" />
             <div class="overlay"></div>
-            <span class="price-chip">From $950</span>
+            <span class="price-chip">From $2,500</span>
           </div>
           <div class="pillar-body">
-            <div class="tags"><span class="tag">Web Design</span><span class="tag">Development</span></div>
-            <h3>Custom Websites</h3>
-            <p>A real website — not a template. Designed for your business, built to convert, delivered in 2 weeks. Works beautifully on every device.</p>
+            <div class="tags"><span class="tag">Make an impression</span><span class="tag">Web Design</span></div>
+            <h3>Websites that book clients</h3>
+            <p>A custom site built around one job — turning browsers into booked appointments. Premium, fast, flawless on every device. Never a template.</p>
             <div class="pillar-cta">
               <!-- Replace href with Polar checkout link once set up at polar.sh (merchant-of-record — handles sales tax/VAT for you) -->
               <a href="/contact/?s=web" class="btn-sm btn-sm-primary">Start a project →</a>
@@ -389,16 +380,16 @@
               <source src="images/ai-pack-chrome.mp4" type="video/mp4">
             </video>
             <div class="overlay"></div>
-            <span class="price-chip">From $75 / pack</span>
+            <span class="price-chip">Content add-on</span>
           </div>
           <div class="pillar-body">
-            <div class="tags"><span class="tag">Motion FX</span><span class="tag">Creator Tools</span></div>
-            <h3>Motion Graphics</h3>
-            <p>3D animated overlays, floating logo packs, and cinematic motion graphics built for YouTube and TikTok creators. Ready to drop into any editor.</p>
+            <div class="tags"><span class="tag">Get remembered</span><span class="tag">Motion &amp; Content</span></div>
+            <h3>Content that stops the scroll</h3>
+            <p>Reels, promo videos, and animated branding that keep your spa, gallery, or label top of mind — the content that makes people stop and book.</p>
             <div class="pillar-cta">
               <!-- Replace href with Polar checkout link once set up at polar.sh (merchant-of-record — handles sales tax/VAT for you) -->
-              <a href="/motion/" class="btn-sm btn-sm-primary">Order a pack →</a>
-              <a href="/motion/" class="btn-sm btn-sm-ghost">See packs</a>
+              <a href="/contact/?s=motion" class="btn-sm btn-sm-primary">Add content →</a>
+              <a href="/motion/" class="btn-sm btn-sm-ghost">See examples</a>
             </div>
           </div>
         </div>
@@ -409,12 +400,12 @@
               <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="bg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#b6b6c4"/><stop offset="55%" stop-color="#fbfbff"/><stop offset="100%" stop-color="#8c8c9c"/></linearGradient></defs><circle cx="60" cy="60" r="52" stroke="url(#bg1)" stroke-width="1.5" opacity=".3"/><circle cx="60" cy="60" r="36" stroke="url(#bg1)" stroke-width="1.5" opacity=".55"/><text x="60" y="76" font-family="Space Grotesk,sans-serif" font-weight="700" font-size="56" fill="url(#bg1)" text-anchor="middle">B</text></svg>
             </div>
             <div class="overlay"></div>
-            <span class="price-chip">From $450</span>
+            <span class="price-chip">From $950</span>
           </div>
           <div class="pillar-body">
-            <div class="tags"><span class="tag">Brand Identity</span><span class="tag">Logo Design</span></div>
-            <h3>Brand Identity</h3>
-            <p>Logo, color system, typography, social graphics, and a brand guide — everything you need to look consistent and professional from day one.</p>
+            <div class="tags"><span class="tag">Look premium</span><span class="tag">Brand Identity</span></div>
+            <h3>Look as premium as your prices</h3>
+            <p>Logo, color system, typography, and social templates — a polished identity that signals quality before a client reads a single word.</p>
             <div class="pillar-cta">
               <!-- Replace href with Polar checkout link once set up at polar.sh (merchant-of-record — handles sales tax/VAT for you) -->
               <a href="/contact/?s=brand" class="btn-sm btn-sm-primary">Start brand project →</a>
@@ -429,12 +420,12 @@
               <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="seo1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#b6b6c4"/><stop offset="55%" stop-color="#fbfbff"/><stop offset="100%" stop-color="#8c8c9c"/></linearGradient></defs><circle cx="52" cy="52" r="30" stroke="url(#seo1)" stroke-width="3.5" fill="none"/><line x1="74" y1="74" x2="94" y2="94" stroke="url(#seo1)" stroke-width="3.5" stroke-linecap="round"/><path d="M40 56l8-10 7 7 11-15" stroke="url(#seo1)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
             </div>
             <div class="overlay"></div>
-            <span class="price-chip">From $300</span>
+            <span class="price-chip">From $500</span>
           </div>
           <div class="pillar-body">
-            <div class="tags"><span class="tag">SEO</span><span class="tag">Google Business</span></div>
-            <h3>Get Found on Google</h3>
-            <p>Google Business setup, local SEO, and review strategy so customers searching for what you do actually find you — not your competitors.</p>
+            <div class="tags"><span class="tag">Get found</span><span class="tag">Local SEO</span></div>
+            <h3>Get found first on Google</h3>
+            <p>Google Business setup, local SEO, and a review engine so the clients searching "med spa near me" find you — not the spa down the street.</p>
             <div class="pillar-cta">
               <!-- Replace href with Polar checkout link once set up at polar.sh (merchant-of-record — handles sales tax/VAT for you) -->
               <a href="/contact/?s=seo" class="btn-sm btn-sm-primary">Boost my visibility →</a>
@@ -448,12 +439,12 @@
             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="auto1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#b6b6c4"/><stop offset="55%" stop-color="#fbfbff"/><stop offset="100%" stop-color="#8c8c9c"/></linearGradient></defs><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" stroke="url(#auto1)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
           <div style="flex:1;min-width:240px">
-            <div class="tags" style="margin-bottom:8px"><span class="tag" style="color:#0a0a12;background:var(--grad);border:0">★ New</span><span class="tag">Automation</span></div>
-            <h3 style="font-size:23px;font-weight:700;letter-spacing:-.02em">Put the busywork on autopilot</h3>
-            <p style="color:var(--muted);font-size:14.5px;margin-top:6px;max-width:64ch">Lead follow-ups, booking, review requests, reminders — I wire the repetitive stuff to run itself. Pairs perfectly with your site.</p>
+            <div class="tags" style="margin-bottom:8px"><span class="tag" style="color:#0a0a12;background:var(--grad);border:0">Book on autopilot</span><span class="tag">Automation</span></div>
+            <h3 style="font-size:23px;font-weight:700;letter-spacing:-.02em">Bookings &amp; follow-ups on autopilot</h3>
+            <p style="color:var(--muted);font-size:14.5px;margin-top:6px;max-width:64ch">New-lead replies, booking reminders, and review requests that run themselves — so no client slips through the cracks. Wired straight into your site.</p>
           </div>
           <div style="flex-shrink:0;display:flex;flex-direction:column;align-items:flex-start;gap:12px">
-            <div style="font-size:13px;color:var(--muted)">from <span style="font-size:22px;font-weight:800;color:var(--text);letter-spacing:-.02em">$400</span></div>
+            <div style="font-size:13px;color:var(--muted)">from <span style="font-size:22px;font-weight:800;color:var(--text);letter-spacing:-.02em">$600</span></div>
             <a href="/automation/" class="btn-sm btn-sm-primary">Explore Automation →</a>
           </div>
         </div>
@@ -469,8 +460,8 @@
     <div class="wrap">
       <div class="sec-head reveal">
         <span class="eyebrow">Featured work</span>
-        <h2>Real sites, built for real businesses.</h2>
-        <p>Every project is custom — designed and built from scratch to match the business, not a template.</p>
+        <h2>Three brands. Three worlds.</h2>
+        <p>A med spa, a gallery, a fashion agency — each with a custom look built from scratch. No two alike, and not a template in sight.</p>
       </div>
       <div class="work-grid">
         <div class="work-card reveal">
@@ -480,7 +471,7 @@
           <div class="work-body">
             <div class="tags"><span class="tag">Med Spa</span><span class="tag">Booking</span><span class="tag">Memberships</span></div>
             <h3>Glow Aesthetics</h3>
-            <p>A boutique Boulder injectables studio with a premium, editorial feel — transparent treatment menu, a recurring membership offer, and one-tap consult booking.</p>
+            <p>A boutique injectables studio with a premium, editorial feel — transparent treatment menu, a recurring membership offer, and one-tap consult booking.</p>
             <div class="work-links">
               <a href="/medspa/" class="btn-sm btn-sm-primary">View demo →</a>
             </div>
@@ -559,8 +550,8 @@
             <source src="images/claudebot-v2.mp4" type="video/mp4">
           </video>
           <div class="craft-cap">
-            <div class="t">Your emblem, alive in real videos</div>
-            <div class="d">3D motion emblems &amp; overlays creators actually use.<br><a href="/motion/" style="color:var(--v);text-decoration:underline;text-underline-offset:3px">See the motion packs →</a></div>
+            <div class="t">Brand motion that feels alive</div>
+            <div class="d">Animated logos, overlays &amp; content built for your brand.<br><a href="/motion/" style="color:var(--v);text-decoration:underline;text-underline-offset:3px">See the motion work →</a></div>
           </div>
         </div>
 
@@ -630,7 +621,7 @@
         <div class="p-card reveal">
           <div class="p-title">SEO / Google</div>
           <div class="p-desc">Get found by customers searching for what you do.</div>
-          <div class="p-price"><sup>$</sup>300</div>
+          <div class="p-price"><sup>$</sup>500</div>
           <ul class="p-features">
             <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Google Business setup</span></li>
             <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Local SEO optimization</span></li>
@@ -644,7 +635,7 @@
         <div class="p-card reveal">
           <div class="p-title">Automation</div>
           <div class="p-desc">Put the repetitive busywork on autopilot.</div>
-          <div class="p-price"><sup>$</sup>400</div>
+          <div class="p-price"><sup>$</sup>600</div>
           <ul class="p-features">
             <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>One built automation</span></li>
             <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Lead, booking or review flow</span></li>
@@ -658,7 +649,7 @@
         <div class="p-card reveal">
           <div class="p-title">Brand Identity</div>
           <div class="p-desc">Everything you need to look professional from day one.</div>
-          <div class="p-price"><sup>$</sup>450</div>
+          <div class="p-price"><sup>$</sup>950</div>
           <ul class="p-features">
             <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Logo + 2 variations</span></li>
             <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Color palette with codes</span></li>
@@ -671,8 +662,8 @@
 
         <div class="p-card featured reveal">
           <div class="p-title">Web Design</div>
-          <div class="p-desc">A full custom website that makes your business look serious.</div>
-          <div class="p-price"><sup>$</sup>950</div>
+          <div class="p-desc">A full custom website designed to turn visitors into booked clients.</div>
+          <div class="p-price"><sup>$</sup>2,500</div>
           <ul class="p-features">
             <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Custom design — no templates</span></li>
             <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Mobile responsive</span></li>
@@ -684,9 +675,9 @@
         </div>
 
         <div class="p-card reveal">
-          <div class="p-title">Motion FX Pack</div>
-          <div class="p-desc">3D animated overlays for YouTube & TikTok creators.</div>
-          <div class="p-price"><sup>$</sup>75</div>
+          <div class="p-title">Motion &amp; Content</div>
+          <div class="p-desc">Animated branding &amp; short-form content for your brand.</div>
+          <div class="p-price"><sup>$</sup>350</div>
           <ul class="p-features">
             <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>15-second looping clip</span></li>
             <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>16:9 + 9:16 formats</span></li>
@@ -694,11 +685,11 @@
             <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Editor-ready MP4</span></li>
             <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Commercial license</span></li>
           </ul>
-          <a href="/motion/" class="btn btn-ghost p-btn">Order a pack</a>
+          <a href="/motion/" class="btn btn-ghost p-btn">See examples</a>
         </div>
 
       </div>
-      <p style="text-align:center;color:var(--faint);font-size:13px;margin-top:22px">Bundle Brand + Web and save $100. <a href="/contact/?s=bundle" style="color:var(--v);text-decoration:underline;text-underline-offset:3px">Ask about the bundle →</a></p>
+      <p style="text-align:center;color:var(--faint);font-size:13px;margin-top:22px">Building the full presence? Bundle web + brand + SEO and save. <a href="/contact/?s=bundle" style="color:var(--v);text-decoration:underline;text-underline-offset:3px">Ask about the studio package →</a></p>
     </div>
   </section>
   </div><!-- /panel-pricing -->
@@ -731,7 +722,11 @@
         </details>
         <details class="faq reveal">
           <summary>Can you combine services? <span class="plus"></span></summary>
-          <div class="faq-body">Absolutely — that's the whole point of one studio. Most clients pair a website with brand identity and SEO so everything is cohesive. Bundle Brand + Web and I'll take $100 off the total.</div>
+          <div class="faq-body">Absolutely — that's the whole point of one studio. Most clients pair a website with brand identity and SEO so everything is cohesive, then add motion and automation on top. Bundle web + brand + SEO and I'll knock money off the total.</div>
+        </details>
+        <details class="faq reveal">
+          <summary>Do you run our social media and ads day-to-day? <span class="plus"></span></summary>
+          <div class="faq-body">We build the marketing engine — your website, brand, content, and the automations that run it — not the daily posting or ad-buying. Think of us as the studio that designs and builds your presence, then hands you something that keeps working for you 24/7. Need fresh content or a refresh later? We're here for that too.</div>
         </details>
         <details class="faq reveal">
           <summary>How do payments work? <span class="plus"></span></summary>
@@ -774,7 +769,7 @@
   <div class="wrap foot-grid">
     <div class="foot-brand">
       <span class="brand-sm"><svg viewBox="0 0 64 64" height="22" style="display:block;flex-shrink:0" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="fg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#b6b6c4"/><stop offset="55%" stop-color="#fbfbff"/><stop offset="100%" stop-color="#8c8c9c"/></linearGradient></defs><rect width="64" height="64" rx="15" fill="url(#fg)"/><text x="32" y="46" font-family="Space Grotesk,sans-serif" font-size="40" font-weight="700" fill="#0a0a12" text-anchor="middle">B</text></svg> Burgos Studio</span>
-      <p>One studio for everything your business needs to look like the real deal — web, motion, brand, SEO, and automation.</p>
+      <p>The boutique marketing studio for aesthetic brands — websites, brand, motion, SEO &amp; automation that turn attention into booked clients.</p>
       <span class="foot-copy">© <span id="yr"></span> Burgos Studio</span>
     </div>
     <div class="foot-col">
@@ -790,6 +785,7 @@
       <a href="/#work">Work</a>
       <a href="/#pricing">Pricing</a>
       <a href="/about/">About</a>
+      <a href="/privacy/">Privacy</a>
     </div>
     <div class="foot-col">
       <div class="foot-h">Get started</div>
@@ -836,7 +832,7 @@
   /* ===== Ad reel — play the product clips as one continuous reel ===== */
   (function(){
     var v=document.getElementById('ad-video'); if(!v) return;
-    var clips=['images/ad-web.mp4','images/ad-subscribe.mp4','images/ad-phone.mp4'], i=0;
+    var clips=['images/ad-web.mp4','images/reveal-ad.mp4','images/ad-phone.mp4'], i=0;
     var wrap=document.getElementById('ad-dots');
     var dots=clips.map(function(_,k){ var d=document.createElement('i'); d.addEventListener('click',function(){go(k)}); wrap.appendChild(d); return d; });
     function go(k){ i=k; v.src=clips[i]; v.load(); v.play().catch(function(){}); dots.forEach(function(d,x){d.classList.toggle('on',x===i)}); }
