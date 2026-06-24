@@ -69,8 +69,13 @@
   .stat .l{font-size:13px;color:var(--muted);margin-top:2px}
 
   /* hero 3D B medallion */
-  .b-stage{position:relative;width:142px;height:142px;margin:0 auto 22px;perspective:760px;z-index:2}
+  .b-stage{position:relative;width:142px;height:142px;margin:6px auto 40px;perspective:760px;z-index:2}
   .b-aura{position:absolute;top:50%;left:50%;width:240px;height:240px;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,rgba(251,251,255,.5),rgba(182,182,196,.28) 45%,transparent 70%);filter:blur(30px);animation:bAura 5s ease-in-out infinite;z-index:0;pointer-events:none}
+  .b-ring{position:absolute;top:50%;left:50%;width:166px;height:166px;transform:translate(-50%,-50%);border-radius:50%;background:conic-gradient(from 0deg,#8c8c9c,#fbfbff,#b6b6c4,#fbfbff,#8c8c9c,#fbfbff,#8c8c9c);-webkit-mask:radial-gradient(closest-side,transparent 85%,#000 88%);mask:radial-gradient(closest-side,transparent 85%,#000 88%);opacity:.92;z-index:0;pointer-events:none;animation:bRingSpin 16s linear infinite;filter:drop-shadow(0 0 10px rgba(251,251,255,.22))}
+  .b-orbit{position:absolute;top:50%;left:50%;width:198px;height:198px;transform:translate(-50%,-50%);border-radius:50%;border:1px solid rgba(255,255,255,.09);z-index:0;pointer-events:none;animation:bOrbitSpin 26s linear infinite}
+  .b-orbit i{position:absolute;top:-3.5px;left:50%;margin-left:-3.5px;width:7px;height:7px;border-radius:50%;background:var(--grad);box-shadow:0 0 10px rgba(251,251,255,.7)}
+  @keyframes bRingSpin{to{transform:translate(-50%,-50%) rotate(360deg)}}
+  @keyframes bOrbitSpin{to{transform:translate(-50%,-50%) rotate(360deg)}}
   .b-medallion{position:absolute;inset:0;transform-style:preserve-3d;transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .3s ease-out;z-index:1}
   .b-spin{position:absolute;inset:0;transform-style:preserve-3d;animation:bFloat 7s ease-in-out infinite}
   .b-spin .slab{position:absolute;inset:0;border-radius:31%;background:linear-gradient(150deg,#3a3a46,#16161c);transform:translateZ(var(--z))}
@@ -83,8 +88,8 @@
   @keyframes bSheen{0%,38%{transform:translateX(-130%) rotate(18deg)}62%,100%{transform:translateX(360%) rotate(18deg)}}
   .b-logo{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;animation:bLogoFloat 6s ease-in-out infinite;filter:drop-shadow(0 18px 38px rgba(0,0,0,.6))}
   @keyframes bLogoFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
-  @media(max-width:640px){.b-stage{width:116px;height:116px;margin-bottom:18px}.b-face .glyph{font-size:66px}}
-  @media(prefers-reduced-motion:reduce){.b-spin,.b-aura,.b-sheen,.b-logo{animation:none}.b-medallion{transform:rotateY(-8deg) rotateX(4deg)}}
+  @media(max-width:640px){.b-stage{width:116px;height:116px;margin:4px auto 32px}.b-ring{width:138px;height:138px}.b-orbit{width:166px;height:166px}}
+  @media(prefers-reduced-motion:reduce){.b-spin,.b-aura,.b-sheen,.b-logo,.b-ring,.b-orbit{animation:none}.b-medallion{transform:rotateY(-8deg) rotateX(4deg)}}
 
   /* service pillars */
   .pillars{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
@@ -263,6 +268,8 @@
       <div class="hero-content">
         <div class="b-stage" aria-hidden="true">
           <div class="b-aura"></div>
+          <div class="b-ring"></div>
+          <div class="b-orbit"><i></i></div>
           <div class="b-medallion"><img class="b-logo" src="images/logo-b.png" alt="Burgos Studio chrome B logo" /></div>
         </div>
         <div class="pill reveal"><span class="dot"></span> Taking new clients</div>
